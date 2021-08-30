@@ -20,6 +20,8 @@ npm install hexo-cli -g
 
 ```shell
 hexo init blog
+cd blog
+npm install --registry=https://registry.npm.taobao.org
 ```
 
 ### 运行博客

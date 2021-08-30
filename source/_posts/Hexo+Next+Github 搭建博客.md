@@ -1,7 +1,7 @@
 ---
 title: Hexo+Next+Github 搭建博客
 date: 2021-07-29 18:43:36
-tags:
+tags: blog
 ---
 
 

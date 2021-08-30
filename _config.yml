@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Rain's Blog
 subtitle: ''
-description: ''
-keywords:
-author: John Doe
+description: 'hello world'
+keywords: rainlf
+author: rain
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://rainlf.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -96,6 +96,8 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins: hexo-generate-feed
+
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: next
@@ -104,3 +106,30 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+
+# hexo-auto-excerpt
+# excerpt_length: 150
+# hexo-excerpt
+excerpt:
+  depth: 2  #按层来算，也就是按代码块来算
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+
+# hexo-helper-live2d
+# https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-koharu
+  display:
+    position: left
+    width: 150
+    height: 300
+  mobile:
+    show: true

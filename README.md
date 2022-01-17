@@ -6,3 +6,4 @@
 > Next: https://theme-next.iissnan.com/  
 > Font Awesome： https://fontawesome.com/  
 > Baidu Statistics: https://tongji.baidu.com/  
+> Live2d: https://github.com/EYHN/hexo-helper-live2d

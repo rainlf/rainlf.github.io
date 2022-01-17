@@ -10,6 +10,9 @@
   </div>
 {%- endif %}
 
+{# 网站底部访问量 #}
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="copyright">
   {% set copyright_year = date(null, 'YYYY') %}
   &copy; {% if theme.footer.since and theme.footer.since != copyright_year %}{{ theme.footer.since }} – {% endif %}
@@ -43,13 +46,23 @@
 </div>
 
 {%- if theme.footer.powered %}
+  {# 网站底部访问量 #}
   <div class="powered-by">
-    {%- set next_site = 'https://theme-next.org' %}
-    {%- if theme.scheme !== 'Gemini' %}
-      {%- set next_site = 'https://' + theme.scheme | lower + '.theme-next.org' %}
-    {%- endif %}
-    {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'}) + ' & ' + next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'})) }}
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+      Page view: <span id="busuanzi_value_site_uv"></span> | 
+    </span>
   </div>
+
+  {# 隐藏 Power by
+    <div class="powered-by">
+      {%- set next_site = 'https://theme-next.org' %}
+      {%- if theme.scheme !== 'Gemini' %}
+        {%- set next_site = 'https://' + theme.scheme | lower + '.theme-next.org' %}
+      {%- endif %}
+      {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'}) + ' & ' + next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'})) }}
+    </div>
+  #}
 {%- endif %}
 
 {%- if theme.add_this_id %}
@@ -57,5 +70,11 @@
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ theme.add_this_id }}" async="async"></script>
   </div>
 {%- endif %}
+
+{# 全站字数统计 #}
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count"> | Blog word count: {{ totalcount(site) }}</span>
+</div>
 
 {{- next_inject('footer') }}

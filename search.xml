@@ -34,6 +34,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Nginx 配置 HTTPS</title>
+    <url>/2022/01/23/Nginx-%E9%85%8D%E7%BD%AE-HTTPS/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+<p>Nginx 1.14.0</p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>上传<code>SSL</code>证书到服务器，并修改配置文件<code>/etc/nginx/nginx.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"><span class="meta">  #</span><span class="bash"> http -&gt; https</span></span><br><span class="line">  server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line">		return 301 https://$server_name$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">	#</span><span class="bash"> https configuration</span></span><br><span class="line">	server &#123;</span><br><span class="line">		listen 443 ssl;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line"></span><br><span class="line">      # ssl证书地址</span><br><span class="line">      ssl_certificate     /etc/nginx/ssl/ssl_rainlf_com.crt;  # pem/crt文件的路径</span><br><span class="line">      ssl_certificate_key  /etc/nginx/ssl/ssl_rainlf_com.key; # key文件的路径</span><br><span class="line"></span><br><span class="line">      # ssl验证相关配置</span><br><span class="line">      ssl_session_timeout  5m;    #缓存有效期</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议</span><br><span class="line">      ssl_prefer_server_ciphers on;   #使用服务器端的首选算法</span><br><span class="line"></span><br><span class="line">		root /var/www/html;</span><br><span class="line">		index index.html;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu 20.04 安装 jdk8</title>
     <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85%20jdk8/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -342,8 +361,8 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
         <tag>nginx</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -792,6 +811,17 @@
       </categories>
       <tags>
         <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>站点隐式 URL 跳转</title>
+    <url>/2022/01/23/%E7%AB%99%E7%82%B9%E9%9A%90%E5%BC%8F-URL-%E8%B7%B3%E8%BD%AC/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我们需要通过自己的域名连接到外部的站点时，<code>DNS</code> 解析的隐式 <code>URL</code>跳转是一个较好的选择。但由于使用了默认的 <code>iframe</code>代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。</p>
+<h2 id="站点文件"><a href="#站点文件" class="headerlink" title="站点文件"></a>站点文件</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>I am site title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--网页标题左侧显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--收藏夹显示图标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noframes</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noframes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>site</tag>
       </tags>
   </entry>
 </search>

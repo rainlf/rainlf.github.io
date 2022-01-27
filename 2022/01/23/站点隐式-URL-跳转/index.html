@@ -25,22 +25,20 @@
     var CONFIG = {"hostname":"rainlf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="环境 Ubuntu 20.04 LTS Maven 3.8.3">
+  <meta name="description" content="背景当我们需要通过自己的域名连接到外部的站点时，DNS 解析的隐式 URL跳转是一个较好的选择。但由于使用了默认的 iframe代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu 20.04 安装 maven">
-<meta property="og:url" content="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-maven/index.html">
+<meta property="og:title" content="站点隐式 URL 跳转">
+<meta property="og:url" content="https://rainlf.github.io/2022/01/23/%E7%AB%99%E7%82%B9%E9%9A%90%E5%BC%8F-URL-%E8%B7%B3%E8%BD%AC/index.html">
 <meta property="og:site_name" content="Rain&#39;s Blog">
-<meta property="og:description" content="环境 Ubuntu 20.04 LTS Maven 3.8.3">
+<meta property="og:description" content="背景当我们需要通过自己的域名连接到外部的站点时，DNS 解析的隐式 URL跳转是一个较好的选择。但由于使用了默认的 iframe代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-29T03:11:11.000Z">
-<meta property="article:modified_time" content="2022-01-27T14:57:23.799Z">
+<meta property="article:published_time" content="2022-01-23T03:37:48.000Z">
+<meta property="article:modified_time" content="2022-01-27T14:57:23.803Z">
 <meta property="article:author" content="rain">
-<meta property="article:tag" content="linux">
-<meta property="article:tag" content="ubuntu">
-<meta property="article:tag" content="maven">
+<meta property="article:tag" content="site">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-maven/">
+<link rel="canonical" href="https://rainlf.github.io/2022/01/23/%E7%AB%99%E7%82%B9%E9%9A%90%E5%BC%8F-URL-%E8%B7%B3%E8%BD%AC/">
 
 
 <script id="page-configurations">
@@ -53,7 +51,7 @@
   };
 </script>
 
-  <title>Ubuntu 20.04 安装 maven | Rain's Blog</title>
+  <title>站点隐式 URL 跳转 | Rain's Blog</title>
   
 
 
@@ -207,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-maven/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/23/%E7%AB%99%E7%82%B9%E9%9A%90%E5%BC%8F-URL-%E8%B7%B3%E8%BD%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -220,7 +218,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Ubuntu 20.04 安装 maven
+          站点隐式 URL 跳转
         </h1>
 
         <div class="post-meta">
@@ -230,7 +228,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="Created: 2022-01-23 11:37:48" itemprop="dateCreated datePublished" datetime="2022-01-23T11:37:48+08:00">2022-01-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -239,15 +237,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2022-01-27 22:57:23" itemprop="dateModified" datetime="2022-01-27T22:57:23+08:00">2022-01-27</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-            </span>
 
           
 
@@ -260,22 +249,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>Maven 3.8.3</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>安装 Maven，并设置相关环境变量，参考 <a target="_blank" rel="noopener" href="https://maven.apache.org/settings.html">官方文档</a></p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>在 <a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java8">Oracle官方地址</a> 下载 jdk release 文件，解压文件至安装目录</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/maven/</span><br><span class="line">sudo tar xvf apache-maven-3.8.3-bin.tar.gz -C /usr/maven/</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>编辑 <code>~/.zshrc</code> （bash shell 则编辑 <code>~/.bashrc</code>）,添加内容</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MAVEN_HOME=/usr/maven/apache-maven-3.8.3</span><br><span class="line">export PATH=$MAVEN_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我们需要通过自己的域名连接到外部的站点时，<code>DNS</code> 解析的隐式 <code>URL</code>跳转是一个较好的选择。但由于使用了默认的 <code>iframe</code>代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。</p>
+<h2 id="站点文件"><a href="#站点文件" class="headerlink" title="站点文件"></a>站点文件</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>I am site title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--网页标题左侧显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--收藏夹显示图标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noframes</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noframes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -287,11 +262,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               
-              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
-              
-              <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
-              
-              <a href="/tags/maven/" rel="tag"><i class="fa fa-tag"></i> maven</a>
+              <a href="/tags/site/" rel="tag"><i class="fa fa-tag"></i> site</a>
           </div>
 
         
@@ -300,12 +271,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-mongo/" rel="prev" title="Ubuntu 20.04 安装 mongo">
-      <i class="fa fa-chevron-left"></i> Ubuntu 20.04 安装 mongo
+    <a href="/2022/01/23/Nginx-%E9%85%8D%E7%BD%AE-HTTPS/" rel="prev" title="Nginx 配置 HTTPS">
+      <i class="fa fa-chevron-left"></i> Nginx 配置 HTTPS
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-es/" rel="next" title="Ubuntu 20.04 安装 es">
-      Ubuntu 20.04 安装 es <i class="fa fa-chevron-right"></i>
+    <a href="/2022/01/27/Windows-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/" rel="next" title="Windows 常用镜像源">
+      Windows 常用镜像源 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -365,7 +336,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">站点文件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

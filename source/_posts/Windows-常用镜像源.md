@@ -11,9 +11,9 @@ category: Windows
 
 
 
-## PIP 镜像源
+## Pip 镜像源
 
-在` %APPDATA%`目录下新建`\pip\pip.ini\`，并编辑内容
+在`%APPDATA%`目录下新建`\pip\pip.ini\`，并编辑内容
 
 ```properties
 [global]
@@ -30,7 +30,7 @@ pip config get global.index-url
 
 
 
-## Yarn/NPM 镜像源
+## Yarn/Npm 镜像源
 
 配置
 

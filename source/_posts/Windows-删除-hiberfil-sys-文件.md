@@ -1,0 +1,23 @@
+---
+title: Windows 删除 hiberfil.sys 文件
+tag: [windows]
+date: 2022-01-29 14:04:09
+category: Windows
+---
+
+
+
+## 说明
+
+`hiberfil.sys`为`Windows`的系统休眠文件，如果系统磁盘紧张，可考虑禁用休眠功能以取消该文件。
+
+
+
+## 操作
+
+以管理员权限运行`PowerShell`，执行
+
+```powershell
+powercfg -h off
+```
+

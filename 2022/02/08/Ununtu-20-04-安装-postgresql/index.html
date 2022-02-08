@@ -25,18 +25,22 @@
     var CONFIG = {"hostname":"rainlf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="hello world">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rain&#39;s Blog">
-<meta property="og:url" content="https://rainlf.github.io/categories/Ubuntu/index.html">
+  <meta name="description" content="环境 Ubuntu 20.04 LTS   PostgresQL 14.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ununtu 20.04 安装 postgresql">
+<meta property="og:url" content="https://rainlf.github.io/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/index.html">
 <meta property="og:site_name" content="Rain&#39;s Blog">
-<meta property="og:description" content="hello world">
+<meta property="og:description" content="环境 Ubuntu 20.04 LTS   PostgresQL 14.1">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-08T09:03:13.000Z">
+<meta property="article:modified_time" content="2022-02-08T11:16:42.743Z">
 <meta property="article:author" content="rain">
-<meta property="article:tag" content="rainlf">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="postgresql">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://rainlf.github.io/categories/Ubuntu/">
+<link rel="canonical" href="https://rainlf.github.io/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/">
 
 
 <script id="page-configurations">
@@ -44,12 +48,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: Ubuntu | Rain's Blog</title>
+  <title>Ununtu 20.04 安装 postgresql | Rain's Blog</title>
   
 
 
@@ -196,238 +200,124 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Ubuntu
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ununtu 20.04 安装 postgresql
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-08 17:03:13 / Modified: 19:16:42" itemprop="dateCreated datePublished" datetime="2022-02-08T17:03:13+08:00">2022-02-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+<p>PostgresQL 14.1</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>postgresql</code>服务器，配置远程访问。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装<code>postgresql</code>，参考 <a target="_blank" rel="noopener" href="https://www.postgresql.org/download/linux/ubuntu/">https://www.postgresql.org/download/linux/ubuntu/</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &#x27;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;</span><br><span class="line">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install postgresql</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>查看版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u postgres psql -c &quot;select version()&quot;;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-08T17:03:13+08:00"
-              content="2022-02-08">
-          02-08
-        </time>
-      </div>
+<p>配置角色（仅仅超级用户和拥有<code>CREATEROLE</code>权限的角色可以创建新角色）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 登陆db</span><br><span class="line">sudo <span class="operator">-</span>u postgres psql</span><br><span class="line"># 创建角色</span><br><span class="line"><span class="keyword">create</span> role role_root login password &quot;123456&quot;;</span><br><span class="line"># 创建数据库</span><br><span class="line"><span class="keyword">create</span> database test_db;</span><br><span class="line"># 修改用户密码，并授权用户操作数据库</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> database test_db <span class="keyword">to</span> role_root;</span><br><span class="line"># 列举角色</span><br><span class="line">\dg</span><br><span class="line"># 列举数据库</span><br><span class="line">\l</span><br><span class="line"># 列举Schema</span><br><span class="line">\dn</span><br><span class="line"># 列举表</span><br><span class="line">\dt</span><br><span class="line"># 退出</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/" itemprop="url">
-            <span itemprop="name">Ununtu 20.04 安装 postgresql</span>
-          </a>
-      </div>
+<p>配置远程访问，修改<code> /etc/postgresql/14/main/postgresql.conf</code></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">listen_addresses</span> = <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<p>修改<code>/etc/postgresql/14/main/pg_hba.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">local</span>   all             all                                     peer</span></span><br><span class="line">local   all             all                                     md5</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>重启服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-23T11:03:50+08:00"
-              content="2022-01-23">
-          01-23
-        </time>
-      </div>
+<p>连接数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql -U role_root -d test_db -W</span><br></pre></td></tr></table></figure>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/23/Nginx-%E9%85%8D%E7%BD%AE-HTTPS/" itemprop="url">
-            <span itemprop="name">Nginx 配置 HTTPS</span>
-          </a>
-      </div>
 
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85%20jdk8/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 jdk8</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-es/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 es</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-maven/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 maven</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-mongo/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 mongo</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-mysql/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 mysql</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-nacos/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 nacos</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-nginx/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 nginx</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-29T11:11:11+08:00"
-              content="2021-11-29">
-          11-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-nvm/" itemprop="url">
-            <span itemprop="name">Ubuntu 20.04 安装 nvm</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              
+              <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+              
+              <a href="/tags/postgresql/" rel="tag"><i class="fa fa-tag"></i> postgresql</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/29/Windows-%E5%88%A0%E9%99%A4-hiberfil-sys-%E6%96%87%E4%BB%B6/" rel="prev" title="Windows 删除 hiberfil.sys 文件">
+      <i class="fa fa-chevron-left"></i> Windows 删除 hiberfil.sys 文件
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/Ubuntu/page/2/">2</a><a class="extend next" rel="next" href="/categories/Ubuntu/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
@@ -479,6 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -70,7 +70,7 @@
 <blockquote>
 <p>编辑 <code>~/.zshrc</code> （bash shell 则编辑 <code>~/.bashrc</code>）,添加内容</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_301/</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_301</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
 
 
 
@@ -769,6 +769,49 @@
       <tags>
         <tag>linux</tag>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ununtu 20.04 安装 postgresql</title>
+    <url>/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+<p>PostgresQL 14.1</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>postgresql</code>服务器，配置远程访问。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装<code>postgresql</code>，参考 <a href="https://www.postgresql.org/download/linux/ubuntu/">https://www.postgresql.org/download/linux/ubuntu/</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sh -c &#x27;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;</span><br><span class="line">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install postgresql</span><br></pre></td></tr></table></figure>
+
+<p>查看版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -u postgres psql -c &quot;select version()&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>配置角色（仅仅超级用户和拥有<code>CREATEROLE</code>权限的角色可以创建新角色）</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 登陆db</span><br><span class="line">sudo <span class="operator">-</span>u postgres psql</span><br><span class="line"># 创建角色</span><br><span class="line"><span class="keyword">create</span> role role_root login password &quot;123456&quot;;</span><br><span class="line"># 创建数据库</span><br><span class="line"><span class="keyword">create</span> database test_db;</span><br><span class="line"># 修改用户密码，并授权用户操作数据库</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> database test_db <span class="keyword">to</span> role_root;</span><br><span class="line"># 列举角色</span><br><span class="line">\dg</span><br><span class="line"># 列举数据库</span><br><span class="line">\l</span><br><span class="line"># 列举Schema</span><br><span class="line">\dn</span><br><span class="line"># 列举表</span><br><span class="line">\dt</span><br><span class="line"># 退出</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
+
+<p>配置远程访问，修改<code> /etc/postgresql/14/main/postgresql.conf</code></p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">listen_addresses</span> = <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>/etc/postgresql/14/main/pg_hba.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">local</span>   all             all                                     peer</span></span><br><span class="line">local   all             all                                     md5</span><br></pre></td></tr></table></figure>
+
+<p>重启服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
+
+<p>连接数据库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">psql -U role_root -d test_db -W</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>ubuntu</tag>
+        <tag>postgresql</tag>
       </tags>
   </entry>
   <entry>

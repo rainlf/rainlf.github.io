@@ -31,7 +31,7 @@ sudo tar xvf jdk-8u301-linux-x64.tar.gz -C /usr/java/
 > 编辑 `~/.zshrc` （bash shell 则编辑 `~/.bashrc`）,添加内容
 
 ```shell
-export JAVA_HOME=/usr/java/jdk1.8.0_301/
+export JAVA_HOME=/usr/java/jdk1.8.0_301
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 

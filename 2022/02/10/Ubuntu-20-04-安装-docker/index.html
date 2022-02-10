@@ -25,18 +25,22 @@
     var CONFIG = {"hostname":"rainlf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="hello world">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rain&#39;s Blog">
-<meta property="og:url" content="https://rainlf.github.io/tags/postgresql/index.html">
+  <meta name="description" content="环境 Ubuntu 20.04 LTS Docker 20.10.12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 20.04 安装 docker">
+<meta property="og:url" content="https://rainlf.github.io/2022/02/10/Ubuntu-20-04-%E5%AE%89%E8%A3%85-docker/index.html">
 <meta property="og:site_name" content="Rain&#39;s Blog">
-<meta property="og:description" content="hello world">
+<meta property="og:description" content="环境 Ubuntu 20.04 LTS Docker 20.10.12">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-10T10:17:41.000Z">
+<meta property="article:modified_time" content="2022-02-10T10:40:03.469Z">
 <meta property="article:author" content="rain">
-<meta property="article:tag" content="rainlf">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://rainlf.github.io/tags/postgresql/">
+<link rel="canonical" href="https://rainlf.github.io/2022/02/10/Ubuntu-20-04-%E5%AE%89%E8%A3%85-docker/">
 
 
 <script id="page-configurations">
@@ -44,12 +48,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: postgresql | Rain's Blog</title>
+  <title>Ubuntu 20.04 安装 docker | Rain's Blog</title>
   
 
 
@@ -196,51 +200,112 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">postgresql
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/10/Ubuntu-20-04-%E5%AE%89%E8%A3%85-docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu 20.04 安装 docker
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-10 18:17:41 / Modified: 18:40:03" itemprop="dateCreated datePublished" datetime="2022-02-10T18:17:41+08:00">2022-02-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS</p>
+<p>Docker 20.10.12</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>Ubuntu</code>安装<code>docker</code>运行时环境，参考<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">官方文档</a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>删除旧版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y ca-certificates curl gnupg lsb-release</span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<p>安装<code>docker</code>引擎</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p>启动服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-08T17:03:13+08:00"
-              content="2022-02-08">
-          02-08
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              
+              <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+              
+              <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/" itemprop="url">
-            <span itemprop="name">Ununtu 20.04 安装 postgresql</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/" rel="prev" title="Ununtu 20.04 安装 postgresql">
+      <i class="fa fa-chevron-left"></i> Ununtu 20.04 安装 postgresql
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -293,6 +358,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

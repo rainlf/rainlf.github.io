@@ -847,6 +847,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 修改默认用户目录</title>
+    <url>/2022/02/16/Windows-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>Windows</code>系统时，将默认的用户目录调整至非系统盘。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p>当 windows 连接到网络的时候有时 Sysprep 会失败，所以在进入 Audit Mode 之前，全程关闭网络连接</p>
+<p>安装上 windows，重启电脑之后，当进入区域选择界面时，按下 Ctrl Shift F3 </p>
+<p>这时 windows 会重启，进入 Audit Mode，然后显示一个 System Preparation Tool，将它关闭</p>
+<h3 id="配置用户目录"><a href="#配置用户目录" class="headerlink" title="配置用户目录"></a>配置用户目录</h3><p>现在可以将电脑连接到网络了。</p>
+<p>接下来要使用 System Preparation Tool (Sysprep) 工具来设置用户路径。这个工具会执行一个 XML 文件中的配置（也就是 unattended answer file）</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">unattend</span> <span class="attr">xmlns</span>=<span class="string">&quot;urn:schemas-microsoft-com:unattend&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span> <span class="attr">pass</span>=<span class="string">&quot;oobeSystem&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">name</span>=<span class="string">&quot;Microsoft-Windows-Shell-Setup&quot;</span> <span class="attr">processorArchitecture</span>=<span class="string">&quot;amd64&quot;</span> <span class="attr">publicKeyToken</span>=<span class="string">&quot;31bf3856ad364e35&quot;</span> <span class="attr">language</span>=<span class="string">&quot;neutral&quot;</span> <span class="attr">versionScope</span>=<span class="string">&quot;nonSxS&quot;</span> <span class="attr">xmlns:wcm</span>=<span class="string">&quot;http://schemas.microsoft.com/WMIConfig/2002/State&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ProfilesDirectory</span>&gt;</span>D:\Users<span class="tag">&lt;/<span class="name">ProfilesDirectory</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">unattend</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Windows 以字母来标识盘符，但是当安装了 windows 重启之后，本来你想把用户目录安装到 d 盘，但这个盘符可能会发生改变，这个时候就会失败。</p>
+<p>所以为了保证你的 d 盘盘符不变，你需要给他手动设置一下盘符，在 Audit Mode 你可以使用磁盘管理工具，先手动的将 d 盘改成 w 盘，再把它改回 d 盘</p>
+<p>将这个 XML 文件保存到磁盘根目录（不能是 C 盘），例如D:\relocate.xml</p>
+<h3 id="执行配置"><a href="#执行配置" class="headerlink" title="执行配置"></a>执行配置</h3><p>以管理员模式运行 cmd ，首先，确保 WMP Network Sharing Service 已停止运行</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">net stop wmpnetworksvc</span><br></pre></td></tr></table></figure>
+
+<p>然后运行命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">%windir%\system32\sysprep\sysprep.exe /oobe /reboot /unattend:d:\relocate.xml</span><br></pre></td></tr></table></figure>
+
+<p>上述命令告诉系统从 Windows\System32\Sysprep 运行 Sysprep，执行 D:/relocate.xml 中的指令，为 OOBE（the firlst boot of newly installed Windows） 重启准备系统，最后重启</p>
+<p>然后就继续安装配置系统，之后新用户都会在 D:/Users 这个目录下新建</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>https://<em>meta.appinn.net/t/topic/18899</em></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 删除 hiberfil.sys 文件</title>
     <url>/2022/01/29/Windows-%E5%88%A0%E9%99%A4-hiberfil-sys-%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>hiberfil.sys</code>为<code>Windows</code>的系统休眠文件，如果系统磁盘紧张，可考虑禁用休眠功能以取消该文件。</p>

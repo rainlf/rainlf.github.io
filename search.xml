@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Docker 部署 redis</title>
+    <url>/2022/02/18/Docker-%E9%83%A8%E7%BD%B2-redis/</url>
+    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>Docker</code> 部署<code>redis</code>服务器，配置密码认证登陆。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>下载镜像</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo docker pull redis:latest</span><br></pre></td></tr></table></figure>
+
+<p>执行命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo docker -d --name redis-server -p 6379:6379 redis:latest --appendonly yes --requirepass &quot;123456&quot;</span><br></pre></td></tr></table></figure>
+
+<p>登陆测试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">redis-cli -h localhost -p 6379</span><br><span class="line">localhost:6379&gt; auth 123456</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo+Github 搭建博客</title>
     <url>/2021/11/29/Hexo+Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>使用<code>Hexo</code>搭建博客，配置<code>Next</code>主题，并搭配<code>Github</code>实现自动构建与部署。</p>
@@ -79,9 +101,9 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
+        <tag>docker</tag>
         <tag>linux</tag>
         <tag>ubuntu</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -482,9 +504,9 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
+        <tag>redis</tag>
         <tag>linux</tag>
         <tag>ubuntu</tag>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>

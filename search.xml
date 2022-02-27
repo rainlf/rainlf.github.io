@@ -56,6 +56,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac 安装与卸载 Java</title>
+    <url>/2022/02/27/Mac-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD-Java/</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先前往<a href="https://www.oracle.com/java/technologies/downloads/">官方地址</a>，下载所需版本的安装文件</p>
+<p>安装后修改<code>.zshrc</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home</span><br><span class="line">export JAVA_11_HOME=`/usr/libexec/java_home -v 11`</span><br><span class="line">export JAVA_17_HOME=`/usr/libexec/java_home -v 17`</span><br><span class="line">export JAVA_HOME=$JAVA_17_HOME</span><br><span class="line">alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;</span><br><span class="line">alias jdk11=&quot;export JAVA_HOME=$JAVA_11_HOME&quot;</span><br><span class="line">alias jdk17=&quot;export JAVA_HOME=$JAVA_17_HOME&quot;</span><br></pre></td></tr></table></figure>
+
+<p>使用时，可动态切换<code>java</code>版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  ~ jdk8 &amp;&amp; java -version</span><br><span class="line">java version &quot;1.8.0_321&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_321-b07)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.321-b07, mixed mode)</span><br><span class="line">➜  ~ jdk11 &amp;&amp; java --version</span><br><span class="line">java 11.0.14 2022-01-18 LTS</span><br><span class="line">Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)</span><br><span class="line">➜  ~ jdk17 &amp;&amp; java --version</span><br><span class="line">java 17.0.2 2022-01-18 LTS</span><br><span class="line">Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>首先，删除系统文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin</span><br><span class="line">sudo rm -rf /Library/PreferencesPanes/JavaControlPanel.prefPane</span><br><span class="line">sudo rm -rf ~/Library/Application\ Support/Oracle/Java</span><br></pre></td></tr></table></figure>
+
+<p>然后，查找当前安装文件并删除即可</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls /Library/Java/JavaVirtualMachines/ </span><br><span class="line">sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx 配置 HTTPS</title>
     <url>/2022/01/23/Nginx-%E9%85%8D%E7%BD%AE-HTTPS/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -133,9 +160,9 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
+        <tag>java</tag>
         <tag>linux</tag>
         <tag>ubuntu</tag>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>

@@ -39,8 +39,12 @@ sudo mysql_secure_installation
 ## 登陆 mysql
 sudo mysql -uroot -p
 
-## 配置权限
-GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
+## 配置权限(5.0 版本)
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
+
+## 配置权限(8.0 版本)
+CREATE USER 'root'@'%' IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON *.* to 'root'@'%' WITH GRANT OPTION;
 
 ## 刷新权限
 FLUSH PRIVILEGES;
@@ -49,7 +53,7 @@ FLUSH PRIVILEGES;
 SELECT User, Host, HEX(authentication_string) FROM mysql.user;
 
 ## 修改密码
-set password for root@localhost = password('123456');
+# set password for root@localhost = password('123456');
 ```
 
 > 修改常用配置，在 `/etc/mysql/mysql.conf.d/mysqld.cnf`文件中添加
@@ -67,7 +71,10 @@ character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 init_connect = 'SET NAMES utf8mb4'
 bind-address = 0.0.0.0
-# 取消大小写敏感
+# 表名大小写敏感性
+# 0: 表名按原始字符串存储，比较时区分大小写（Linux默认）
+# 1: 表名转小写后存储，比较时不区分大小写（Windows默认）
+# 2: 表名按原始字符串存储，比较时不区分大小写（MacOS默认）
 lower_case_table_names = 1
 ```
 

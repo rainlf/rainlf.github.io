@@ -202,6 +202,72 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/28/Linux-%E5%B8%B8%E7%94%A8-shell-%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/28/Linux-%E5%B8%B8%E7%94%A8-shell-%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">Linux 常用 shell 脚本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-28 15:31:52 / Modified: 18:14:56" itemprop="dateCreated datePublished" datetime="2022-02-28T15:31:52+08:00">2022-02-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/28/Linux-%E5%B8%B8%E7%94%A8-shell-%E8%84%9A%E6%9C%AC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/27/Mac-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD-Java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,10 +291,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-02-27 15:11:43 / Modified: 16:27:40" itemprop="dateCreated datePublished" datetime="2022-02-27T15:11:43+08:00">2022-02-27</time>
+              <time title="Created: 2022-02-27 15:11:43" itemprop="dateCreated datePublished" datetime="2022-02-27T15:11:43+08:00">2022-02-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -308,7 +380,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -389,7 +461,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -470,7 +542,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -554,7 +626,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -638,7 +710,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -719,7 +791,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -802,7 +874,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
 
           
@@ -874,7 +946,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -904,78 +976,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/01/23/Nginx-%E9%85%8D%E7%BD%AE-HTTPS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/17/%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0-Github-%E6%A0%87%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/17/%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0-Github-%E6%A0%87%E8%AF%86/" class="post-title-link" itemprop="url">博客页面添加 Github 标识角</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-17 17:20:59" itemprop="dateCreated datePublished" datetime="2022-01-17T17:20:59+08:00">2022-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>在下面网站用选择自己喜欢的图标：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/17/%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0-Github-%E6%A0%87%E8%AF%86/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1066,7 +1066,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1079,7 +1079,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1136,7 +1136,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 5.2k</span>
+  <span class="post-count"> | Blog word count: 5.4k</span>
 </div>
 
         

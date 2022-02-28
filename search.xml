@@ -56,6 +56,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux 常用 shell 脚本</title>
+    <url>/2022/02/28/Linux-%E5%B8%B8%E7%94%A8-shell-%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="批量拷贝文件"><a href="#批量拷贝文件" class="headerlink" title="批量拷贝文件"></a>批量拷贝文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">src=$1</span><br><span class="line">dst=$2</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$src&quot; = &quot;x&quot; -o &quot;x$dst&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: src or dst can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to scp $src to $host:$dst&quot;</span><br><span class="line">  scp -r $src $host:$dst</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac 安装与卸载 Java</title>
     <url>/2022/02/27/Mac-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD-Java/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先前往<a href="https://www.oracle.com/java/technologies/downloads/">官方地址</a>，下载所需版本的安装文件</p>
@@ -160,8 +175,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>linux</tag>
+        <tag>java</tag>
         <tag>ubuntu</tag>
       </tags>
   </entry>
@@ -324,12 +339,12 @@
 <blockquote>
 <p>允许 root 远程访问</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 登陆 mysql</span></span></span><br><span class="line">sudo mysql -uroot -p</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限</span></span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO root@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 刷新权限</span></span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看权限</span></span></span><br><span class="line">SELECT User, Host, HEX(authentication_string) FROM mysql.user;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改密码</span></span></span><br><span class="line">set password for root@localhost = password(&#x27;123456&#x27;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 登陆 mysql</span></span></span><br><span class="line">sudo mysql -uroot -p</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限(5.0 版本)</span></span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限(8.0 版本)</span></span></span><br><span class="line">CREATE USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* to &#x27;root&#x27;@&#x27;%&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 刷新权限</span></span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看权限</span></span></span><br><span class="line">SELECT User, Host, HEX(authentication_string) FROM mysql.user;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改密码</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">set</span> password <span class="keyword">for</span> root@localhost = password(<span class="string">&#x27;123456&#x27;</span>);</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>修改常用配置，在 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>文件中添加</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line"># 取消大小写敏感</span><br><span class="line">lower_case_table_names = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line"># 表名大小写敏感性</span><br><span class="line"># 0: 表名按原始字符串存储，比较时区分大小写（Linux默认）</span><br><span class="line"># 1: 表名转小写后存储，比较时不区分大小写（Windows默认）</span><br><span class="line"># 2: 表名按原始字符串存储，比较时不区分大小写（MacOS默认）</span><br><span class="line">lower_case_table_names = 1</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>查看常用配置</p>

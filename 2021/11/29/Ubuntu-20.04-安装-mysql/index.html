@@ -33,7 +33,7 @@
 <meta property="og:description" content="环境 Ubuntu 20.04 LTS MySQL  v5.7.35">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-29T03:11:11.000Z">
-<meta property="article:modified_time" content="2022-02-27T08:27:40.918Z">
+<meta property="article:modified_time" content="2022-02-28T10:14:56.821Z">
 <meta property="article:author" content="rain">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="ubuntu">
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-27 16:27:40" itemprop="dateModified" datetime="2022-02-27T16:27:40+08:00">2022-02-27</time>
+                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,12 +280,12 @@
 <blockquote>
 <p>允许 root 远程访问</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 登陆 mysql</span></span></span><br><span class="line">sudo mysql -uroot -p</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限</span></span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO root@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 刷新权限</span></span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看权限</span></span></span><br><span class="line">SELECT User, Host, HEX(authentication_string) FROM mysql.user;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改密码</span></span></span><br><span class="line">set password for root@localhost = password(&#x27;123456&#x27;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 登陆 mysql</span></span></span><br><span class="line">sudo mysql -uroot -p</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限(5.0 版本)</span></span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限(8.0 版本)</span></span></span><br><span class="line">CREATE USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* to &#x27;root&#x27;@&#x27;%&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 刷新权限</span></span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看权限</span></span></span><br><span class="line">SELECT User, Host, HEX(authentication_string) FROM mysql.user;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改密码</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">set</span> password <span class="keyword">for</span> root@localhost = password(<span class="string">&#x27;123456&#x27;</span>);</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>修改常用配置，在 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>文件中添加</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line"># 取消大小写敏感</span><br><span class="line">lower_case_table_names = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line"># 表名大小写敏感性</span><br><span class="line"># 0: 表名按原始字符串存储，比较时区分大小写（Linux默认）</span><br><span class="line"># 1: 表名转小写后存储，比较时不区分大小写（Windows默认）</span><br><span class="line"># 2: 表名按原始字符串存储，比较时不区分大小写（MacOS默认）</span><br><span class="line">lower_case_table_names = 1</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>查看常用配置</p>
@@ -401,7 +401,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -414,7 +414,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -471,7 +471,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 5.2k</span>
+  <span class="post-count"> | Blog word count: 5.4k</span>
 </div>
 
         

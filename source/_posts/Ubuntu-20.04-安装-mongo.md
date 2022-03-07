@@ -21,6 +21,8 @@ tag: [linux, ubuntu, mongodb]
 
 ## 步骤
 
+### 安装
+
 > 安装 mongodb，参考[官方文档](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ```shell
@@ -70,29 +72,20 @@ bind_ip=0.0.0.0
 port=27019
 ```
 
+### 认证配置
+
 > 启动服务
 
 ```shell
-sudo mongod -f /opt/app/mongodb/db1/etc/mongodb.conf --replSet replset
-sudo mongod -f /opt/app/mongodb/db2/etc/mongodb.conf --replSet replset
-sudo mongod -f /opt/app/mongodb/db3/etc/mongodb.conf --replSet replset
+sudo mongod -f /opt/app/mongodb/db1/etc/mongodb.conf --replSet rs &
+sudo mongod -f /opt/app/mongodb/db2/etc/mongodb.conf --replSet rs &
+sudo mongod -f /opt/app/mongodb/db3/etc/mongodb.conf --replSet rs &
 ```
 
-> 登陆其中一个节点
+> 登陆
 
 ```shell
 mongo --host localhost --port 27017
-```
-
-> 配置副本集
-
-```shell
-## 配置
-> config = {_id: 'replset', members: [{_id: 0, host: 'localhost:27017'},{_id: 1, host: 'localhost:27018'},{_id: 2, host:'localhost:27019'}]}
-> rs.initiate(config)
-
-## 查看
-> rs.status()
 ```
 
 > 配置认证
@@ -101,7 +94,11 @@ mongo --host localhost --port 27017
 ## 创建 admin 库的 root 用户
 > use admin
 > db.createUser({user: 'root', pwd: '123456', roles:[{role: 'userAdminAnyDatabase', db: 'admin'}, {role: 'readWriteAnyDatabase', db:'admin', {role: 'clusterAdmin', db:'admin'}}]})
+```
 
+> keyfile配置
+
+```shell
 ## 创建 keyfile
 echo `openssl rand -base64 756` | sudo tee /opt/app/mongodb/keyfile
 sudo chmod 400 /opt/app/mongodb/keyfile
@@ -109,5 +106,38 @@ sudo chmod 400 /opt/app/mongodb/keyfile
 ## 配置文件中添加参数，并重启服务
 auth=true
 keyfile=/opt/app/mongodb/keyfile
+```
+
+### 副本集配置
+
+> 登陆其中一个节点
+
+```shell
+mongo --host localhost --port 27017 -u root -p
+```
+
+> 配置副本集
+
+```shell
+## 配置
+> config = {_id: 'rs', members: [{_id: 0, host: 'localhost:27017'},{_id: 1, host: 'localhost:27018'},{_id: 2, host:'localhost:27019'}]}
+> rs.initiate(config)
+
+## 查看
+> rs.status()
+```
+
+> 修改副本集配置
+
+```shell
+# 例: 修改node端口
+## 获取配置
+> cfg=rs.conf()
+## 修改配置
+> cfg.members[0].host="localhost:27017"
+## 覆盖配置
+> rs.reconfig(cfg)
+## 非primary节点需要执行
+> rs.reconfig(cfg, {force : true})
 ```
 

@@ -33,7 +33,7 @@
 <meta property="og:description" content="环境 Ubuntu 20.04 LTS MongDB 5.0.3">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-29T03:11:11.000Z">
-<meta property="article:modified_time" content="2022-02-28T10:14:56.821Z">
+<meta property="article:modified_time" content="2022-03-07T03:13:27.141Z">
 <meta property="article:author" content="rain">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="ubuntu">
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-28 18:14:56" itemprop="dateModified" datetime="2022-02-28T18:14:56+08:00">2022-02-28</time>
+                <time title="Modified: 2022-03-07 11:13:27" itemprop="dateModified" datetime="2022-03-07T11:13:27+08:00">2022-03-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>使用单机搭建 mongodb repliceset 三节点伪集群</p>
 </blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
 <p>安装 mongodb，参考<a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/">官方文档</a></p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 导入公钥</span></span></span><br><span class="line">wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 新建 apt mongodb 源</span></span></span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 官方源速度过慢，可使用阿里云 apt mongdb 源</span></span></span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://mirrors.aliyun.com/mongodb/apt/ubuntu focal/mongodb-org/5.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 更新 apt 源</span></span></span><br><span class="line">sudo apt update</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 安装 mongodb</span></span></span><br><span class="line">sudo apt install -y mongodb-org</span><br></pre></td></tr></table></figure>
@@ -282,25 +282,40 @@
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> db1: /opt/app/mongodb/db1/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db1/data</span><br><span class="line">logpath=/opt/app/mongodb/db1/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27017</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> db2: /opt/app/mongodb/db2/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db2/data</span><br><span class="line">logpath=/opt/app/mongodb/db2/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27018</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> db3: /opt/app/mongodb/db3/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db3/data</span><br><span class="line">logpath=/opt/app/mongodb/db3/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27019</span><br></pre></td></tr></table></figure>
 
-<blockquote>
+<h3 id="认证配置"><a href="#认证配置" class="headerlink" title="认证配置"></a>认证配置</h3><blockquote>
 <p>启动服务</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mongod -f /opt/app/mongodb/db1/etc/mongodb.conf --replSet replset</span><br><span class="line">sudo mongod -f /opt/app/mongodb/db2/etc/mongodb.conf --replSet replset</span><br><span class="line">sudo mongod -f /opt/app/mongodb/db3/etc/mongodb.conf --replSet replset</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mongod -f /opt/app/mongodb/db1/etc/mongodb.conf --replSet rs &amp;</span><br><span class="line">sudo mongod -f /opt/app/mongodb/db2/etc/mongodb.conf --replSet rs &amp;</span><br><span class="line">sudo mongod -f /opt/app/mongodb/db3/etc/mongodb.conf --replSet rs &amp;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>登陆其中一个节点</p>
+<p>登陆</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --host localhost --port 27017</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>配置副本集</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> config = &#123;_id: <span class="string">&#x27;replset&#x27;</span>, members: [&#123;_id: 0, host: <span class="string">&#x27;localhost:27017&#x27;</span>&#125;,&#123;_id: 1, host: <span class="string">&#x27;localhost:27018&#x27;</span>&#125;,&#123;_id: 2, host:<span class="string">&#x27;localhost:27019&#x27;</span>&#125;]&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.initiate(config)</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.status()</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
 <p>配置认证</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建 admin 库的 root 用户</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> use admin</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> db.createUser(&#123;user: <span class="string">&#x27;root&#x27;</span>, <span class="built_in">pwd</span>: <span class="string">&#x27;123456&#x27;</span>, roles:[&#123;role: <span class="string">&#x27;userAdminAnyDatabase&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span>&#125;, &#123;role: <span class="string">&#x27;readWriteAnyDatabase&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>, &#123;role: <span class="string">&#x27;clusterAdmin&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>&#125;&#125;]&#125;)</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建 keyfile</span></span></span><br><span class="line">echo `openssl rand -base64 756` | sudo tee /opt/app/mongodb/keyfile</span><br><span class="line">sudo chmod 400 /opt/app/mongodb/keyfile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置文件中添加参数，并重启服务</span></span></span><br><span class="line">auth=true</span><br><span class="line">keyfile=/opt/app/mongodb/keyfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建 admin 库的 root 用户</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> use admin</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> db.createUser(&#123;user: <span class="string">&#x27;root&#x27;</span>, <span class="built_in">pwd</span>: <span class="string">&#x27;123456&#x27;</span>, roles:[&#123;role: <span class="string">&#x27;userAdminAnyDatabase&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span>&#125;, &#123;role: <span class="string">&#x27;readWriteAnyDatabase&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>, &#123;role: <span class="string">&#x27;clusterAdmin&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>&#125;&#125;]&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>keyfile配置</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建 keyfile</span></span></span><br><span class="line">echo `openssl rand -base64 756` | sudo tee /opt/app/mongodb/keyfile</span><br><span class="line">sudo chmod 400 /opt/app/mongodb/keyfile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置文件中添加参数，并重启服务</span></span></span><br><span class="line">auth=true</span><br><span class="line">keyfile=/opt/app/mongodb/keyfile</span><br></pre></td></tr></table></figure>
+
+<h3 id="副本集配置"><a href="#副本集配置" class="headerlink" title="副本集配置"></a>副本集配置</h3><blockquote>
+<p>登陆其中一个节点</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --host localhost --port 27017 -u root -p</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置副本集</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> config = &#123;_id: <span class="string">&#x27;rs&#x27;</span>, members: [&#123;_id: 0, host: <span class="string">&#x27;localhost:27017&#x27;</span>&#125;,&#123;_id: 1, host: <span class="string">&#x27;localhost:27018&#x27;</span>&#125;,&#123;_id: 2, host:<span class="string">&#x27;localhost:27019&#x27;</span>&#125;]&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.initiate(config)</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.status()</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改副本集配置</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 例: 修改node端口</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 获取配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> cfg=rs.conf()</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> cfg.members[0].host=<span class="string">&quot;localhost:27017&quot;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 覆盖配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.reconfig(cfg)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 非primary节点需要执行</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.reconfig(cfg, &#123;force : <span class="literal">true</span>&#125;)</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -390,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">认证配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%AF%E6%9C%AC%E9%9B%86%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">副本集配置</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -476,7 +491,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 5.4k</span>
+  <span class="post-count"> | Blog word count: 5.5k</span>
 </div>
 
         

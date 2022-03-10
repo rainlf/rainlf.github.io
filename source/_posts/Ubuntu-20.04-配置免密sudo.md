@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 20.04 配置 sudo
+title: Ubuntu 20.04 配置免密sudo
 date: 2021-11-29 11:11:11
 category: Ubuntu
 tag: [linux, ubuntu]

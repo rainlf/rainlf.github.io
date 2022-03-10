@@ -11,6 +11,8 @@ category: Ubuntu
 >
 > Nginx 1.14.0
 
+
+
 ## 配置
 
 上传`SSL`证书到服务器，并修改配置文件`/etc/nginx/nginx.conf`

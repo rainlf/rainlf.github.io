@@ -1,39 +1,26 @@
 ---
-title: Ubuntu 20.04 配置 git
+title: Git 配置
 date: 2021-11-29 11:11:11
-category: Ubuntu
-tag: [linux, ubuntu, git]
+category: Config
+tag: [linux, config, git]
 ---
 
-## 环境
-
-> Ubuntu 20.04 LTS
-
-
-
-## 说明
-
-> 配置常用的 git 命令缩写
-
-
-
-## 步骤
-
-> 编辑配置文件
+## 配置文件
 
 ```shell
 vi ~/.gitconfig
 ```
 
-> 修改内容为
 
-```config
+
+## 内容
+
+```shell
 [user]
-        name = Rain
-        email = iheyu22@163.com
+        name = <user>
+        email = <email>
 [credential]
         helper = cache --timeout=8640000
-#       helper = cache --timeout=600
 [push]
         default = simple
 [color]
@@ -60,6 +47,8 @@ vi ~/.gitconfig
 [core]
         excludesFile = ~/.gitignore
         quotepath = false
+        whitespace = cr-at-eol
+        autocrlf = true
 ```
 
 

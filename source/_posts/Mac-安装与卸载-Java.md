@@ -5,8 +5,6 @@ date: 2022-02-27 15:11:43
 category: Mac
 ---
 
-
-
 ## 安装
 
 首先前往[官方地址](https://www.oracle.com/java/technologies/downloads/)，下载所需版本的安装文件

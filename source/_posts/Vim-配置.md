@@ -5,13 +5,11 @@ category: Config
 tag: [linux, config, vi]
 ---
 
-## 配置文件
 
-```shell
-vi ~/.vimrc
-```
 
-## 内容
+## 常用配置
+
+编辑文件`vi ~/.vimrc`
 
 ```shell
 syntax enable

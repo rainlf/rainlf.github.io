@@ -27,19 +27,19 @@
 
   <meta name="description" content="环境 Ubuntu 20.04 LTS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu 20.04 配置 vim">
-<meta property="og:url" content="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE-vim/index.html">
+<meta property="og:title" content="Ubuntu 20.04 配置免密sudo">
+<meta property="og:url" content="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86sudo/index.html">
 <meta property="og:site_name" content="Rain&#39;s Blog">
 <meta property="og:description" content="环境 Ubuntu 20.04 LTS">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-29T03:11:11.000Z">
-<meta property="article:modified_time" content="2022-03-07T03:13:27.141Z">
+<meta property="article:modified_time" content="2022-03-10T07:15:21.257Z">
 <meta property="article:author" content="rain">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="ubuntu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE-vim/">
+<link rel="canonical" href="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86sudo/">
 
 
 <script id="page-configurations">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>Ubuntu 20.04 配置 vim | Rain's Blog</title>
+  <title>Ubuntu 20.04 配置免密sudo | Rain's Blog</title>
   
 
 
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE-vim/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86sudo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -219,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Ubuntu 20.04 配置 vim
+          Ubuntu 20.04 配置免密sudo
         </h1>
 
         <div class="post-meta">
@@ -236,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-07 11:13:27" itemprop="dateModified" datetime="2022-03-07T11:13:27+08:00">2022-03-07</time>
+                <time title="Modified: 2022-03-10 15:15:21" itemprop="dateModified" datetime="2022-03-10T15:15:21+08:00">2022-03-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,17 +263,22 @@
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>vim 是 Linux 下一款非常强大的编辑器，支持丰富的编辑功能，这里记录下自己的常用配置</p>
+<p>切记使用 <code>sudo visudo</code> 命令!<br>取消 Linux 普通用户在使用 sudo 命令时，要求输入密码的步骤<br>取消 sudo 命令对 env 的重置<br>指定 sudo 命令执行时的安全路径</p>
 </blockquote>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
 <p>修改配置文件</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.vimrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo visudo</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>修改内容为</p>
+<p>编辑内容</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">syntax enable</span><br><span class="line">set nu</span><br><span class="line">set syntax=on</span><br><span class="line">set showcmd</span><br><span class="line">set autoread</span><br><span class="line">set nobackup</span><br><span class="line">set ruler</span><br><span class="line">set cursorline</span><br><span class="line">set magic</span><br><span class="line">set noeb</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4</span><br><span class="line">set mouse=a</span><br><span class="line">set hlsearch</span><br><span class="line">filetype on</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消 env 重置</span></span><br><span class="line"><span class="attr">Defaults</span>        <span class="string">!env_reset</span></span><br><span class="line"><span class="comment"># 指定安全 PATH</span></span><br><span class="line"><span class="attr">Defaults</span> <span class="string">secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</span></span><br><span class="line"><span class="comment"># 取消输入密码，在最后一行添加</span></span><br><span class="line"><span class="attr">admin</span>  <span class="string">ALL=(ALL:ALL) NOPASSWD:ALL</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>保存退出，visudo 默认使用 nano 编辑器</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行 ctrl+o</span><br><span class="line">提示 File Name to Write: /etc/sudoers.tmp</span><br><span class="line">执行 enter</span><br><span class="line">执行 ctrl+x</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -296,12 +301,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AEssh%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/" rel="prev" title="Ubuntu 20.04 配置 ssh 超时时间">
-      <i class="fa fa-chevron-left"></i> Ubuntu 20.04 配置 ssh 超时时间
+    <a href="/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/" rel="prev" title="Ubuntu 20.04 配置静态 ip">
+      <i class="fa fa-chevron-left"></i> Ubuntu 20.04 配置静态 ip
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE-sudo/" rel="next" title="Ubuntu 20.04 配置 sudo">
-      Ubuntu 20.04 配置 sudo <i class="fa fa-chevron-right"></i>
+    <a href="/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AEssh%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/" rel="next" title="Ubuntu 20.04 配置 ssh 超时时间">
+      Ubuntu 20.04 配置 ssh 超时时间 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -384,13 +389,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

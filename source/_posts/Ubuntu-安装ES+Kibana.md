@@ -1,18 +1,15 @@
 ---
-title: Ubuntu 20.04 安装 es
+title: Ubuntu 安装ES+Kibana
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, es]
-
+tag: [linux, es, kibana]
 ---
 
 ## 环境
 
-> Ubuntu 20.04 LTS
->
-> Elsticsearch 7.15.0
->
-> Kibana 7.15.0
+> Ubuntu 20.04 LTS  
+> Elsticsearch 7.15.0  
+> Kibana 7.15.0  
 
 
 

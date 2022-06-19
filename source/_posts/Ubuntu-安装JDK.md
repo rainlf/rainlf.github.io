@@ -1,15 +1,14 @@
 ---
-title: Ubuntu 20.04 安装 jdk8
+title: Ubuntu 安装JDK
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, java]
+tag: [linux, java]
 ---
 
 ## 环境
 
-> Ubuntu 20.04 LTS
->
-> JDK1.8
+> Ubuntu 20.04 LTS  
+> JDK1.8  
 
 
 

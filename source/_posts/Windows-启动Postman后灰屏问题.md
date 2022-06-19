@@ -1,8 +1,8 @@
 ---
-title: Windows 启动 Postman 后灰屏
+title: Windows 启动Postman后灰屏问题
 date: 2022-01-14 23:01:27
 category: Windows
-tag: [windows]
+tag: [windows, bug]
 ---
 ## 环境
 

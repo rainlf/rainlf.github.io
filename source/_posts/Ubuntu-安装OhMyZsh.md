@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 安装 zsh
+title: Ubuntu 安装OhMyZsh
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, zsh]
+tag: [linux, zsh]
 ---
 
 ## 环境
@@ -13,7 +13,7 @@ tag: [linux, ubuntu, zsh]
 
 ## 说明
 
-> zsh 是 Linux 下一款优秀的终端工具，搭配 [oh-my-zsh](https://ohmyz.sh/) 食用更香
+> 使用zsh与[oh-my-zsh](https://ohmyz.sh/)搭建日常命令行环境
 
 
 

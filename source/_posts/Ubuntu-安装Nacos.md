@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 20.04 安装 nacos
+title: Ubuntu 安装Nacos
 date: 2021-11-29 11:11:11
 category: Ubuntu
 tag: [linux, ubuntu, nacos]

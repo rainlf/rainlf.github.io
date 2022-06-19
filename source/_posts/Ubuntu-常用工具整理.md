@@ -1,7 +1,7 @@
 ---
-title: Ubuntu 20.04 常用工具
+title: Ubuntu 常用工具整理
 date: 2021-11-29 11:11:11
-tag: [linux, ubuntu]
+tag: [linux]
 ---
 
 ## 环境

@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 安装 redis
+title: Ubuntu 安装Redis
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, redis]
+tag: [linux, redis]
 ---
 
 ## 环境

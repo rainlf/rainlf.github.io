@@ -1,6 +1,7 @@
 ---
-title: Hexo+Github 搭建博客
+title: Hexo+Github搭建博客
 date: 2021-11-29 11:11:11
+category: Blog
 tag: [blog]
 ---
 

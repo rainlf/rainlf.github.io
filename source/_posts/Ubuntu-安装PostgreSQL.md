@@ -1,10 +1,9 @@
 ---
-title: Ununtu 20.04 安装 postgresql
-tag: [linux, ubuntu, postgresql]
+title: Ubuntu 安装PostgreSQL
 date: 2022-02-08 17:03:13
 category: Ubuntu
+tag: [linux, postgresql]
 ---
-
 
 
 ## 环境

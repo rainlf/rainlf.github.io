@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 安装 maven
+title: Ubuntu 安装Maven
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, maven]
+tag: [linux, maven]
 ---
 
 ## 环境

@@ -1,16 +1,14 @@
 ---
-title: Ubuntu 20.04 安装 docker
-tag: [linux, ubuntu, docker]
+title: Ubuntu 安装Docker
 date: 2022-02-10 18:17:41
 category: Ubuntu
+tag: [linux, docker]
 ---
 
 ## 环境
 
-> Ubuntu 20.04 LTS
->
-> Docker 20.10.12
-
+> Ubuntu 20.04 LTS  
+> Docker 20.10.12  
 
 
 ## 说明

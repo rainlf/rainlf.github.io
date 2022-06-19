@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 20.04 安装 mysql
+title: Ubuntu 安装MySQL
 date: 2021-11-29 11:11:11
 category: Ubuntu
 tag: [linux, ubuntu, mysql]
@@ -27,7 +27,12 @@ tag: [linux, ubuntu, mysql]
 sudo apt install -y mysql-server
 ```
 
-> 初始化配置，配置密码，询问项选 n，最后选 y 刷新权限
+> 启动服务
+```
+sudo service mysql restart
+```
+
+> 初始化配置，配置密码，全选 n，至`Reload privilege tables now?`时，选 y 即可
 
 ```shell
 sudo mysql_secure_installation

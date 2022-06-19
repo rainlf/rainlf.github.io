@@ -1,8 +1,8 @@
 ---
-title: Mac 安装VS CODE
-tag: [mac]
+title: Mac 安装Visual Studio Code
 date: 2022-06-19 10:02:27
 category: Mac
+tag: [mac, vscode]
 ---
 
 ## 安装

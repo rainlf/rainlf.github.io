@@ -1,8 +1,8 @@
 ---
-title: 博客页面添加 Github 标识角
-tag: [blog]
+title: 博客页面添加Github标识角
 date: 2022-01-17 17:20:59
-category:
+category: Blog
+tag: [blog]
 ---
 
 ## 步骤

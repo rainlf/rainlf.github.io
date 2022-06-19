@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 安装 nvm
+title: Ubuntu 安装与配置NVM
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, nodejs]
+tag: [linux, node]
 ---
 
 ## 环境

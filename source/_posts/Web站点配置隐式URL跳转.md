@@ -1,5 +1,5 @@
 ---
-title: 站点隐式 URL 跳转
+title: Web站点配置隐式URL跳转
 tag: [site]
 date: 2022-01-23 11:37:48
 category:

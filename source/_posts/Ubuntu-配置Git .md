@@ -1,8 +1,8 @@
 ---
-title: Git 配置
+title: Ubuntu 配置Git 
 date: 2021-11-29 11:11:11
-category: Config
-tag: [linux, config, git]
+category: Ubuntu
+tag: [linux, git]
 ---
 
 

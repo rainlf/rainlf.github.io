@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 常用镜像源
+title: Ubuntu 常用镜像源整理
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, apt]
+tag: [linux, apt, npm]
 ---
 
 ## 环境

@@ -1,8 +1,8 @@
 ---
-title: Nginx 配置 HTTPS
-tag: [linux, nginx]
+title: Ubuntu 配置Nginx HTTPS
 date: 2022-01-23 11:03:50
 category: Ubuntu
+tag: [linux, nginx]
 ---
 
 ## 环境

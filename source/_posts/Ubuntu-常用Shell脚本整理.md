@@ -1,5 +1,5 @@
 ---
-title: Linux 常用 shell 脚本
+title: Ubuntu 常用Shell脚本整理
 tag: [linux, shell]
 date: 2022-02-28 15:31:52
 ---

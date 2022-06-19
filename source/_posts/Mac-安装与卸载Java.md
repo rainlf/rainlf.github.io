@@ -1,8 +1,8 @@
 ---
-title: Mac 安装与卸载 Java
-tag: [mac, java]
+title: Mac 安装与卸载Java
 date: 2022-02-27 15:11:43
 category: Mac
+tag: [mac, java]
 ---
 
 ## 安装

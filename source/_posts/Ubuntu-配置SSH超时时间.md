@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 配置 ssh 超时时间
+title: Ubuntu 配置SSH超时时间
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu]
+tag: [linux, ssh]
 ---
 
 ## 环境

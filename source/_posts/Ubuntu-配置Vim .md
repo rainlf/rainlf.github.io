@@ -1,5 +1,5 @@
 ---
-title: Vim 配置
+title: Ubuntu 配置Vim 
 date: 2021-11-29 11:11:11
 category: Config
 tag: [linux, config, vi]

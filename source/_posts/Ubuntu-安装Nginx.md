@@ -1,8 +1,8 @@
 ---
-title: Ubuntu 20.04 安装 nginx
+title: Ubuntu 安装Nginx
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ubuntu, nginx]
+tag: [linux, nginx]
 ---
 
 ## 环境

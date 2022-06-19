@@ -7,7 +7,7 @@ tag: [mac, vscode]
 
 
 ## 安装
-参考(官网)[https://brew.sh/], 命令行中输入
+参考[官网](https://brew.sh), 命令行中输入
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```

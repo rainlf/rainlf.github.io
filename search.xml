@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Docker 部署 redis</title>
-    <url>/2022/02/18/Docker-%E9%83%A8%E7%BD%B2-redis/</url>
+    <title>Docker 部署Redis</title>
+    <url>/2022/02/18/Docker-%E9%83%A8%E7%BD%B2Redis/</url>
     <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>Docker</code> 部署<code>redis</code>服务器，配置密码认证登陆。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>下载镜像</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo docker pull redis:latest</span><br></pre></td></tr></table></figure>
@@ -23,31 +23,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Git 配置</title>
-    <url>/2021/11/29/Git-%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>~/.gitconfig</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">        name = &lt;user&gt;</span><br><span class="line">        email = &lt;email&gt;</span><br><span class="line">[credential]</span><br><span class="line">        helper = cache --timeout=8640000</span><br><span class="line">[push]</span><br><span class="line">        default = simple</span><br><span class="line">[color]</span><br><span class="line">        ui = true</span><br><span class="line">        status = auto</span><br><span class="line">        branch = auto</span><br><span class="line">[alias]</span><br><span class="line">        st = status -s</span><br><span class="line">        br = branch</span><br><span class="line">        ci = commit</span><br><span class="line">        co = checkout</span><br><span class="line">        lg = log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">        required = true</span><br><span class="line">        clean = git-lfs clean -- %f</span><br><span class="line">        smudge = git-lfs smudge -- %f</span><br><span class="line">        process = git-lfs filter-process</span><br><span class="line">[difftool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = opendiff \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot;</span><br><span class="line">        path =</span><br><span class="line">[mergetool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot; -ancestor \&quot;$BASE\&quot; -merge \&quot;$MERGED\&quot;</span><br><span class="line">        trustExitCode = true</span><br><span class="line">[core]</span><br><span class="line">        excludesFile = ~/.gitignore</span><br><span class="line">        quotepath = false</span><br><span class="line">        whitespace = cr-at-eol</span><br><span class="line">        autocrlf = true</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置BASH显示分支名"><a href="#配置BASH显示分支名" class="headerlink" title="配置BASH显示分支名"></a>配置BASH显示分支名</h2><p>在<code>~/bashrc</code>尾部添加</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">function git_branch &#123;</span><br><span class="line">    branch=&quot;`git branch 2&gt;/dev/null | grep &quot;^\*&quot; | sed -e &quot;s/^\*\ //&quot;`&quot;</span><br><span class="line">    if [ &quot;$&#123;branch&#125;&quot; != &quot;&quot; ];then</span><br><span class="line">        if [ &quot;$&#123;branch&#125;&quot; = &quot;(no branch)&quot; ];then</span><br><span class="line">            branch=&quot;(`git rev-parse --short HEAD`...)&quot;</span><br><span class="line">        fi</span><br><span class="line">        echo &quot; ($branch)&quot;</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line">export PS1=&#x27;\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ &#x27;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Config</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Github 搭建博客</title>
-    <url>/2021/11/29/Hexo+Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <title>Hexo+Github搭建博客</title>
+    <url>/2021/11/29/Hexo+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>使用<code>Hexo</code>搭建博客，配置<code>Next</code>主题，并搭配<code>Github</code>实现自动构建与部署。</p>
 <h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在安装好的了<code>Node</code>环境中，运行</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
@@ -74,28 +51,105 @@
 
 
 ]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
   </entry>
   <entry>
-    <title>Linux 常用 shell 脚本</title>
-    <url>/2022/02/28/Linux-%E5%B8%B8%E7%94%A8-shell-%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+    <title>JetBrains系列破解</title>
+    <url>/2022/06/19/JetBrains%E7%B3%BB%E5%88%97%E7%A0%B4%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>访问<a href="https://3.jetbra.in/">链接列表</a>，选择可用链接如<a href="https://ipfs.io/ipfs/bafybeicb5ndmec4twnrohkcbadxwd3h2bso3hw7dbss3b632oq4nesdfrq/">这里</a>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://ipfs.io/ipfs/bafybeicb5ndmec4twnrohkcbadxwd3h2bso3hw7dbss3b632oq4nesdfrq/</span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="批量拷贝文件"><a href="#批量拷贝文件" class="headerlink" title="批量拷贝文件"></a>批量拷贝文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">src=$1</span><br><span class="line">dst=$2</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$src&quot; = &quot;x&quot; -o &quot;x$dst&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: src or dst can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to scp $src to $host:$dst&quot;</span><br><span class="line">  scp -r $src $host:$dst</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
+<p>下载<code>jetbra.zip</code>，参考<code>readme.txt</code>参考  </p>
+<p>打开<code>IDE</code>，粘贴上述站点对应的<code>ActiveCode</code>即可  </p>
 ]]></content>
       <tags>
-        <tag>linux</tag>
-        <tag>shell</tag>
+        <tag>jetbarins</tag>
       </tags>
   </entry>
   <entry>
-    <title>Mac 安装与卸载 Java</title>
-    <url>/2022/02/27/Mac-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD-Java/</url>
+    <title>Mac 安装Homebrew</title>
+    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Homebrew/</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>参考<a href="https://brew.sh/">官网</a>, 命令行中输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 安装MySQL</title>
+    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85MySQL/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew services start mysql</span><br></pre></td></tr></table></figure>
+
+<p>初始化安全策略与配置，参考<a href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85MySQL/">Ubuntu 安装MySQL</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<p>登陆</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 安装Visual Studio Code</title>
+    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Visual-Studio-Code/</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>前往<a href="https://code.visualstudio.com/">官网</a>，下载最新版本，复制下载链接如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://az764295.vo.msecnd.net/stable/30d9c6cd9483b2cc586687151bcbcd635f373630/VSCode-darwin-universal.zip</span><br></pre></td></tr></table></figure>
+<p>海外服务器存在下载速度过慢的问题，将其中的域名替换为<code>vscode.cdn.azure.cn</code>即可，如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://vscode.cdn.azure.cn/stable/30d9c6cd9483b2cc586687151bcbcd635f373630/VSCode-darwin-universal.zip</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 安装Yarn</title>
+    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Yarn/</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用<code>homebrew</code>安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h2><p>安装<code>yrm</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn global add yrm</span><br></pre></td></tr></table></figure>
+
+<p>查询可用镜像源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yrm ls</span><br></pre></td></tr></table></figure>
+
+<p>测试镜像源，如</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yrm test taobao        </span><br></pre></td></tr></table></figure>
+
+<p>选择镜像源，如</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yrm use taobao</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>yarn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 安装与卸载Java</title>
+    <url>/2022/02/27/Mac-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJava/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先前往<a href="https://www.oracle.com/java/technologies/downloads/">官方地址</a>，下载所需版本的安装文件</p>
 <p>安装后修改<code>.zshrc</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home</span><br><span class="line">export JAVA_11_HOME=`/usr/libexec/java_home -v 11`</span><br><span class="line">export JAVA_17_HOME=`/usr/libexec/java_home -v 17`</span><br><span class="line">export JAVA_HOME=$JAVA_17_HOME</span><br><span class="line">alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;</span><br><span class="line">alias jdk11=&quot;export JAVA_HOME=$JAVA_11_HOME&quot;</span><br><span class="line">alias jdk17=&quot;export JAVA_HOME=$JAVA_17_HOME&quot;</span><br></pre></td></tr></table></figure>
@@ -121,30 +175,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Nginx 配置 HTTPS</title>
-    <url>/2022/01/23/Nginx-%E9%85%8D%E7%BD%AE-HTTPS/</url>
+    <title>Ubuntu 安装Docker</title>
+    <url>/2022/02/10/Ubuntu-%E5%AE%89%E8%A3%85Docker/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-<p>Nginx 1.14.0</p>
-</blockquote>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>上传<code>SSL</code>证书到服务器，并修改配置文件<code>/etc/nginx/nginx.conf</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"><span class="meta">  #</span><span class="bash"> http -&gt; https</span></span><br><span class="line">  server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line">		return 301 https://$server_name$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">	#</span><span class="bash"> https configuration</span></span><br><span class="line">	server &#123;</span><br><span class="line">		listen 443 ssl;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line"></span><br><span class="line">      # ssl证书地址</span><br><span class="line">      ssl_certificate     /etc/nginx/ssl/ssl_rainlf_com.crt;  # pem/crt文件的路径</span><br><span class="line">      ssl_certificate_key  /etc/nginx/ssl/ssl_rainlf_com.key; # key文件的路径</span><br><span class="line"></span><br><span class="line">      # ssl验证相关配置</span><br><span class="line">      ssl_session_timeout  5m;    #缓存有效期</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议</span><br><span class="line">      ssl_prefer_server_ciphers on;   #使用服务器端的首选算法</span><br><span class="line"></span><br><span class="line">		root /var/www/html;</span><br><span class="line">		index index.html;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>nginx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 20.04 安装 docker</title>
-    <url>/2022/02/10/Ubuntu-20-04-%E5%AE%89%E8%A3%85-docker/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>Docker 20.10.12</p>
+<p>Ubuntu 20.04 LTS<br>Docker 20.10.12  </p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>Ubuntu</code>安装<code>docker</code>运行时环境，参考<a href="https://docs.docker.com/engine/install/ubuntu/">官方文档</a></p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>删除旧版本</p>
@@ -168,48 +202,13 @@
       <tags>
         <tag>docker</tag>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 jdk8</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85%20jdk8/</url>
+    <title>Ubuntu 安装ES+Kibana</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85ES+Kibana/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>JDK1.8</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>安装 JDK8，并设置相关环境变量，参考 <a href="https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/">Oracle官方文档</a></p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>在 <a href="https://www.oracle.com/java/technologies/downloads/#java8">Oracle官方地址</a> 下载 jdk release 文件，解压文件至安装目录</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/java/</span><br><span class="line">sudo tar xvf jdk-8u301-linux-x64.tar.gz -C /usr/java/</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>编辑 <code>~/.zshrc</code> （bash shell 则编辑 <code>~/.bashrc</code>）,添加内容</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_301</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>java</tag>
-        <tag>ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 20.04 安装 es</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-es/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>Elsticsearch 7.15.0</p>
-<p>Kibana 7.15.0</p>
+<p>Ubuntu 20.04 LTS<br>Elsticsearch 7.15.0<br>Kibana 7.15.0  </p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>安装 Elasticsearch + Kibana，配置密码访问</p>
@@ -250,13 +249,43 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
         <tag>es</tag>
+        <tag>kibana</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 maven</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-maven/</url>
+    <title>Ubuntu 安装JDK</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85JDK/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS<br>JDK1.8  </p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>安装 JDK8，并设置相关环境变量，参考 <a href="https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/">Oracle官方文档</a></p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>在 <a href="https://www.oracle.com/java/technologies/downloads/#java8">Oracle官方地址</a> 下载 jdk release 文件，解压文件至安装目录</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/java/</span><br><span class="line">sudo tar xvf jdk-8u301-linux-x64.tar.gz -C /usr/java/</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编辑 <code>~/.zshrc</code> （bash shell 则编辑 <code>~/.bashrc</code>）,添加内容</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_301</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装Maven</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Maven/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Maven 3.8.3</p>
@@ -280,13 +309,12 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
         <tag>maven</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 mongo</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-mongo/</url>
+    <title>Ubuntu 安装MongoDB</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85MongoDB/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>MongDB 5.0.3</p>
@@ -350,13 +378,12 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
         <tag>mongodb</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 mysql</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-mysql/</url>
+    <title>Ubuntu 安装MySQL</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85MySQL/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>MySQL  v5.7.35</p>
@@ -370,7 +397,12 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install -y mysql-server</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>初始化配置，配置密码，询问项选 n，最后选 y 刷新权限</p>
+<p>启动服务</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>初始化配置，配置密码，全选 n，至<code>Reload privilege tables now?</code>时，选 y 即可</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
 
@@ -399,14 +431,14 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
+        <tag>mysql</tag>
         <tag>linux</tag>
         <tag>ubuntu</tag>
-        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 nacos</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-nacos/</url>
+    <title>Ubuntu 安装Nacos</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nacos/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Nacos 2.0.3</p>
@@ -460,8 +492,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 nginx</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-nginx/</url>
+    <title>Ubuntu 安装Nginx</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nginx/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Nginx 1.14.0</p>
@@ -496,12 +528,132 @@
       <tags>
         <tag>linux</tag>
         <tag>nginx</tag>
-        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 nvm</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-nvm/</url>
+    <title>Ubuntu 安装OhMyZsh</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85OhMyZsh/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>使用zsh与<a href="https://ohmyz.sh/">oh-my-zsh</a>搭建日常命令行环境</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>安装 zsh</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install -y zsh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置 zsh 为默认 shell</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>安装 oh-my-zsh</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><blockquote>
+<p>安装时可能会遇到 github 访问过慢的问题，也可以将上述安装文件先保存至本地，手动指定镜像仓库来安装</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">REMOTE=https://codechina.csdn.net/mirrors/ohmyzsh/ohmyzsh.git ./install.sh</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装PostgreSQL</title>
+    <url>/2022/02/08/Ubuntu-%E5%AE%89%E8%A3%85PostgreSQL/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+<p>PostgresQL 14.1</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>postgresql</code>服务器，配置远程访问。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装<code>postgresql</code>，参考 <a href="https://www.postgresql.org/download/linux/ubuntu/">https://www.postgresql.org/download/linux/ubuntu/</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sh -c &#x27;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;</span><br><span class="line">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install postgresql</span><br></pre></td></tr></table></figure>
+
+<p>查看版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -u postgres psql -c &quot;select version()&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>配置角色（仅仅超级用户和拥有<code>CREATEROLE</code>权限的角色可以创建新角色）</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 登陆db</span><br><span class="line">sudo <span class="operator">-</span>u postgres psql</span><br><span class="line"># 创建角色</span><br><span class="line"><span class="keyword">create</span> role role_root login password &quot;123456&quot;;</span><br><span class="line"># 创建数据库</span><br><span class="line"><span class="keyword">create</span> database test_db;</span><br><span class="line"># 修改用户密码，并授权用户操作数据库</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> database test_db <span class="keyword">to</span> role_root;</span><br><span class="line"># 列举角色</span><br><span class="line">\dg</span><br><span class="line"># 列举数据库</span><br><span class="line">\l</span><br><span class="line"># 列举Schema</span><br><span class="line">\dn</span><br><span class="line"># 列举表</span><br><span class="line">\dt</span><br><span class="line"># 退出</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
+
+<p>配置远程访问，修改<code> /etc/postgresql/14/main/postgresql.conf</code></p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">listen_addresses</span> = <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>/etc/postgresql/14/main/pg_hba.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">local</span>   all             all                                     peer</span></span><br><span class="line">local   all             all                                     md5</span><br></pre></td></tr></table></figure>
+
+<p>重启服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
+
+<p>连接数据库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">psql -U role_root -d test_db -W</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>postgresql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装Redis</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Redis/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS</p>
+<p>Redis 4.0.9</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>安装 Redis Server，配置密码，并允许外网访问</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>安装 redis-server</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install -y redis-server</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改配置文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>找到对应行，修改内容为</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bind 0.0.0.0 ::1</span><br><span class="line">protected-mode no</span><br><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>重启服务</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service redis-server restart</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装与配置NVM</title>
+    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AENVM/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -545,94 +697,27 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
-        <tag>nodejs</tag>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 redis</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-redis/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>Redis 4.0.9</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>安装 Redis Server，配置密码，并允许外网访问</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>安装 redis-server</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install -y redis-server</span><br></pre></td></tr></table></figure>
+    <title>Ubuntu 常用Shell脚本整理</title>
+    <url>/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>修改配置文件</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>找到对应行，修改内容为</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bind 0.0.0.0 ::1</span><br><span class="line">protected-mode no</span><br><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>重启服务</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service redis-server restart</span><br></pre></td></tr></table></figure>
+<h2 id="批量拷贝文件"><a href="#批量拷贝文件" class="headerlink" title="批量拷贝文件"></a>批量拷贝文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">src=$1</span><br><span class="line">dst=$2</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$src&quot; = &quot;x&quot; -o &quot;x$dst&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: src or dst can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to scp $src to $host:$dst&quot;</span><br><span class="line">  scp -r $src $host:$dst</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
       <tags>
-        <tag>redis</tag>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 安装 zsh</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%AE%89%E8%A3%85-zsh/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>zsh 是 Linux 下一款优秀的终端工具，搭配 <a href="https://ohmyz.sh/">oh-my-zsh</a> 食用更香</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>安装 zsh</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install -y zsh</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>配置 zsh 为默认 shell</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>安装 oh-my-zsh</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><blockquote>
-<p>安装时可能会遇到 github 访问过慢的问题，也可以将上述安装文件先保存至本地，手动指定镜像仓库来安装</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">REMOTE=https://codechina.csdn.net/mirrors/ohmyzsh/ohmyzsh.git ./install.sh</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>ubuntu</tag>
-        <tag>zsh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 20.04 常用工具</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</url>
+    <title>Ubuntu 常用工具整理</title>
+    <url>/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -648,12 +733,45 @@
 ]]></content>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 常用镜像源</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+    <title>Ubuntu 常用用户管理</title>
+    <url>/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>Linux 默认提供 root 用户，但日常使用时推荐使用拥有 sudo 权限的普通用户</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>新建用户，指定工作目录，指定 Shell</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd -d /home/admin -m -s /bin/bash admin</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置密码</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">passwd admin</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>删除用户时执行（会同时删除主目录）</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">userdel admin</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 常用镜像源整理</title>
+    <url>/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -695,33 +813,20 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
         <tag>apt</tag>
+        <tag>npm</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 用户管理</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>Linux 默认提供 root 用户，但日常使用时推荐使用拥有 sudo 权限的普通用户</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>新建用户，指定工作目录，指定 Shell</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd -d /home/admin -m -s /bin/bash admin</span><br></pre></td></tr></table></figure>
+    <title>Ubuntu 配置Git</title>
+    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEGit%20/</url>
+    <content><![CDATA[<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>~/.gitconfig</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">        name = &lt;user&gt;</span><br><span class="line">        email = &lt;email&gt;</span><br><span class="line">[credential]</span><br><span class="line">        helper = cache --timeout=8640000</span><br><span class="line">[push]</span><br><span class="line">        default = simple</span><br><span class="line">[color]</span><br><span class="line">        ui = true</span><br><span class="line">        status = auto</span><br><span class="line">        branch = auto</span><br><span class="line">[alias]</span><br><span class="line">        st = status -s</span><br><span class="line">        br = branch</span><br><span class="line">        ci = commit</span><br><span class="line">        co = checkout</span><br><span class="line">        lg = log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">        required = true</span><br><span class="line">        clean = git-lfs clean -- %f</span><br><span class="line">        smudge = git-lfs smudge -- %f</span><br><span class="line">        process = git-lfs filter-process</span><br><span class="line">[difftool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = opendiff \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot;</span><br><span class="line">        path =</span><br><span class="line">[mergetool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot; -ancestor \&quot;$BASE\&quot; -merge \&quot;$MERGED\&quot;</span><br><span class="line">        trustExitCode = true</span><br><span class="line">[core]</span><br><span class="line">        excludesFile = ~/.gitignore</span><br><span class="line">        quotepath = false</span><br><span class="line">        whitespace = cr-at-eol</span><br><span class="line">        autocrlf = true</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>配置密码</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">passwd admin</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>删除用户时执行（会同时删除主目录）</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">userdel admin</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置BASH显示分支名"><a href="#配置BASH显示分支名" class="headerlink" title="配置BASH显示分支名"></a>配置BASH显示分支名</h2><p>在<code>~/bashrc</code>尾部添加</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">function git_branch &#123;</span><br><span class="line">    branch=&quot;`git branch 2&gt;/dev/null | grep &quot;^\*&quot; | sed -e &quot;s/^\*\ //&quot;`&quot;</span><br><span class="line">    if [ &quot;$&#123;branch&#125;&quot; != &quot;&quot; ];then</span><br><span class="line">        if [ &quot;$&#123;branch&#125;&quot; = &quot;(no branch)&quot; ];then</span><br><span class="line">            branch=&quot;(`git rev-parse --short HEAD`...)&quot;</span><br><span class="line">        fi</span><br><span class="line">        echo &quot; ($branch)&quot;</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line">export PS1=&#x27;\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ &#x27;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -731,12 +836,31 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 配置 ssh 超时时间</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AEssh%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/</url>
+    <title>Ubuntu 配置Nginx HTTPS</title>
+    <url>/2022/01/23/Ubuntu-%E9%85%8D%E7%BD%AENginx-HTTPS/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+<p>Nginx 1.14.0</p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>上传<code>SSL</code>证书到服务器，并修改配置文件<code>/etc/nginx/nginx.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"><span class="meta">  #</span><span class="bash"> http -&gt; https</span></span><br><span class="line">  server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line">		return 301 https://$server_name$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">	#</span><span class="bash"> https configuration</span></span><br><span class="line">	server &#123;</span><br><span class="line">		listen 443 ssl;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line"></span><br><span class="line">      # ssl证书地址</span><br><span class="line">      ssl_certificate     /etc/nginx/ssl/ssl_rainlf_com.crt;  # pem/crt文件的路径</span><br><span class="line">      ssl_certificate_key  /etc/nginx/ssl/ssl_rainlf_com.key; # key文件的路径</span><br><span class="line"></span><br><span class="line">      # ssl验证相关配置</span><br><span class="line">      ssl_session_timeout  5m;    #缓存有效期</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议</span><br><span class="line">      ssl_prefer_server_ciphers on;   #使用服务器端的首选算法</span><br><span class="line"></span><br><span class="line">		root /var/www/html;</span><br><span class="line">		index index.html;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置SSH超时时间</title>
+    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AESSH%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -778,12 +902,28 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 配置免密sudo</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86sudo/</url>
+    <title>Ubuntu 配置Vim</title>
+    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEVim%20/</url>
+    <content><![CDATA[<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>vi ~/.vimrc</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">syntax enable</span><br><span class="line">set nu</span><br><span class="line">set syntax=on</span><br><span class="line">set showcmd</span><br><span class="line">set autoread</span><br><span class="line">set nobackup</span><br><span class="line">set ruler</span><br><span class="line">set cursorline</span><br><span class="line">set magic</span><br><span class="line">set noeb</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4</span><br><span class="line">set mouse=a</span><br><span class="line">set hlsearch</span><br><span class="line">filetype on</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Config</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>config</tag>
+        <tag>vi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置免密Sudo</title>
+    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86Sudo/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -811,12 +951,11 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 20.04 配置静态 ip</title>
-    <url>/2021/11/29/Ubuntu-20.04-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/</url>
+    <title>Ubuntu 配置静态IP</title>
+    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81IP/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -843,117 +982,23 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>ubuntu</tag>
+        <tag>network</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ununtu 20.04 安装 postgresql</title>
-    <url>/2022/02/08/Ununtu-20-04-%E5%AE%89%E8%A3%85-postgresql/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-<p>PostgresQL 14.1</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>postgresql</code>服务器，配置远程访问。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装<code>postgresql</code>，参考 <a href="https://www.postgresql.org/download/linux/ubuntu/">https://www.postgresql.org/download/linux/ubuntu/</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo sh -c &#x27;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;</span><br><span class="line">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install postgresql</span><br></pre></td></tr></table></figure>
-
-<p>查看版本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -u postgres psql -c &quot;select version()&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>配置角色（仅仅超级用户和拥有<code>CREATEROLE</code>权限的角色可以创建新角色）</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 登陆db</span><br><span class="line">sudo <span class="operator">-</span>u postgres psql</span><br><span class="line"># 创建角色</span><br><span class="line"><span class="keyword">create</span> role role_root login password &quot;123456&quot;;</span><br><span class="line"># 创建数据库</span><br><span class="line"><span class="keyword">create</span> database test_db;</span><br><span class="line"># 修改用户密码，并授权用户操作数据库</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> database test_db <span class="keyword">to</span> role_root;</span><br><span class="line"># 列举角色</span><br><span class="line">\dg</span><br><span class="line"># 列举数据库</span><br><span class="line">\l</span><br><span class="line"># 列举Schema</span><br><span class="line">\dn</span><br><span class="line"># 列举表</span><br><span class="line">\dt</span><br><span class="line"># 退出</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
-
-<p>配置远程访问，修改<code> /etc/postgresql/14/main/postgresql.conf</code></p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">listen_addresses</span> = <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>修改<code>/etc/postgresql/14/main/pg_hba.conf</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">local</span>   all             all                                     peer</span></span><br><span class="line">local   all             all                                     md5</span><br></pre></td></tr></table></figure>
-
-<p>重启服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
-
-<p>连接数据库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">psql -U role_root -d test_db -W</span><br></pre></td></tr></table></figure>
-
-
-
-
+    <title>Web站点配置隐式URL跳转</title>
+    <url>/2022/01/23/Web%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E9%9A%90%E5%BC%8FURL%E8%B7%B3%E8%BD%AC/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我们需要通过自己的域名连接到外部的站点时，<code>DNS</code> 解析的隐式 <code>URL</code>跳转是一个较好的选择。但由于使用了默认的 <code>iframe</code>代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。</p>
+<h2 id="站点文件"><a href="#站点文件" class="headerlink" title="站点文件"></a>站点文件</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>I am site title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--网页标题左侧显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--收藏夹显示图标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noframes</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noframes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>ubuntu</tag>
-        <tag>postgresql</tag>
+        <tag>site</tag>
       </tags>
   </entry>
   <entry>
-    <title>Vim 配置</title>
-    <url>/2021/11/29/Vim-%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>vi ~/.vimrc</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">syntax enable</span><br><span class="line">set nu</span><br><span class="line">set syntax=on</span><br><span class="line">set showcmd</span><br><span class="line">set autoread</span><br><span class="line">set nobackup</span><br><span class="line">set ruler</span><br><span class="line">set cursorline</span><br><span class="line">set magic</span><br><span class="line">set noeb</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4</span><br><span class="line">set mouse=a</span><br><span class="line">set hlsearch</span><br><span class="line">filetype on</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Config</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-        <tag>vi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 修改默认用户目录</title>
-    <url>/2022/02/16/Windows-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>Windows</code>系统时，将默认的用户目录调整至非系统盘。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p>当 windows 连接到网络的时候有时 Sysprep 会失败，所以在进入 Audit Mode 之前，全程关闭网络连接</p>
-<p>安装上 windows，重启电脑之后，当进入区域选择界面时，按下 Ctrl Shift F3 </p>
-<p>这时 windows 会重启，进入 Audit Mode，然后显示一个 System Preparation Tool，将它关闭</p>
-<h3 id="配置用户目录"><a href="#配置用户目录" class="headerlink" title="配置用户目录"></a>配置用户目录</h3><p>现在可以将电脑连接到网络了。</p>
-<p>接下来要使用 System Preparation Tool (Sysprep) 工具来设置用户路径。这个工具会执行一个 XML 文件中的配置（也就是 unattended answer file）</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">unattend</span> <span class="attr">xmlns</span>=<span class="string">&quot;urn:schemas-microsoft-com:unattend&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span> <span class="attr">pass</span>=<span class="string">&quot;oobeSystem&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">name</span>=<span class="string">&quot;Microsoft-Windows-Shell-Setup&quot;</span> <span class="attr">processorArchitecture</span>=<span class="string">&quot;amd64&quot;</span> <span class="attr">publicKeyToken</span>=<span class="string">&quot;31bf3856ad364e35&quot;</span> <span class="attr">language</span>=<span class="string">&quot;neutral&quot;</span> <span class="attr">versionScope</span>=<span class="string">&quot;nonSxS&quot;</span> <span class="attr">xmlns:wcm</span>=<span class="string">&quot;http://schemas.microsoft.com/WMIConfig/2002/State&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ProfilesDirectory</span>&gt;</span>D:\Users<span class="tag">&lt;/<span class="name">ProfilesDirectory</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">unattend</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>Windows 以字母来标识盘符，但是当安装了 windows 重启之后，本来你想把用户目录安装到 d 盘，但这个盘符可能会发生改变，这个时候就会失败。</p>
-<p>所以为了保证你的 d 盘盘符不变，你需要给他手动设置一下盘符，在 Audit Mode 你可以使用磁盘管理工具，先手动的将 d 盘改成 w 盘，再把它改回 d 盘</p>
-<p>将这个 XML 文件保存到磁盘根目录（不能是 C 盘），例如D:\relocate.xml</p>
-<h3 id="执行配置"><a href="#执行配置" class="headerlink" title="执行配置"></a>执行配置</h3><p>以管理员模式运行 cmd ，首先，确保 WMP Network Sharing Service 已停止运行</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">net stop wmpnetworksvc</span><br></pre></td></tr></table></figure>
-
-<p>然后运行命令：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">%windir%\system32\sysprep\sysprep.exe /oobe /reboot /unattend:d:\relocate.xml</span><br></pre></td></tr></table></figure>
-
-<p>上述命令告诉系统从 Windows\System32\Sysprep 运行 Sysprep，执行 D:/relocate.xml 中的指令，为 OOBE（the firlst boot of newly installed Windows） 重启准备系统，最后重启</p>
-<p>然后就继续安装配置系统，之后新用户都会在 D:/Users 这个目录下新建</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>https://<em>meta.appinn.net/t/topic/18899</em></p>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 删除 hiberfil.sys 文件</title>
-    <url>/2022/01/29/Windows-%E5%88%A0%E9%99%A4-hiberfil-sys-%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>hiberfil.sys</code>为<code>Windows</code>的系统休眠文件，如果系统磁盘紧张，可考虑禁用休眠功能以取消该文件。</p>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>以管理员权限运行<code>PowerShell</code>，执行</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powercfg <span class="literal">-h</span> off</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 启动 Postman 后灰屏</title>
-    <url>/2022/01/14/Windows-%E5%90%AF%E5%8A%A8-Postman-%E5%90%8E%E7%81%B0%E5%B1%8F/</url>
+    <title>Windows 启动Postman后灰屏问题</title>
+    <url>/2022/01/14/Windows-%E5%90%AF%E5%8A%A8Postman%E5%90%8E%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro</p>
 <p>Postman v9.0.7 </p>
@@ -972,10 +1017,11 @@
       </categories>
       <tags>
         <tag>windows</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
-    <title>Windows 常用镜像源</title>
+    <title>Windows 常用镜像源整理</title>
     <url>/2022/01/27/Windows-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro</p>
@@ -1003,8 +1049,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 重启 Linux 子系统</title>
-    <url>/2022/01/14/Windows-%E9%87%8D%E5%90%AF-Liunx-%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
+    <title>Windows 重启Linux子系统</title>
+    <url>/2022/01/14/Windows-%E9%87%8D%E5%90%AFLiunx%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>Windows 子系统（WSL）是基于 LxssManager 服务运行的，只需将 LxssManager 重启即可</p>
 </blockquote>
@@ -1022,8 +1068,8 @@
       </tags>
   </entry>
   <entry>
-    <title>博客页面添加 Github 标识角</title>
-    <url>/2022/01/17/%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0-Github-%E6%A0%87%E8%AF%86/</url>
+    <title>博客页面添加Github标识角</title>
+    <url>/2022/01/17/%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0Github%E6%A0%87%E8%AF%86%E8%A7%92/</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>在下面网站用选择自己喜欢的图标：</p>
 <blockquote>
 <p><a href="https://github.blog/2008-12-19-github-ribbons/">https://github.blog/2008-12-19-github-ribbons/</a>  </p>
@@ -1033,19 +1079,11 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;headband&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 刚刚复制的代码 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">&quot;header&quot;</span> <span class="attr">itemscope</span> <span class="attr">itemtype</span>=<span class="string">&quot;http://schema.org/WPHeader&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;header-inner&quot;</span>&gt;</span>&#123;% include &#x27;_partials/header/index.swig&#x27; %&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
       <tags>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>站点隐式 URL 跳转</title>
-    <url>/2022/01/23/%E7%AB%99%E7%82%B9%E9%9A%90%E5%BC%8F-URL-%E8%B7%B3%E8%BD%AC/</url>
-    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我们需要通过自己的域名连接到外部的站点时，<code>DNS</code> 解析的隐式 <code>URL</code>跳转是一个较好的选择。但由于使用了默认的 <code>iframe</code>代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。</p>
-<h2 id="站点文件"><a href="#站点文件" class="headerlink" title="站点文件"></a>站点文件</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>I am site title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--网页标题左侧显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--收藏夹显示图标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noframes</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noframes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>site</tag>
       </tags>
   </entry>
 </search>

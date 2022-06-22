@@ -1,5 +1,5 @@
 ---
-title: Windows 重启Linux子系统
+title: Windows 重启子系统
 date: 2022-01-14 22:54:44
 category: Windows
 tag: [windows]

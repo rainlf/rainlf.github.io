@@ -1,8 +1,8 @@
 ---
-title: JetBrains系列破解
-tag: [jetbarins]
-date: 2022-06-19 11:37:48
+title: JetBrains系列激活
 category: [optimize]
+date: 2022-06-19 11:37:48
+tag: [optimize]
 ---
 
 ## 破解

@@ -59,7 +59,7 @@
       </tags>
   </entry>
   <entry>
-    <title>JetBrains系列破解</title>
+    <title>JetBrains系列激活</title>
     <url>/2022/06/19/JetBrains%E7%B3%BB%E5%88%97%E7%A0%B4%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>访问<a href="https://3.jetbra.in/">链接列表</a>，选择可用链接如<a href="https://ipfs.io/ipfs/bafybeicb5ndmec4twnrohkcbadxwd3h2bso3hw7dbss3b632oq4nesdfrq/">这里</a>  </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://ipfs.io/ipfs/bafybeicb5ndmec4twnrohkcbadxwd3h2bso3hw7dbss3b632oq4nesdfrq/</span><br></pre></td></tr></table></figure>
@@ -67,8 +67,11 @@
 <p>下载<code>jetbra.zip</code>，参考<code>readme.txt</code>参考  </p>
 <p>打开<code>IDE</code>，粘贴上述站点对应的<code>ActiveCode</code>即可  </p>
 ]]></content>
+      <categories>
+        <category>optimize</category>
+      </categories>
       <tags>
-        <tag>jetbarins</tag>
+        <tag>optimize</tag>
       </tags>
   </entry>
   <entry>
@@ -193,6 +196,9 @@
 <p>启动服务</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
 
+<p>赋予当前用户<code>docker</code>操作权限</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker $USER &amp;&amp; newgrp docker</span><br></pre></td></tr></table></figure>
+
 
 
 ]]></content>
@@ -208,7 +214,7 @@
     <title>Ubuntu 安装ES+Kibana</title>
     <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85ES+Kibana/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS<br>Elsticsearch 7.15.0<br>Kibana 7.15.0  </p>
+<p>Ubuntu 20.04 LTS<br>ElsticSearch 7.15.0<br>Kibana 7.15.0  </p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>安装 Elasticsearch + Kibana，配置密码访问</p>
@@ -284,6 +290,73 @@
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu 安装K9s</title>
+    <url>/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85K9s/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS<br>K9s v0.25.18  </p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>点击<a href="https://github.com/derailed/k9s/releases">下载页面</a>，下载最新的<code>release</code>文件，如</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -Lo k9s.tgz https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>安装命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo install k9s /usr/local/bin/</span><br></pre></td></tr></table></figure>
+
+<p>查看信息</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  k9s k9s info</span><br><span class="line"> ____  __.________</span><br><span class="line">|    |/ _/   __   \______</span><br><span class="line">|      &lt; \____    /  ___/</span><br><span class="line">|    |  \   /    /\___ \</span><br><span class="line">|____|__ \ /____//____  &gt;</span><br><span class="line">        \/            \/</span><br><span class="line"></span><br><span class="line">Configuration:   /home/rain/.config/k9s/config.yml</span><br><span class="line">Logs:            /tmp/k9s-rain.log</span><br><span class="line">Screen Dumps:    /tmp/k9s-screens-rain</span><br></pre></td></tr></table></figure>
+
+<p>常用命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> List all available CLI options</span></span><br><span class="line">k9s help</span><br><span class="line"><span class="meta">#</span><span class="bash"> Get info about K9s runtime (logs, configs, etc..)</span></span><br><span class="line">k9s info</span><br><span class="line"><span class="meta">#</span><span class="bash"> Run K9s <span class="keyword">in</span> a given namespace.</span></span><br><span class="line">k9s -n k8s-ns</span><br><span class="line"><span class="meta">#</span><span class="bash"> Run K9s and launch <span class="keyword">in</span> pod view via the pod <span class="built_in">command</span>.</span></span><br><span class="line">k9s -c pod</span><br><span class="line"><span class="meta">#</span><span class="bash"> Start K9s <span class="keyword">in</span> a non default KubeConfig context</span></span><br><span class="line">k9s --context coolCtx</span><br><span class="line"><span class="meta">#</span><span class="bash"> Start K9s <span class="keyword">in</span> <span class="built_in">readonly</span> mode - with all modification commands disabled</span></span><br><span class="line">k9s --readonly</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><code>Ubuntu</code>操作系统下，不要使用以下命令安装<code>k9s</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo snap install k9s</span></span><br></pre></td></tr></table></figure>
+<p>该安装方式会使用沙盒模式，无法穿过<code>Ubuntu</code>的防火墙。</p>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>kubernetes</tag>
+        <tag>k9s</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装Kubectl</title>
+    <url>/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85Kubectl/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>下载最新版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;</span><br></pre></td></tr></table></figure>
+
+<p>下载指定版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -LO https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl</span><br></pre></td></tr></table></figure>
+
+<p>安装命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<p>查看版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl version --client --output=yaml</span><br></pre></td></tr></table></figure>
+
+<p>将连接信息写入<code>$HOME/.kube/config </code>，</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl get namespace</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://kubernetes.io/docs/tasks/tools/?spm=5176.2020520152.0.0.405816ddd71VlD">kubectl install</a>  </li>
+<li><a href="http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/">kubectl command</a>  </li>
+</ol>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>kubernetes</tag>
+        <tag>kubectl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu 安装Maven</title>
     <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Maven/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -310,6 +383,35 @@
       <tags>
         <tag>linux</tag>
         <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装Minikube</title>
+    <url>/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85Minikube/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>下载<code>minikube</code>  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64</span><br></pre></td></tr></table></figure>
+
+<p>安装命令  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo install minikube-linux-amd64 /usr/local/bin/minikube</span><br></pre></td></tr></table></figure>
+
+<p>启动集群  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  ~ minikube start</span><br><span class="line">😄  minikube v1.25.2 on Ubuntu 20.04</span><br><span class="line">✨  Automatically selected the docker driver. Other choices: none, ssh</span><br><span class="line">👍  Starting control plane node minikube in cluster minikube</span><br><span class="line">🚜  Pulling base image ...</span><br><span class="line">💾  Downloading Kubernetes v1.23.3 preload ...</span><br><span class="line">    &gt; preloaded-images-k8s-v17-v1...: 505.68 MiB / 505.68 MiB  100.00% 634.83 K</span><br><span class="line">    &gt; index.docker.io/kicbase/sta...: 379.06 MiB / 379.06 MiB  100.00% 529.16 K</span><br><span class="line">❗  minikube was unable to download gcr.io/k8s-minikube/kicbase:v0.0.30, but successfully downloaded docker.io/kicbase/stable:v0.0.30 as a fallback image</span><br><span class="line">🔥  Creating docker container (CPUs=2, Memory=9600MB) ...</span><br><span class="line">❗  This container is having trouble accessing https://k8s.gcr.io</span><br><span class="line">💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/</span><br><span class="line">🐳  Preparing Kubernetes v1.23.3 on Docker 20.10.12 ...</span><br><span class="line">    ▪ kubelet.housekeeping-interval=5m</span><br><span class="line">    ▪ Generating certificates and keys ...</span><br><span class="line">    ▪ Booting up control plane ...</span><br><span class="line">    ▪ Configuring RBAC rules ...</span><br><span class="line">🔎  Verifying Kubernetes components...</span><br><span class="line">    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5</span><br><span class="line">🌟  Enabled addons: default-storageclass, storage-provisioner</span><br><span class="line">🏄  Done! kubectl is now configured to use &quot;minikube&quot; cluster and &quot;default&quot; namespace by default</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://minikube.sigs.k8s.io/docs/start/">minikube start</a></li>
+<li><a href="http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/">kubectl command</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>kubernetes</tag>
+        <tag>minikube</tag>
       </tags>
   </entry>
   <entry>
@@ -703,7 +805,10 @@
   <entry>
     <title>Ubuntu 常用Shell脚本整理</title>
     <url>/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 
 
@@ -807,20 +912,40 @@
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
+
+<h2 id="Anaconda-镜像源"><a href="#Anaconda-镜像源" class="headerlink" title="Anaconda 镜像源"></a>Anaconda 镜像源</h2><blockquote>
+<p>编辑文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi ~/.condarc</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>添加</p>
+</blockquote>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">channels</span>:<span class="string"></span></span><br><span class="line">  <span class="meta">-</span> <span class="string">https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span></span><br><span class="line">  <span class="meta">-</span> <span class="string">https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span></span><br><span class="line">  <span class="meta">-</span> <span class="string">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></span><br><span class="line">  <span class="meta">-</span> <span class="string">defaults</span></span><br><span class="line"><span class="attr">show_channel_urls</span>: <span class="string">true</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看配置</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --show-sources</span><br><span class="line">conda clean -i</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Ubuntu</category>
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>config</tag>
         <tag>apt</tag>
         <tag>npm</tag>
+        <tag>anaconda</tag>
       </tags>
   </entry>
   <entry>
     <title>Ubuntu 配置Git</title>
     <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEGit%20/</url>
-    <content><![CDATA[<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>~/.gitconfig</code></p>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>~/.gitconfig</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">        name = &lt;user&gt;</span><br><span class="line">        email = &lt;email&gt;</span><br><span class="line">[credential]</span><br><span class="line">        helper = cache --timeout=8640000</span><br><span class="line">[push]</span><br><span class="line">        default = simple</span><br><span class="line">[color]</span><br><span class="line">        ui = true</span><br><span class="line">        status = auto</span><br><span class="line">        branch = auto</span><br><span class="line">[alias]</span><br><span class="line">        st = status -s</span><br><span class="line">        br = branch</span><br><span class="line">        ci = commit</span><br><span class="line">        co = checkout</span><br><span class="line">        lg = log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">        required = true</span><br><span class="line">        clean = git-lfs clean -- %f</span><br><span class="line">        smudge = git-lfs smudge -- %f</span><br><span class="line">        process = git-lfs filter-process</span><br><span class="line">[difftool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = opendiff \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot;</span><br><span class="line">        path =</span><br><span class="line">[mergetool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot; -ancestor \&quot;$BASE\&quot; -merge \&quot;$MERGED\&quot;</span><br><span class="line">        trustExitCode = true</span><br><span class="line">[core]</span><br><span class="line">        excludesFile = ~/.gitignore</span><br><span class="line">        quotepath = false</span><br><span class="line">        whitespace = cr-at-eol</span><br><span class="line">        autocrlf = true</span><br></pre></td></tr></table></figure>
 
 
@@ -836,6 +961,7 @@
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>config</tag>
         <tag>git</tag>
       </tags>
   </entry>
@@ -856,6 +982,7 @@
       <tags>
         <tag>linux</tag>
         <tag>nginx</tag>
+        <tag>config</tag>
       </tags>
   </entry>
   <entry>
@@ -902,18 +1029,22 @@
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>config</tag>
         <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
     <title>Ubuntu 配置Vim</title>
     <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEVim%20/</url>
-    <content><![CDATA[<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>vi ~/.vimrc</code></p>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>vi ~/.vimrc</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">syntax enable</span><br><span class="line">set nu</span><br><span class="line">set syntax=on</span><br><span class="line">set showcmd</span><br><span class="line">set autoread</span><br><span class="line">set nobackup</span><br><span class="line">set ruler</span><br><span class="line">set cursorline</span><br><span class="line">set magic</span><br><span class="line">set noeb</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4</span><br><span class="line">set mouse=a</span><br><span class="line">set hlsearch</span><br><span class="line">filetype on</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>Config</category>
+        <category>Ubuntu</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -925,7 +1056,7 @@
     <title>Ubuntu 配置免密Sudo</title>
     <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86Sudo/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
+<p>Ubuntu 20.04 LTS  </p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>切记使用 <code>sudo visudo</code> 命令!<br>取消 Linux 普通用户在使用 sudo 命令时，要求输入密码的步骤<br>取消 sudo 命令对 env 的重置<br>指定 sudo 命令执行时的安全路径</p>
@@ -951,6 +1082,7 @@
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>config</tag>
       </tags>
   </entry>
   <entry>
@@ -982,6 +1114,7 @@
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>config</tag>
         <tag>network</tag>
       </tags>
   </entry>
@@ -993,15 +1126,70 @@
 
 ]]></content>
       <tags>
-        <tag>site</tag>
+        <tag>config</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 修改默认用户目录</title>
+    <url>/2022/02/16/Windows-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro  </p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>安装<code>Windows</code>系统时，将默认的用户目录调整至非系统盘。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p>当 windows 连接到网络的时候有时 Sysprep 会失败，所以在进入 Audit Mode 之前，全程关闭网络连接</p>
+<p>安装上 windows，重启电脑之后，当进入区域选择界面时，按下 Ctrl Shift F3 </p>
+<p>这时 windows 会重启，进入 Audit Mode，然后显示一个 System Preparation Tool，将它关闭</p>
+<h3 id="配置用户目录"><a href="#配置用户目录" class="headerlink" title="配置用户目录"></a>配置用户目录</h3><p>现在可以将电脑连接到网络了。</p>
+<p>接下来要使用 System Preparation Tool (Sysprep) 工具来设置用户路径。这个工具会执行一个 XML 文件中的配置（也就是 unattended answer file）</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">unattend</span> <span class="attr">xmlns</span>=<span class="string">&quot;urn:schemas-microsoft-com:unattend&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span> <span class="attr">pass</span>=<span class="string">&quot;oobeSystem&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">name</span>=<span class="string">&quot;Microsoft-Windows-Shell-Setup&quot;</span> <span class="attr">processorArchitecture</span>=<span class="string">&quot;amd64&quot;</span> <span class="attr">publicKeyToken</span>=<span class="string">&quot;31bf3856ad364e35&quot;</span> <span class="attr">language</span>=<span class="string">&quot;neutral&quot;</span> <span class="attr">versionScope</span>=<span class="string">&quot;nonSxS&quot;</span> <span class="attr">xmlns:wcm</span>=<span class="string">&quot;http://schemas.microsoft.com/WMIConfig/2002/State&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ProfilesDirectory</span>&gt;</span>D:\Users<span class="tag">&lt;/<span class="name">ProfilesDirectory</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">unattend</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Windows 以字母来标识盘符，但是当安装了 windows 重启之后，本来你想把用户目录安装到 d 盘，但这个盘符可能会发生改变，这个时候就会失败。</p>
+<p>所以为了保证你的 d 盘盘符不变，你需要给他手动设置一下盘符，在 Audit Mode 你可以使用磁盘管理工具，先手动的将 d 盘改成 w 盘，再把它改回 d 盘</p>
+<p>将这个 XML 文件保存到磁盘根目录（不能是 C 盘），例如D:\relocate.xml</p>
+<h3 id="执行配置"><a href="#执行配置" class="headerlink" title="执行配置"></a>执行配置</h3><p>以管理员模式运行 cmd ，首先，确保 WMP Network Sharing Service 已停止运行</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">net stop wmpnetworksvc</span><br></pre></td></tr></table></figure>
+
+<p>然后运行命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">%windir%\system32\sysprep\sysprep.exe /oobe /reboot /unattend:d:\relocate.xml</span><br></pre></td></tr></table></figure>
+
+<p>上述命令告诉系统从 Windows\System32\Sysprep 运行 Sysprep，执行 D:/relocate.xml 中的指令，为 OOBE（the firlst boot of newly installed Windows） 重启准备系统，最后重启</p>
+<p>然后就继续安装配置系统，之后新用户都会在 D:/Users 这个目录下新建</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>https://<em>meta.appinn.net/t/topic/18899</em></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>optimize</tag>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 删除系统文件hiberfil.sys</title>
+    <url>/2022/01/29/Windows-%E5%88%A0%E9%99%A4%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6hiberfil.sys/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro  </p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>hiberfil.sys</code>为<code>Windows</code>的系统休眠文件，如果系统磁盘紧张，可考虑禁用休眠功能以取消该文件。</p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>以管理员权限运行<code>PowerShell</code>，执行</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powercfg <span class="literal">-h</span> off</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>optimize</tag>
+        <tag>windows</tag>
       </tags>
   </entry>
   <entry>
     <title>Windows 启动Postman后灰屏问题</title>
     <url>/2022/01/14/Windows-%E5%90%AF%E5%8A%A8Postman%E5%90%8E%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Windows 10 Pro</p>
-<p>Postman v9.0.7 </p>
+<p>Windows 10 Pro<br>Postman v9.0.7   </p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>解决 Postman 使用或启动后，突然出现灰屏的问题</p>
@@ -1021,37 +1209,91 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 常用镜像源整理</title>
-    <url>/2022/01/27/Windows-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+    <title>Windows 子系统出现The referenced object type does not support the attempted operation的问题</title>
+    <url>/2022/06/22/Windows-%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%87%BA%E7%8E%B0The-referenced-object-type-does-not-support-the-attempted-operation%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Windows 10 Pro</p>
+<p>Windows 10 Pro  </p>
 </blockquote>
-<h2 id="Pip-镜像源"><a href="#Pip-镜像源" class="headerlink" title="Pip 镜像源"></a>Pip 镜像源</h2><p>在<code>%APPDATA%</code>目录下新建<code>\pip\pip.ini\</code>，并编辑内容</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">[global]</span></span><br><span class="line"><span class="attr">timeout</span> = <span class="string">6000</span></span><br><span class="line"><span class="meta">trusted-host</span>=<span class="string">mirrors.aliyun.com</span></span><br><span class="line"><span class="meta">index-url</span>=<span class="string">http://mirrors.aliyun.com/pypi/simple/</span></span><br></pre></td></tr></table></figure>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="临时方案"><a href="#临时方案" class="headerlink" title="临时方案"></a>临时方案</h3><p>以管理员身份运行</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh winsock reset</span><br></pre></td></tr></table></figure>
 
-<p>查看</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip config get global.index-url</span><br></pre></td></tr></table></figure>
+<h3 id="永久方案"><a href="#永久方案" class="headerlink" title="永久方案"></a>永久方案</h3><p>下载<code>NoLsp</code>工具</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http://file2.happyjava.cn/NoLsp.exe</span><br></pre></td></tr></table></figure>
+<p>以管理员身份运行</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">.\NoLsp.exe C:\windows\system32\wsl.exe</span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="Yarn-Npm-镜像源"><a href="#Yarn-Npm-镜像源" class="headerlink" title="Yarn/Npm 镜像源"></a>Yarn/Npm 镜像源</h2><p>配置</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>查看</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config get registry</span><br></pre></td></tr></table></figure>
-
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://blog.actorsfit.com/a?ID=01700-55c208f3-575c-41be-b656-edda3df12ef0">Solve the problem that WSL2 and Proxifier cannot be used at the same time</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>Windows</category>
       </categories>
       <tags>
         <tag>windows</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
-    <title>Windows 重启Linux子系统</title>
-    <url>/2022/01/14/Windows-%E9%87%8D%E5%90%AFLiunx%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+    <title>Windows 常用镜像源整理</title>
+    <url>/2022/01/27/Windows-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro</p>
+</blockquote>
+<h2 id="Pip-镜像源"><a href="#Pip-镜像源" class="headerlink" title="Pip 镜像源"></a>Pip 镜像源</h2><blockquote>
+<p>在<code>%APPDATA%</code>目录下新建<code>\pip\pip.ini\</code>，并编辑内容</p>
+</blockquote>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">[global]</span></span><br><span class="line"><span class="attr">timeout</span> = <span class="string">6000</span></span><br><span class="line"><span class="meta">trusted-host</span>=<span class="string">mirrors.aliyun.com</span></span><br><span class="line"><span class="meta">index-url</span>=<span class="string">http://mirrors.aliyun.com/pypi/simple/</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip config get global.index-url</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Yarn-Npm-镜像源"><a href="#Yarn-Npm-镜像源" class="headerlink" title="Yarn/Npm 镜像源"></a>Yarn/Npm 镜像源</h2><blockquote>
+<p>配置</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config get registry</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Anaconda-源"><a href="#Anaconda-源" class="headerlink" title="Anaconda 源"></a>Anaconda 源</h2><blockquote>
+<p>配置</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">conda config -<span class="literal">-add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config -<span class="literal">-add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda<span class="literal">-forge</span> </span><br><span class="line">conda config -<span class="literal">-add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">conda config -<span class="literal">-set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">conda config -<span class="literal">-show</span><span class="literal">-sources</span></span><br><span class="line">conda clean <span class="literal">-i</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>yarn</tag>
+        <tag>config</tag>
+        <tag>npm</tag>
+        <tag>anaconda</tag>
+        <tag>windows</tag>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 重启子系统</title>
+    <url>/2022/01/14/Windows-%E9%87%8D%E5%90%AF%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>Windows 子系统（WSL）是基于 LxssManager 服务运行的，只需将 LxssManager 重启即可</p>
 </blockquote>
 <h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><blockquote>

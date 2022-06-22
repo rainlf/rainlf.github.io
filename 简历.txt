@@ -1,0 +1,11 @@
+# 简历
+
+## 简介
+做过IDEA插件
+做过spring boot starter
+做过java game
+前端 vue react
+后端 java go
+做过云原生
+做过devops
+熟悉linux 网络 io

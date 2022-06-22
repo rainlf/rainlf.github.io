@@ -46,5 +46,10 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 sudo service docker start
 ```
 
+赋予当前用户`docker`操作权限
+```shell
+ sudo usermod -aG docker $USER && newgrp docker
+```
+
 
 

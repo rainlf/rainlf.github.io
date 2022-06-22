@@ -1,6 +1,5 @@
 ---
 title: Windows 删除系统文件hiberfil.sys
-tag: [windows]
 date: 2022-01-29 14:04:09
 category: Windows
 tag: [windows, optimize]

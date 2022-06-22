@@ -31,9 +31,12 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client --output=yaml
 ```
 
-## 使用
-将连接信息写入`$HOME/.kube/config `
-查看版本
+将连接信息写入`$HOME/.kube/config `，
 ```shell
 kubectl get namespace
 ```
+
+
+## 参考
+1. [kubectl install](https://kubernetes.io/docs/tasks/tools/?spm=5176.2020520152.0.0.405816ddd71VlD)  
+1. [kubectl command](http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/)  

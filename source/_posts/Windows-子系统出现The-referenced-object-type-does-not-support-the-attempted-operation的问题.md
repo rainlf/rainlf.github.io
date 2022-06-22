@@ -28,4 +28,4 @@ http://file2.happyjava.cn/NoLsp.exe
 ```
 
 ## 参考
-[Solve the problem that WSL2 and Proxifier cannot be used at the same time](https://blog.actorsfit.com/a?ID=01700-55c208f3-575c-41be-b656-edda3df12ef0)
+1. [Solve the problem that WSL2 and Proxifier cannot be used at the same time](https://blog.actorsfit.com/a?ID=01700-55c208f3-575c-41be-b656-edda3df12ef0)

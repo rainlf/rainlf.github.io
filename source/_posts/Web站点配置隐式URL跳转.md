@@ -1,8 +1,8 @@
 ---
 title: Web站点配置隐式URL跳转
-tag: [site]
 date: 2022-01-23 11:37:48
-category:
+category: 
+tag: [config]
 ---
 
 ## 背景

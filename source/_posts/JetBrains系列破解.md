@@ -2,7 +2,7 @@
 title: JetBrains系列破解
 tag: [jetbarins]
 date: 2022-06-19 11:37:48
-category:
+category: [optimize]
 ---
 
 ## 破解

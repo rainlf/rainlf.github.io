@@ -6,9 +6,8 @@ tag: [windows, bug]
 ---
 ## 环境
 
-> Windows 10 Pro
->
-> Postman v9.0.7 
+> Windows 10 Pro  
+> Postman v9.0.7   
 
 
 

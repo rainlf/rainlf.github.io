@@ -5,6 +5,10 @@ category: Windows
 tag: [windows]
 ---
 
+## 环境
+
+> Windows 10 Pro
+
 ## 说明
 
 > Windows 子系统（WSL）是基于 LxssManager 服务运行的，只需将 LxssManager 重启即可

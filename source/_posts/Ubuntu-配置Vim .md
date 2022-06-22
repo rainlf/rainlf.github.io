@@ -1,11 +1,12 @@
 ---
 title: Ubuntu 配置Vim 
 date: 2021-11-29 11:11:11
-category: Config
+category: Ubuntu
 tag: [linux, config, vi]
 ---
 
-
+## 环境
+> Ubuntu 20.04 LTS  
 
 ## 常用配置
 

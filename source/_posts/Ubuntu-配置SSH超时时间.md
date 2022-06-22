@@ -2,7 +2,7 @@
 title: Ubuntu 配置SSH超时时间
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, ssh]
+tag: [linux, config, ssh]
 ---
 
 ## 环境

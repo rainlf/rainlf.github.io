@@ -2,7 +2,7 @@
 title: Ubuntu 配置静态IP
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, network]
+tag: [linux, config, network]
 ---
 
 ## 环境

@@ -8,7 +8,7 @@ tag: [linux, es, kibana]
 ## 环境
 
 > Ubuntu 20.04 LTS  
-> Elsticsearch 7.15.0  
+> ElsticSearch 7.15.0  
 > Kibana 7.15.0  
 
 

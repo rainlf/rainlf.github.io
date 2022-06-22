@@ -2,10 +2,11 @@
 title: Ubuntu 配置Git 
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux, git]
+tag: [linux, config, git]
 ---
 
-
+## 环境
+> Ubuntu 20.04 LTS  
 
 ## 常用配置
 

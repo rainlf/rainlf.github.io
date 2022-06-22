@@ -2,12 +2,11 @@
 title: Ubuntu 配置免密Sudo
 date: 2021-11-29 11:11:11
 category: Ubuntu
-tag: [linux]
+tag: [linux, config]
 ---
 
 ## 环境
-
-> Ubuntu 20.04 LTS
+> Ubuntu 20.04 LTS  
 
 
 

@@ -44,6 +44,11 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
 
+停止集群
+```shell
+minikube stop
+```
+
 ## 参考
 1. [minikube start](https://minikube.sigs.k8s.io/docs/start/)
 1. [kubectl command](http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/)

@@ -75,6 +75,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Kubernetes 部署Flink Kubernetes Operator</title>
+    <url>/2022/07/01/Kubernetes-%E9%83%A8%E7%BD%B2Flink-Kubernetes-Operator/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Kubectl Client Version: v1.24.2<br>Kubernetes Server Version: v1.18.8<br>Helm version: v3.9.0</p>
+</blockquote>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>部署<code>cert-manager</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.7.1/cert-manager.yaml</span><br></pre></td></tr></table></figure>
+
+<p>部署<code>flink-kubernetes-operator</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">helm repo add flink-operator-repo https://downloads.apache.org/flink/flink-kubernetes-operator-1.0.1/</span><br><span class="line">helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator</span><br><span class="line"><span class="meta">#</span><span class="bash"> 取消webhook, 指定镜像仓库, 命名空间，节点</span></span><br><span class="line">helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator -n flink --set nodeSelector.dev=flink --set webhook.create=false --set image.repository=apache/flink-kubernetes-operator</span><br></pre></td></tr></table></figure>
+
+<p>观察部署情况</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  ~ kubectl get pods -n flink</span><br><span class="line">NAME                                        READY   STATUS    RESTARTS   AGE</span><br><span class="line">flink-kubernetes-operator-64c56bfdd-924sc   1/1     Running   0          150m</span><br><span class="line">➜  ~ helm list</span><br><span class="line">NAME                            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION</span><br><span class="line">flink-kubernetes-operator       flink           1               2022-07-01 17:27:12.2651766 +0800 CST   deployed        flink-kubernetes-operator-1.0.1 1.0.1</span><br></pre></td></tr></table></figure>
+
+<p>运行示例任务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl create -f https://raw.githubusercontent.com/apache/flink-kubernetes-operator/release-1.0/examples/basic.yaml</span><br></pre></td></tr></table></figure>
+
+<p>查看任务日志</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl logs -f deploy/basic-example</span><br></pre></td></tr></table></figure>
+
+<p>删除示例任务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl delete flinkdeployment/basic-example</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Kubernetes</category>
+      </categories>
+      <tags>
+        <tag>kubernetes</tag>
+        <tag>flink</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac 安装Homebrew</title>
     <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Homebrew/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>参考<a href="https://brew.sh/">官网</a>, 命令行中输入</p>
@@ -280,8 +312,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>kubernetes</tag>
+        <tag>ubuntu</tag>
         <tag>helm</tag>
       </tags>
   </entry>
@@ -341,8 +373,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>kubernetes</tag>
+        <tag>ubuntu</tag>
         <tag>k9s</tag>
       </tags>
   </entry>
@@ -377,8 +409,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>kubernetes</tag>
+        <tag>ubuntu</tag>
         <tag>kubectl</tag>
       </tags>
   </entry>
@@ -438,8 +470,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>kubernetes</tag>
+        <tag>ubuntu</tag>
         <tag>minikube</tag>
       </tags>
   </entry>

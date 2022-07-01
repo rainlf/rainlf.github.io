@@ -33,7 +33,7 @@
 <meta property="og:description" content="环境 Ubuntu 20.04 LTS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-22T07:32:11.000Z">
-<meta property="article:modified_time" content="2022-06-22T15:40:07.869Z">
+<meta property="article:modified_time" content="2022-07-01T06:11:56.268Z">
 <meta property="article:author" content="rain">
 <meta property="article:tag" content="ubuntu">
 <meta property="article:tag" content="kubernetes">
@@ -229,10 +229,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-06-22 15:32:11 / 修改时间：23:40:07" itemprop="dateCreated datePublished" datetime="2022-06-22T15:32:11+08:00">2022-06-22</time>
+              <time title="创建时间：2022-06-22 15:32:11" itemprop="dateCreated datePublished" datetime="2022-06-22T15:32:11+08:00">2022-06-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-01 14:11:56" itemprop="dateModified" datetime="2022-07-01T14:11:56+08:00">2022-07-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -266,6 +272,9 @@
 <p>启动集群  </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ minikube start</span><br><span class="line">😄  minikube v1.25.2 on Ubuntu 20.04</span><br><span class="line">✨  Automatically selected the docker driver. Other choices: none, ssh</span><br><span class="line">👍  Starting control plane node minikube in cluster minikube</span><br><span class="line">🚜  Pulling base image ...</span><br><span class="line">💾  Downloading Kubernetes v1.23.3 preload ...</span><br><span class="line">    &gt; preloaded-images-k8s-v17-v1...: 505.68 MiB / 505.68 MiB  100.00% 634.83 K</span><br><span class="line">    &gt; index.docker.io/kicbase/sta...: 379.06 MiB / 379.06 MiB  100.00% 529.16 K</span><br><span class="line">❗  minikube was unable to download gcr.io/k8s-minikube/kicbase:v0.0.30, but successfully downloaded docker.io/kicbase/stable:v0.0.30 as a fallback image</span><br><span class="line">🔥  Creating docker container (CPUs=2, Memory=9600MB) ...</span><br><span class="line">❗  This container is having trouble accessing https://k8s.gcr.io</span><br><span class="line">💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/</span><br><span class="line">🐳  Preparing Kubernetes v1.23.3 on Docker 20.10.12 ...</span><br><span class="line">    ▪ kubelet.housekeeping-interval=5m</span><br><span class="line">    ▪ Generating certificates and keys ...</span><br><span class="line">    ▪ Booting up control plane ...</span><br><span class="line">    ▪ Configuring RBAC rules ...</span><br><span class="line">🔎  Verifying Kubernetes components...</span><br><span class="line">    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5</span><br><span class="line">🌟  Enabled addons: default-storageclass, storage-provisioner</span><br><span class="line">🏄  Done! kubectl is now configured to use &quot;minikube&quot; cluster and &quot;default&quot; namespace by default</span><br></pre></td></tr></table></figure>
 
+<p>停止集群</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube stop</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://minikube.sigs.k8s.io/docs/start/">minikube start</a></li>
 <li><a target="_blank" rel="noopener" href="http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/">kubectl command</a></li>
@@ -296,7 +305,10 @@
     <a href="/2022/06/22/Windows-%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%87%BA%E7%8E%B0The-referenced-object-type-does-not-support-the-attempted-operation%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="Windows 子系统出现The referenced object type does not support the attempted operation的问题">
       <i class="fa fa-chevron-left"></i> Windows 子系统出现The referenced object type does not support the attempted operation的问题
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/30/Ubuntu-%E5%AE%89%E8%A3%85Helm/" rel="next" title="Ubuntu 安装Helm">
+      Ubuntu 安装Helm <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -371,7 +383,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -384,7 +396,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -441,7 +453,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 6.6k</span>
+  <span class="post-count"> | Blog word count: 6.7k</span>
 </div>
 
         

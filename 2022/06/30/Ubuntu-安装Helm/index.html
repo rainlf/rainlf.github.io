@@ -25,18 +25,22 @@
     var CONFIG = {"hostname":"rainlf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="hello world">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rain&#39;s Blog">
-<meta property="og:url" content="https://rainlf.github.io/tags/shell/index.html">
+  <meta name="description" content="环境 Ubuntu 20.04 LTS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 安装Helm">
+<meta property="og:url" content="https://rainlf.github.io/2022/06/30/Ubuntu-%E5%AE%89%E8%A3%85Helm/index.html">
 <meta property="og:site_name" content="Rain&#39;s Blog">
-<meta property="og:description" content="hello world">
+<meta property="og:description" content="环境 Ubuntu 20.04 LTS">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-30T03:32:58.000Z">
+<meta property="article:modified_time" content="2022-07-01T06:11:56.268Z">
 <meta property="article:author" content="rain">
-<meta property="article:tag" content="rainlf">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="kubernetes">
+<meta property="article:tag" content="helm">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://rainlf.github.io/tags/shell/">
+<link rel="canonical" href="https://rainlf.github.io/2022/06/30/Ubuntu-%E5%AE%89%E8%A3%85Helm/">
 
 
 <script id="page-configurations">
@@ -44,12 +48,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: shell | Rain's Blog</title>
+  <title>Ubuntu 安装Helm | Rain's Blog</title>
   
 
 
@@ -196,51 +200,112 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">shell
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/06/30/Ubuntu-%E5%AE%89%E8%A3%85Helm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu 安装Helm
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-30 11:32:58" itemprop="dateCreated datePublished" datetime="2022-06-30T11:32:58+08:00">2022-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-01 14:11:56" itemprop="dateModified" datetime="2022-07-01T14:11:56+08:00">2022-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>点击<a target="_blank" rel="noopener" href="https://github.com/helm/helm/releases">这里</a>下载所需版本，如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -LO  &quot;https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz&quot;</span><br></pre></td></tr></table></figure>
+
+<p>解压安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf helm-v3.9.0-linux-amd64.tar.gz</span><br><span class="line">sudo install helm /usr/local/bin/helm</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>初次安装使用时，可能遇到如下问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/rain/.kube/config</span><br></pre></td></tr></table></figure>
+<p>执行如下命令，删除同组与其他用户的读写权限即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 ~/.kube/config</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-28T15:31:52+08:00"
-              content="2022-02-28">
-          02-28
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              
+              <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+              
+              <a href="/tags/kubernetes/" rel="tag"><i class="fa fa-tag"></i> kubernetes</a>
+              
+              <a href="/tags/helm/" rel="tag"><i class="fa fa-tag"></i> helm</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/" itemprop="url">
-            <span itemprop="name">Ubuntu 常用Shell脚本整理</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85Minikube/" rel="prev" title="Ubuntu 安装Minikube">
+      <i class="fa fa-chevron-left"></i> Ubuntu 安装Minikube
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -293,6 +358,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">3.</span> <span class="nav-text">注意</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

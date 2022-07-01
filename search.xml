@@ -260,6 +260,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu 安装Helm</title>
+    <url>/2022/06/30/Ubuntu-%E5%AE%89%E8%A3%85Helm/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>点击<a href="https://github.com/helm/helm/releases">这里</a>下载所需版本，如</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -LO  &quot;https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz&quot;</span><br></pre></td></tr></table></figure>
+
+<p>解压安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf helm-v3.9.0-linux-amd64.tar.gz</span><br><span class="line">sudo install helm /usr/local/bin/helm</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>初次安装使用时，可能遇到如下问题</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/rain/.kube/config</span><br></pre></td></tr></table></figure>
+<p>执行如下命令，删除同组与其他用户的读写权限即可</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.kube/config</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>kubernetes</tag>
+        <tag>helm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu 安装JDK</title>
     <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85JDK/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -399,6 +425,9 @@
 
 <p>启动集群  </p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  ~ minikube start</span><br><span class="line">😄  minikube v1.25.2 on Ubuntu 20.04</span><br><span class="line">✨  Automatically selected the docker driver. Other choices: none, ssh</span><br><span class="line">👍  Starting control plane node minikube in cluster minikube</span><br><span class="line">🚜  Pulling base image ...</span><br><span class="line">💾  Downloading Kubernetes v1.23.3 preload ...</span><br><span class="line">    &gt; preloaded-images-k8s-v17-v1...: 505.68 MiB / 505.68 MiB  100.00% 634.83 K</span><br><span class="line">    &gt; index.docker.io/kicbase/sta...: 379.06 MiB / 379.06 MiB  100.00% 529.16 K</span><br><span class="line">❗  minikube was unable to download gcr.io/k8s-minikube/kicbase:v0.0.30, but successfully downloaded docker.io/kicbase/stable:v0.0.30 as a fallback image</span><br><span class="line">🔥  Creating docker container (CPUs=2, Memory=9600MB) ...</span><br><span class="line">❗  This container is having trouble accessing https://k8s.gcr.io</span><br><span class="line">💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/</span><br><span class="line">🐳  Preparing Kubernetes v1.23.3 on Docker 20.10.12 ...</span><br><span class="line">    ▪ kubelet.housekeeping-interval=5m</span><br><span class="line">    ▪ Generating certificates and keys ...</span><br><span class="line">    ▪ Booting up control plane ...</span><br><span class="line">    ▪ Configuring RBAC rules ...</span><br><span class="line">🔎  Verifying Kubernetes components...</span><br><span class="line">    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5</span><br><span class="line">🌟  Enabled addons: default-storageclass, storage-provisioner</span><br><span class="line">🏄  Done! kubectl is now configured to use &quot;minikube&quot; cluster and &quot;default&quot; namespace by default</span><br></pre></td></tr></table></figure>
+
+<p>停止集群</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">minikube stop</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://minikube.sigs.k8s.io/docs/start/">minikube start</a></li>

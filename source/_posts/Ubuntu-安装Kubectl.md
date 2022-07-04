@@ -36,6 +36,23 @@ kubectl version --client --output=yaml
 kubectl get namespace
 ```
 
+## 常用命令
+```shell
+kubectl config view                         # 查看kubectl配置
+kubectl config get-contexts                 # 查看kubectl context列表
+kubectl config use-context <context-name>   # 设置当前context
+kubectl config current-context              # 查看当前context
+kubectl config set-context --current --namespace=<namespace>    # 设置当前context default namespace
+
+kubectl get node                            # 获取kubernetes节点
+kubectl get node -o wide                    # 获取kubernetes节点（展示详细信息）
+kubectl get node --show-labels              # 获取kubernetes节点（展示label信息）
+
+kubectl get pods                            # 获取pod（default namespace）
+kubectl get node -n <namespace>             # 获取pod（指定 namespace）
+kubectl get node --all-namespace            # 获取pod（全部 namespace）
+kubectl get pod <pod-name> -o yaml          # 获取pod（yaml格式）
+```
 
 ## 参考
 1. [kubectl install](https://kubernetes.io/docs/tasks/tools/?spm=5176.2020520152.0.0.405816ddd71VlD)  

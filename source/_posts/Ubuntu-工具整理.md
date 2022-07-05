@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 常用工具整理
+title: Ubuntu 工具整理
 date: 2021-11-29 11:11:11
 tag: [linux]
 ---

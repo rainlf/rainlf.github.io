@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 常用镜像源整理
+title: Ubuntu 镜像源整理
 date: 2021-11-29 11:11:11
 category: Ubuntu
 tag: [linux, config, apt, npm, anaconda]

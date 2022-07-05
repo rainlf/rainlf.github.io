@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 常用用户管理
+title: Ubuntu 用户管理
 date: 2021-11-29 11:11:11
 category: Ubuntu
 tag: [linux]

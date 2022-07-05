@@ -1,5 +1,5 @@
 ---
-title: Windows 常用镜像源整理
+title: Windows 镜像源整理
 date: 2022-01-27 15:11:40
 category: Windows
 tag: [windows, config, pip, yarn, npm, anaconda]

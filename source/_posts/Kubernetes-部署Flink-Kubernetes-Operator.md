@@ -1,7 +1,7 @@
 ---
 title: Kubernetes 部署Flink Kubernetes Operator
 date: 2022-07-01 19:58:42
-category: Kubernetes
+category: Cloud Native
 tag: [kubernetes, flink]
 ---
 

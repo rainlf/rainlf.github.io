@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装PostgreSQL
 date: 2022-02-08 17:03:13
-category: Ubuntu
+category: Linux
 tag: [linux, postgresql]
 ---
 

@@ -1,12 +1,8 @@
 ---
-title: Ubuntu Shell脚本整理
+title: Shell 脚本整理
 tag: [linux, shell]
 date: 2022-02-28 15:31:52
 ---
-
-## 环境
-> Ubuntu 20.04 LTS  
-
 
 ## 批量执行命令
 

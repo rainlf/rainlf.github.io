@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装K9s
 date: 2022-06-22 10:49:25
-category: Ubuntu
+category: Linux
 tag: [ubuntu, kubernetes, k9s]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装Docker
 date: 2022-02-10 18:17:41
-category: Ubuntu
+category: Linux
 tag: [linux, docker]
 ---
 

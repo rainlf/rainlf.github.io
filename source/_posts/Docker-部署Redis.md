@@ -1,7 +1,7 @@
 ---
 title: Docker 部署Redis
 date: 2022-02-18 18:22:11
-category: Docker
+category: Cloud Native
 tag: [docker, redis]
 ---
 

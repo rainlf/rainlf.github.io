@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装Redis
 date: 2021-11-29 11:11:11
-category: Ubuntu
+category: Linux
 tag: [linux, redis]
 ---
 

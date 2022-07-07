@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 配置免密Sudo
 date: 2021-11-29 11:11:11
-category: Ubuntu
+category: Linux
 tag: [linux, config]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装Kubectl
 date: 2022-06-22 11:35:41
-category: Ubuntu
+category: Linux
 tag: [ubuntu, kubernetes, kubectl]
 ---
 

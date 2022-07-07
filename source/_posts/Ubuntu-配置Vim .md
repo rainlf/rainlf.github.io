@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 配置Vim 
 date: 2021-11-29 11:11:11
-category: Ubuntu
+category: Linux
 tag: [linux, config, vi]
 ---
 

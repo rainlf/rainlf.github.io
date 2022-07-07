@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装Minikube
 date: 2022-06-22 15:32:11
-category: Ubuntu
+category: Linux
 tag: [ubuntu, kubernetes, minikube]
 ---
 

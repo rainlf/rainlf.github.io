@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 安装Helm
 date: 2022-06-30 11:32:58
-category: Ubuntu
+category: Linux
 tag: [ubuntu, kubernetes, helm]
 ---
 

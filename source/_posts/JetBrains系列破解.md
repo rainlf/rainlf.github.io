@@ -1,7 +1,7 @@
 ---
 title: JetBrains系列激活
-category: [optimize]
 date: 2022-06-19 11:37:48
+category: [Windows]
 tag: [optimize]
 ---
 

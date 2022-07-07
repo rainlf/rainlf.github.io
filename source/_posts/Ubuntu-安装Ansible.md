@@ -1,7 +1,6 @@
 ---
 title: Ubuntu 安装Ansible
 date: 2022-07-07 19:35:06
-category:
 category: Linux
 tag: [linux, ansible]
 ---

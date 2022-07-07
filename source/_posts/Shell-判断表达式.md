@@ -1,5 +1,5 @@
 ---
-title: Shell 判读逻辑
+title: Shell 判断表达式
 date: 2022-07-07 19:56:52
 tag: [linux, shell]
 ---

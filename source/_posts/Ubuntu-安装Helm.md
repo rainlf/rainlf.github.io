@@ -6,7 +6,6 @@ tag: [ubuntu, kubernetes, helm]
 ---
 
 ## 环境
-
 > Ubuntu 20.04 LTS  
 
 ## 安装

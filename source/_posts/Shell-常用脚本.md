@@ -1,7 +1,7 @@
 ---
 title: Shell 脚本整理
-tag: [linux, shell]
 date: 2022-02-28 15:31:52
+tag: [linux, shell]
 ---
 
 ## 批量执行命令

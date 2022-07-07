@@ -6,7 +6,6 @@ tag: [linux, docker]
 ---
 
 ## 环境
-
 > Ubuntu 20.04 LTS  
 > Docker 20.10.12  
 

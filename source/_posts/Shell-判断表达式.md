@@ -6,7 +6,7 @@ tag: [linux, shell]
 
 ## 语法
 ```shell
-[ 表达式 ] && echo yes || echo no
+[ condition ] && echo yes || echo no
 ```
 
 ## 按文件类型判断

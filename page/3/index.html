@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -202,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nginx/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/01/141e8700bd2f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -216,7 +216,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nginx/" class="post-title-link" itemprop="url">Ubuntu 安装Nginx</a>
+            <a href="/2022/07/01/141e8700bd2f/" class="post-title-link" itemprop="url">Kubernetes 部署Flink Kubernetes Operator</a>
         </h2>
 
         <div class="post-meta">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-07-01 19:58:42" itemprop="dateCreated datePublished" datetime="2022-07-01T19:58:42+08:00">2022-07-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Cloud-Native/" itemprop="url" rel="index"><span itemprop="name">Cloud Native</span></a>
                 </span>
             </span>
 
@@ -256,13 +256,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>Nginx 1.14.0</p>
-</blockquote>
+          环境
+Kubectl Client Version: v1.24.2
+Kubernetes Server Version: v1.18.8
+Helm version: v3.9.0
+
+部署
+部署cert-manager
+
+1
+
+
+kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.7.1/cert-manager.yaml
+
+
+部署flink-kubernetes-operator
+
+1
+2
+3
+4
+
+
+helm repo add flink-operator-repo https://
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nginx/#more" rel="contents">
+              <a class="btn" href="/2022/07/01/141e8700bd2f/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -286,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85OhMyZsh/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/06/19/fae8353f74f2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -300,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85OhMyZsh/" class="post-title-link" itemprop="url">Ubuntu 安装OhMyZsh</a>
+            <a href="/2022/06/19/fae8353f74f2/" class="post-title-link" itemprop="url">Mac 安装Homebrew</a>
         </h2>
 
         <div class="post-meta">
@@ -310,14 +329,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-06-19 11:01:53" itemprop="dateCreated datePublished" datetime="2022-06-19T11:01:53+08:00">2022-06-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -325,7 +344,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
                 </span>
             </span>
 
@@ -340,12 +359,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
+          安装
+参考官网, 命令行中输入
+
+1
+
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85OhMyZsh/#more" rel="contents">
+              <a class="btn" href="/2022/06/19/fae8353f74f2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -369,7 +392,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/08/Ubuntu-%E5%AE%89%E8%A3%85PostgreSQL/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/06/19/292c42269141/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -383,7 +406,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/08/Ubuntu-%E5%AE%89%E8%A3%85PostgreSQL/" class="post-title-link" itemprop="url">Ubuntu 安装PostgreSQL</a>
+            <a href="/2022/06/19/292c42269141/" class="post-title-link" itemprop="url">Mac 安装MySQL</a>
         </h2>
 
         <div class="post-meta">
@@ -393,14 +416,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-02-08 17:03:13" itemprop="dateCreated datePublished" datetime="2022-02-08T17:03:13+08:00">2022-02-08</time>
+              <time title="创建时间：2022-06-19 11:03:55" itemprop="dateCreated datePublished" datetime="2022-06-19T11:03:55+08:00">2022-06-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -408,7 +431,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
                 </span>
             </span>
 
@@ -423,13 +446,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-<p>PostgresQL 14.1</p>
-</blockquote>
+          步骤
+安装
+
+1
+
+
+brew install mysql
+
+
+启动
+
+1
+
+
+brew services start mysql
+
+
+初始化安全策略与配置，参考Ubuntu 安装MySQL
+
+1
+
+
+mysql_secure_installation
+
+
+登陆
+
+1
+
+
+mysql -u root -p
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/02/08/Ubuntu-%E5%AE%89%E8%A3%85PostgreSQL/#more" rel="contents">
+              <a class="btn" href="/2022/06/19/292c42269141/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -453,7 +503,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Redis/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/06/19/c0d16b5e08af/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -467,7 +517,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Redis/" class="post-title-link" itemprop="url">Ubuntu 安装Redis</a>
+            <a href="/2022/06/19/c0d16b5e08af/" class="post-title-link" itemprop="url">Mac 安装Visual Studio Code</a>
         </h2>
 
         <div class="post-meta">
@@ -477,14 +527,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-06-19 10:02:27" itemprop="dateCreated datePublished" datetime="2022-06-19T10:02:27+08:00">2022-06-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -492,7 +542,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
                 </span>
             </span>
 
@@ -507,13 +557,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-<p>Redis 4.0.9</p>
-</blockquote>
+          安装
+前往官网，下载最新版本，复制下载链接如
+
+1
+
+
+https://az764295.vo.msecnd.net/stable/30d9c6cd9483b2cc586687151bcbcd635f373630/VSCode-darwin-universal.zip
+
+
+海外服务器存在下载速度过慢的问题，将其中的域名替换为vscode.cdn.azure.cn即可，如
+
+1
+
+
+https://vscode.cdn.azure.cn/stable/30d9c6cd9483b2cc586687151bcbcd635f373630/VSCode-darwin-universal.zip
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Redis/#more" rel="contents">
+              <a class="btn" href="/2022/06/19/c0d16b5e08af/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -537,7 +598,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AENVM/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/06/19/eb8a48f105b9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -551,7 +612,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AENVM/" class="post-title-link" itemprop="url">Ubuntu 安装与配置NVM</a>
+            <a href="/2022/06/19/eb8a48f105b9/" class="post-title-link" itemprop="url">Mac 安装Yarn</a>
         </h2>
 
         <div class="post-meta">
@@ -561,14 +622,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-06-19 12:19:28" itemprop="dateCreated datePublished" datetime="2022-06-19T12:19:28+08:00">2022-06-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -576,7 +637,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
                 </span>
             </span>
 
@@ -591,12 +652,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
+          安装
+使用homebrew安装
+
+1
+
+
+brew install yarn
+
+
+配置镜像源
+安装yrm
+
+1
+
+
+yarn global add yrm
+
+
+查询可用镜像源
+
+1
+
+
+yrm ls
+
+
+测试镜像源，如
+
+1
+
+
+yrm test taobao        
+
+
+选择镜像源，如
+
+1
+
+
+yrm use taobao
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AENVM/#more" rel="contents">
+              <a class="btn" href="/2022/06/19/eb8a48f105b9/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -620,7 +718,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/27/f83ae2ca5951/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -634,7 +732,204 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/" class="post-title-link" itemprop="url">Ubuntu 常用Shell脚本整理</a>
+            <a href="/2022/02/27/f83ae2ca5951/" class="post-title-link" itemprop="url">Mac 安装与卸载Java</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-27 15:11:43" itemprop="dateCreated datePublished" datetime="2022-02-27T15:11:43+08:00">2022-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          安装
+首先前往官方地址，下载所需版本的安装文件
+
+安装后修改.zshrc
+
+1
+2
+3
+4
+5
+6
+7
+
+
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+export JAVA_11_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_17_HOME=`/usr/libexec/java_home -v 17`
+export JAVA_HOME=$JAVA_17_HOME
+alias jdk8="export JAVA_HOME=
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/27/f83ae2ca5951/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/07/ba0f3454079b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/07/ba0f3454079b/" class="post-title-link" itemprop="url">Shell 判断表达式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-07 19:56:52" itemprop="dateCreated datePublished" datetime="2022-07-07T19:56:52+08:00">2022-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          语法
+1
+
+
+[ condition ] && echo yes || echo no
+
+
+按文件类型判断
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+-e <file>       # 判断是否存在
+-d <file>       # 判断是否存在，并且为目录文件
+-f <file>       # 判断是否存在，并且为普通文件
+-s <file>       # 判断是否存在，并且为非空
+-p <file>       # 判断是否存在，并且为管道文件
+-b <file>       # 判断是否存在，并且为块设备文件
+-c <file>       # 判断是否存在，并且为符号设备文件
+-L
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/07/ba0f3454079b/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/28/e1274cc7b665/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/28/e1274cc7b665/" class="post-title-link" itemprop="url">Shell 脚本整理</a>
         </h2>
 
         <div class="post-meta">
@@ -651,7 +946,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
 
           
@@ -665,12 +960,57 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-</blockquote>
+          批量执行命令
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+
+#! /usr/bin/bash
+
+cmd=$1
+
+hosts=(
+  "host1"
+  "host2"
+  "host3"
+)
+
+if [ "x$cmd" = "x" ]
+then
+  echo "Failed: cmd can't be empty"
+  exit -1
+fi
+
+for host in "${hosts[@]}"
+do
+  echo "begin to run $cmd on $host"
+  ssh $host $cmd
+done
+
+
+批量拷贝文
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/#more" rel="contents">
+              <a class="btn" href="/2022/02/28/e1274cc7b665/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -694,7 +1034,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/07/e1cd445e02ee/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -708,7 +1048,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/" class="post-title-link" itemprop="url">Ubuntu 常用工具整理</a>
+            <a href="/2022/07/07/e1cd445e02ee/" class="post-title-link" itemprop="url">Shell 控制语法</a>
         </h2>
 
         <div class="post-meta">
@@ -718,14 +1058,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-07-07 20:19:22" itemprop="dateCreated datePublished" datetime="2022-07-07T20:19:22+08:00">2022-07-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
 
           
@@ -739,12 +1079,70 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
+          IF 语法
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+
+
+if [ condition ]; then
+  ...
+fi
+
+if [ condition ]
+  then
+  ...
+fi
+
+if [ condition ]; then
+  ...
+elif [ condition ]; then
+  ...
+else
+  ...
+fi
+
+
+CASE 语法
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+case $var in
+  "value1")
+    ...
+    ;;
+  "value2")
+    ...
+    ;;
+esac
+
+
+FOR 语法
+1
+2
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/#more" rel="contents">
+              <a class="btn" href="/2022/07/07/e1cd445e02ee/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -768,7 +1166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/07/535788fd6c1b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -782,7 +1180,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">Ubuntu 常用用户管理</a>
+            <a href="/2022/07/07/535788fd6c1b/" class="post-title-link" itemprop="url">Ubuntu 安装Ansible</a>
         </h2>
 
         <div class="post-meta">
@@ -792,14 +1190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-07-07 19:35:06" itemprop="dateCreated datePublished" datetime="2022-07-07T19:35:06+08:00">2022-07-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
+                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -807,7 +1205,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
             </span>
 
@@ -822,178 +1220,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
+          环境
+Ubuntu 20.04 LTS
+Docker 20.10.12 
+
+步骤
+Ansible使用SSH协议来管理主机，管理节点与托管节点需要建立ssh免密登陆通道，同时管理节点与托管节点均需要Python2.7环境
+在管理节点上安装
+
+1
+2
+3
+4
+
+
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
+
+编辑Inventory文件
+
+1
+2
+3
+4
+5
+6
+
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90%E6%95%B4%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90%E6%95%B4%E7%90%86/" class="post-title-link" itemprop="url">Ubuntu 常用镜像源整理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90%E6%95%B4%E7%90%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEGit%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEGit%20/" class="post-title-link" itemprop="url">Ubuntu 配置Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-01 20:46:20" itemprop="dateModified" datetime="2022-07-01T20:46:20+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEGit%20/#more" rel="contents">
+              <a class="btn" href="/2022/07/07/535788fd6c1b/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1084,20 +1342,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1154,7 +1412,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 6.9k</span>
+  <span class="post-count"> | Blog word count: 8.1k</span>
 </div>
 
         

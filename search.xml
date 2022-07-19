@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Docker 部署Redis</title>
-    <url>/2022/02/18/Docker-%E9%83%A8%E7%BD%B2Redis/</url>
+    <url>/2022/02/18/21422f0e6efa/</url>
     <content><![CDATA[<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>Docker</code> 部署<code>redis</code>服务器，配置密码认证登陆。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>下载镜像</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo docker pull redis:latest</span><br></pre></td></tr></table></figure>
@@ -15,7 +15,7 @@
 
 ]]></content>
       <categories>
-        <category>Docker</category>
+        <category>Cloud Native</category>
       </categories>
       <tags>
         <tag>docker</tag>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title>Hexo+Github搭建博客</title>
-    <url>/2021/11/29/Hexo+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <url>/2021/11/29/f7f2e19d8290/</url>
     <content><![CDATA[<p>使用<code>Hexo</code>搭建博客，配置<code>Next</code>主题，并搭配<code>Github</code>实现自动构建与部署。</p>
 <h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在安装好的了<code>Node</code>环境中，运行</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
@@ -60,7 +60,7 @@
   </entry>
   <entry>
     <title>JetBrains系列激活</title>
-    <url>/2022/06/19/JetBrains%E7%B3%BB%E5%88%97%E7%A0%B4%E8%A7%A3/</url>
+    <url>/2022/06/19/c2b8d6bab035/</url>
     <content><![CDATA[<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>访问<a href="https://3.jetbra.in/">链接列表</a>，选择可用链接如<a href="https://ipfs.io/ipfs/bafybeicb5ndmec4twnrohkcbadxwd3h2bso3hw7dbss3b632oq4nesdfrq/">这里</a>  </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://ipfs.io/ipfs/bafybeicb5ndmec4twnrohkcbadxwd3h2bso3hw7dbss3b632oq4nesdfrq/</span><br></pre></td></tr></table></figure>
 
@@ -68,7 +68,7 @@
 <p>打开<code>IDE</code>，粘贴上述站点对应的<code>ActiveCode</code>即可  </p>
 ]]></content>
       <categories>
-        <category>optimize</category>
+        <category>Windows</category>
       </categories>
       <tags>
         <tag>optimize</tag>
@@ -76,7 +76,7 @@
   </entry>
   <entry>
     <title>Kubernetes 部署Flink Kubernetes Operator</title>
-    <url>/2022/07/01/Kubernetes-%E9%83%A8%E7%BD%B2Flink-Kubernetes-Operator/</url>
+    <url>/2022/07/01/141e8700bd2f/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Kubectl Client Version: v1.24.2<br>Kubernetes Server Version: v1.18.8<br>Helm version: v3.9.0</p>
 </blockquote>
@@ -84,7 +84,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.7.1/cert-manager.yaml</span><br></pre></td></tr></table></figure>
 
 <p>部署<code>flink-kubernetes-operator</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">helm repo add flink-operator-repo https://downloads.apache.org/flink/flink-kubernetes-operator-1.0.1/</span><br><span class="line">helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator</span><br><span class="line"><span class="meta">#</span><span class="bash"> 取消webhook, 指定镜像仓库, 命名空间，节点</span></span><br><span class="line">helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator -n flink --set nodeSelector.dev=flink --set webhook.create=false --set image.repository=apache/flink-kubernetes-operator</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">helm repo add flink-operator-repo https://downloads.apache.org/flink/flink-kubernetes-operator-1.0.1/</span><br><span class="line">helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">取消webhook, 指定镜像仓库, 命名空间，节点</span></span><br><span class="line">helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator -n flink --set nodeSelector.dev=flink --set webhook.create=false --set image.repository=apache/flink-kubernetes-operator</span><br></pre></td></tr></table></figure>
 
 <p>观察部署情况</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  ~ kubectl get pods -n flink</span><br><span class="line">NAME                                        READY   STATUS    RESTARTS   AGE</span><br><span class="line">flink-kubernetes-operator-64c56bfdd-924sc   1/1     Running   0          150m</span><br><span class="line">➜  ~ helm list</span><br><span class="line">NAME                            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION</span><br><span class="line">flink-kubernetes-operator       flink           1               2022-07-01 17:27:12.2651766 +0800 CST   deployed        flink-kubernetes-operator-1.0.1 1.0.1</span><br></pre></td></tr></table></figure>
@@ -99,7 +99,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl delete flinkdeployment/basic-example</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Kubernetes</category>
+        <category>Cloud Native</category>
       </categories>
       <tags>
         <tag>kubernetes</tag>
@@ -108,7 +108,7 @@
   </entry>
   <entry>
     <title>Mac 安装Homebrew</title>
-    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Homebrew/</url>
+    <url>/2022/06/19/fae8353f74f2/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>参考<a href="https://brew.sh/">官网</a>, 命令行中输入</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
@@ -121,7 +121,7 @@
   </entry>
   <entry>
     <title>Mac 安装MySQL</title>
-    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85MySQL/</url>
+    <url>/2022/06/19/292c42269141/</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
 
@@ -143,7 +143,7 @@
   </entry>
   <entry>
     <title>Mac 安装Visual Studio Code</title>
-    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Visual-Studio-Code/</url>
+    <url>/2022/06/19/c0d16b5e08af/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>前往<a href="https://code.visualstudio.com/">官网</a>，下载最新版本，复制下载链接如</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://az764295.vo.msecnd.net/stable/30d9c6cd9483b2cc586687151bcbcd635f373630/VSCode-darwin-universal.zip</span><br></pre></td></tr></table></figure>
 <p>海外服务器存在下载速度过慢的问题，将其中的域名替换为<code>vscode.cdn.azure.cn</code>即可，如</p>
@@ -158,7 +158,7 @@
   </entry>
   <entry>
     <title>Mac 安装Yarn</title>
-    <url>/2022/06/19/Mac-%E5%AE%89%E8%A3%85Yarn/</url>
+    <url>/2022/06/19/eb8a48f105b9/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用<code>homebrew</code>安装</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
 
@@ -184,7 +184,7 @@
   </entry>
   <entry>
     <title>Mac 安装与卸载Java</title>
-    <url>/2022/02/27/Mac-%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJava/</url>
+    <url>/2022/02/27/f83ae2ca5951/</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先前往<a href="https://www.oracle.com/java/technologies/downloads/">官方地址</a>，下载所需版本的安装文件</p>
 <p>安装后修改<code>.zshrc</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home</span><br><span class="line">export JAVA_11_HOME=`/usr/libexec/java_home -v 11`</span><br><span class="line">export JAVA_17_HOME=`/usr/libexec/java_home -v 17`</span><br><span class="line">export JAVA_HOME=$JAVA_17_HOME</span><br><span class="line">alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;</span><br><span class="line">alias jdk11=&quot;export JAVA_HOME=$JAVA_11_HOME&quot;</span><br><span class="line">alias jdk17=&quot;export JAVA_HOME=$JAVA_17_HOME&quot;</span><br></pre></td></tr></table></figure>
@@ -210,8 +210,97 @@
       </tags>
   </entry>
   <entry>
+    <title>Shell 判断表达式</title>
+    <url>/2022/07/07/ba0f3454079b/</url>
+    <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[ condition ] &amp;&amp; echo yes || echo no</span><br></pre></td></tr></table></figure>
+
+<h2 id="按文件类型判断"><a href="#按文件类型判断" class="headerlink" title="按文件类型判断"></a>按文件类型判断</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-e &lt;file&gt;       # 判断是否存在</span><br><span class="line">-d &lt;file&gt;       # 判断是否存在，并且为目录文件</span><br><span class="line">-f &lt;file&gt;       # 判断是否存在，并且为普通文件</span><br><span class="line">-s &lt;file&gt;       # 判断是否存在，并且为非空</span><br><span class="line">-p &lt;file&gt;       # 判断是否存在，并且为管道文件</span><br><span class="line">-b &lt;file&gt;       # 判断是否存在，并且为块设备文件</span><br><span class="line">-c &lt;file&gt;       # 判断是否存在，并且为符号设备文件</span><br><span class="line">-L &lt;file&gt;       # 判断是否存在，并且为符号链接文件</span><br><span class="line">-S &lt;file&gt;       # 判断是否存在，并且为套接字文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="按文件权限判断"><a href="#按文件权限判断" class="headerlink" title="按文件权限判断"></a>按文件权限判断</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-r &lt;file&gt;       # 判断是否存在，并且拥有读权限</span><br><span class="line">-w &lt;file&gt;       # 判断是否存在，并且拥有写权限</span><br><span class="line">-x &lt;file&gt;       # 判断是否存在，并且拥有执行权限</span><br><span class="line">-u &lt;file&gt;       # 判断是否存在，并且拥有SUID权限</span><br><span class="line">-g &lt;file&gt;       # 判断是否存在，并且拥有SGID权限</span><br><span class="line">-k &lt;file&gt;       # 判断是否存在，并且拥有SBit权限</span><br></pre></td></tr></table></figure>
+
+<h2 id="按文件比较判断"><a href="#按文件比较判断" class="headerlink" title="按文件比较判断"></a>按文件比较判断</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&lt;file1&gt; -nt &lt;file2&gt;     # 判断file1是否 比file2修改时间新</span><br><span class="line">&lt;file1&gt; -ot &lt;file2&gt;     # 判断file1是否 比file2修改时间旧</span><br><span class="line">&lt;file1&gt; -ef &lt;file2&gt;     # 判断file1是否 与file2Inode号一致（同一文件）</span><br></pre></td></tr></table></figure>
+
+<h2 id="数字比较"><a href="#数字比较" class="headerlink" title="数字比较"></a>数字比较</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&lt;num1&gt; -eq &lt;num2&gt;       # 判断num1是否等于num1</span><br><span class="line">&lt;num1&gt; -ne &lt;num2&gt;       # 判断num1是否不等于num1</span><br><span class="line">&lt;num1&gt; -gt &lt;num2&gt;       # 判断num1是否大于num1</span><br><span class="line">&lt;num1&gt; -lt &lt;num2&gt;       # 判断num1是否小于num1</span><br><span class="line">&lt;num1&gt; -ge &lt;num2&gt;       # 判断num1是否大于等于num1</span><br><span class="line">&lt;num1&gt; -le &lt;num2&gt;       # 判断num1是否小于等于num1</span><br></pre></td></tr></table></figure>
+
+<h2 id="数字比较-1"><a href="#数字比较-1" class="headerlink" title="数字比较"></a>数字比较</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-z &lt;string&gt;         # 判断字符串是否为空</span><br><span class="line">-n &lt;string&gt;         # 判断字符串是否非空</span><br><span class="line">&lt;string1&gt; == &lt;string2&gt;         # 判断字符串是否相等</span><br><span class="line">&lt;string1&gt; != &lt;string2&gt;         # 判断字符串是否不等</span><br></pre></td></tr></table></figure>
+
+<h2 id="组合判断"><a href="#组合判断" class="headerlink" title="组合判断"></a>组合判断</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&lt;condition1&gt; -a &lt;condition2&gt;    # 逻辑与</span><br><span class="line">&lt;condition1&gt; -o &lt;condition2&gt;    # 逻辑或</span><br><span class="line">! &lt;condition1&gt;                  # 逻辑取反</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Shell 脚本整理</title>
+    <url>/2022/02/28/e1274cc7b665/</url>
+    <content><![CDATA[<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="批量拷贝文件"><a href="#批量拷贝文件" class="headerlink" title="批量拷贝文件"></a>批量拷贝文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">src=$1</span><br><span class="line">dst=$2</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$src&quot; = &quot;x&quot; -o &quot;x$dst&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: src or dst can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to scp $src to $host:$dst&quot;</span><br><span class="line">  scp -r $src $host:$dst</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Shell 控制语法</title>
+    <url>/2022/07/07/e1cd445e02ee/</url>
+    <content><![CDATA[<h2 id="IF-语法"><a href="#IF-语法" class="headerlink" title="IF 语法"></a>IF 语法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">if [ condition ]; then</span><br><span class="line">  ...</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ condition ]</span><br><span class="line">  then</span><br><span class="line">  ...</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ condition ]; then</span><br><span class="line">  ...</span><br><span class="line">elif [ condition ]; then</span><br><span class="line">  ...</span><br><span class="line">else</span><br><span class="line">  ...</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h2 id="CASE-语法"><a href="#CASE-语法" class="headerlink" title="CASE 语法"></a>CASE 语法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">case $var in</span><br><span class="line">  &quot;value1&quot;)</span><br><span class="line">    ...</span><br><span class="line">    ;;</span><br><span class="line">  &quot;value2&quot;)</span><br><span class="line">    ...</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<h2 id="FOR-语法"><a href="#FOR-语法" class="headerlink" title="FOR 语法"></a>FOR 语法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">for var in value1 value2 ...</span><br><span class="line">do</span><br><span class="line">   ... $var ...</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for ((i=1; i&lt;100; i=i+1))</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h2 id="WHILE-语法"><a href="#WHILE-语法" class="headerlink" title="WHILE 语法"></a>WHILE 语法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">while [ condition ]</span><br><span class="line">do</span><br><span class="line">  ...</span><br><span class="line">done</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 安装Ansible</title>
+    <url>/2022/07/07/535788fd6c1b/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS<br>Docker 20.10.12  </p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><code>Ansible</code>使用<code>SSH</code>协议来管理主机，管理节点与托管节点需要建立<code>ssh</code>免密登陆通道，同时管理节点与托管节点均需要<code>Python2.7</code>环境<br>在管理节点上安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo apt-add-repository ppa:ansible/ansible</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ansible</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>Inventory</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/ansible/hosts</span><br><span class="line">---</span><br><span class="line">[group_name]</span><br><span class="line">host1</span><br><span class="line">host2</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>查看<code>ansible</code>支持的模块</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ansible-doc -l</span><br></pre></td></tr></table></figure>
+
+<p>查看模块的详细帮助信息</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ansible-doc &lt;module_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ansible &lt;group or host&gt; -m ping</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ansible &lt;host&gt; -a &quot;echo hello world&quot;            # 执行命令，默认使用command模块，该模块不支持管道符与重定向符号</span><br><span class="line">ansible &lt;host&gt; -m shell -a &quot;echo hello world&quot;   # 执行命令，支持管道符与重定向符号</span><br><span class="line">ansible &lt;host&gt; -copy -a &quot;src=./xx dest=~/&quot;      # 拷贝文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="PlayBook模板"><a href="#PlayBook模板" class="headerlink" title="PlayBook模板"></a>PlayBook模板</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">hosts:</span> <span class="string">test</span></span><br><span class="line">  <span class="attr">vars:</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">foo</span></span><br><span class="line">    <span class="attr">home:</span> <span class="string">/home/&#123;&#123;</span> <span class="string">user</span> <span class="string">&#125;&#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">exec</span> <span class="string">shell</span> <span class="string">command</span></span><br><span class="line">    <span class="attr">shell:</span> <span class="string">cp</span> <span class="string">/tmp/xx</span> <span class="string">/tmp/yy</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">exec</span> <span class="string">shell</span> <span class="string">command</span> <span class="string">with</span> <span class="string">sudo</span></span><br><span class="line">    <span class="attr">shell:</span> <span class="string">cp</span> <span class="string">/tmp/xx</span> <span class="string">/tmp/yy</span></span><br><span class="line">    <span class="attr">become:</span> <span class="literal">yes</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">exec</span> <span class="string">multi</span> <span class="string">shell</span> <span class="string">command</span> <span class="string">and</span> <span class="string">without</span> <span class="string">warning</span></span><br><span class="line">    <span class="attr">shell:</span></span><br><span class="line">      <span class="attr">cmd:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        command 1</span></span><br><span class="line"><span class="string">        command 2</span></span><br><span class="line"><span class="string">        command ...</span></span><br><span class="line"><span class="string"></span>    <span class="attr">become:</span> <span class="literal">yes</span></span><br><span class="line">    <span class="attr">args:</span></span><br><span class="line">     <span class="attr">warn:</span> <span class="literal">false</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">copy</span> <span class="string">file</span></span><br><span class="line">    <span class="attr">copy:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">./xx</span></span><br><span class="line">      <span class="attr">dest:</span> <span class="string">/tmp/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">copy</span> <span class="string">and</span> <span class="string">unarchive</span> <span class="string">file</span></span><br><span class="line">    <span class="attr">unarchive:</span> </span><br><span class="line">      <span class="attr">src:</span> <span class="string">./xx.tar.gz</span></span><br><span class="line">      <span class="attr">dest:</span> <span class="string">/tmp/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">apt</span> <span class="string">install</span></span><br><span class="line">    <span class="attr">apt:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; item &#125;&#125;</span>&quot;</span></span><br><span class="line">      <span class="attr">state:</span> <span class="string">present</span></span><br><span class="line">    <span class="attr">with_items:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">package</span> <span class="number">1</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">package</span> <span class="number">2</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">...</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">mkdir</span></span><br><span class="line">    <span class="attr">file:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">/tmp/bar</span></span><br><span class="line">      <span class="attr">state:</span> <span class="string">directory</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">mkdir</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">rm</span> <span class="string">-rf</span></span><br><span class="line">    <span class="attr">file:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">/tmp/bar</span></span><br><span class="line">      <span class="attr">state:</span> <span class="string">absent</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://ansible-tran.readthedocs.io/en/latest/">Ansible中文权威指南</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>ansible</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu 安装Docker</title>
-    <url>/2022/02/10/Ubuntu-%E5%AE%89%E8%A3%85Docker/</url>
+    <url>/2022/02/10/6dee69dc41c0/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS<br>Docker 20.10.12  </p>
 </blockquote>
@@ -235,7 +324,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>docker</tag>
@@ -244,7 +333,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装ES+Kibana</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85ES+Kibana/</url>
+    <url>/2021/11/29/119087ddd8e0/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS<br>ElsticSearch 7.15.0<br>Kibana 7.15.0  </p>
 </blockquote>
@@ -269,7 +358,7 @@
 <blockquote>
 <p>设置密码</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 生成 keystore</span></span></span><br><span class="line">./bin/elasticsearch-keystore create</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 设置密码</span></span></span><br><span class="line">./bin/elasticsearch-setup-passwords interactive</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 用户说明</span></span></span><br><span class="line">elastic: 超级用户，拥有存取全部 cluster 的权限</span><br><span class="line">apm_system: 一般用户，提供给 kibana 使用，用来和 elasticsearch 进行通信</span><br><span class="line">kibana_system: 一般用户，提供给 logstash 使用，用来向 elasticsearch 写入数据</span><br><span class="line">logstash_system: 一般用户，用于不同类型的 beat 存储和监控 elasticsearch</span><br><span class="line">beats_system: 一般用户，用于 APM Server 存储和监控 elasticsearch</span><br><span class="line">remote_monitoring_user: 一般用户，用于 Metricbeat 监控 elasticsearch</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 生成 keystore</span></span></span><br><span class="line">./bin/elasticsearch-keystore create</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置密码</span></span></span><br><span class="line">./bin/elasticsearch-setup-passwords interactive</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 用户说明</span></span></span><br><span class="line">elastic: 超级用户，拥有存取全部 cluster 的权限</span><br><span class="line">apm_system: 一般用户，提供给 kibana 使用，用来和 elasticsearch 进行通信</span><br><span class="line">kibana_system: 一般用户，提供给 logstash 使用，用来向 elasticsearch 写入数据</span><br><span class="line">logstash_system: 一般用户，用于不同类型的 beat 存储和监控 elasticsearch</span><br><span class="line">beats_system: 一般用户，用于 APM Server 存储和监控 elasticsearch</span><br><span class="line">remote_monitoring_user: 一般用户，用于 Metricbeat 监控 elasticsearch</span><br></pre></td></tr></table></figure>
 
 <h3 id="Kibana-配置"><a href="#Kibana-配置" class="headerlink" title="Kibana 配置"></a>Kibana 配置</h3><blockquote>
 <p>修改 <code>config/kibana.yml</code></p>
@@ -283,7 +372,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -293,7 +382,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Helm</title>
-    <url>/2022/06/30/Ubuntu-%E5%AE%89%E8%A3%85Helm/</url>
+    <url>/2022/06/30/d197011c56f5/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS  </p>
 </blockquote>
@@ -309,7 +398,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.kube/config</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>kubernetes</tag>
@@ -319,7 +408,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装JDK</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85JDK/</url>
+    <url>/2021/11/29/4b04580b4fb6/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS<br>JDK1.8  </p>
 </blockquote>
@@ -340,7 +429,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>java</tag>
@@ -349,7 +438,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装K9s</title>
-    <url>/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85K9s/</url>
+    <url>/2022/06/22/8acd67c0636c/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS<br>K9s v0.25.18  </p>
 </blockquote>
@@ -363,14 +452,14 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">➜  k9s k9s info</span><br><span class="line"> ____  __.________</span><br><span class="line">|    |/ _/   __   \______</span><br><span class="line">|      &lt; \____    /  ___/</span><br><span class="line">|    |  \   /    /\___ \</span><br><span class="line">|____|__ \ /____//____  &gt;</span><br><span class="line">        \/            \/</span><br><span class="line"></span><br><span class="line">Configuration:   /home/rain/.config/k9s/config.yml</span><br><span class="line">Logs:            /tmp/k9s-rain.log</span><br><span class="line">Screen Dumps:    /tmp/k9s-screens-rain</span><br></pre></td></tr></table></figure>
 
 <p>常用命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> List all available CLI options</span></span><br><span class="line">k9s help</span><br><span class="line"><span class="meta">#</span><span class="bash"> Get info about K9s runtime (logs, configs, etc..)</span></span><br><span class="line">k9s info</span><br><span class="line"><span class="meta">#</span><span class="bash"> Run K9s <span class="keyword">in</span> a given namespace.</span></span><br><span class="line">k9s -n k8s-ns</span><br><span class="line"><span class="meta">#</span><span class="bash"> Run K9s and launch <span class="keyword">in</span> pod view via the pod <span class="built_in">command</span>.</span></span><br><span class="line">k9s -c pod</span><br><span class="line"><span class="meta">#</span><span class="bash"> Start K9s <span class="keyword">in</span> a non default KubeConfig context</span></span><br><span class="line">k9s --context coolCtx</span><br><span class="line"><span class="meta">#</span><span class="bash"> Start K9s <span class="keyword">in</span> <span class="built_in">readonly</span> mode - with all modification commands disabled</span></span><br><span class="line">k9s --readonly</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">List all available CLI options</span></span><br><span class="line">k9s help</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Get info about K9s runtime (logs, configs, etc..)</span></span><br><span class="line">k9s info</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Run K9s <span class="keyword">in</span> a given namespace.</span></span><br><span class="line">k9s -n k8s-ns</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Run K9s and launch <span class="keyword">in</span> pod view via the pod <span class="built_in">command</span>.</span></span><br><span class="line">k9s -c pod</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Start K9s <span class="keyword">in</span> a non default KubeConfig context</span></span><br><span class="line">k9s --context coolCtx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Start K9s <span class="keyword">in</span> <span class="built_in">readonly</span> mode - with all modification commands disabled</span></span><br><span class="line">k9s --readonly</span><br></pre></td></tr></table></figure>
 
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><code>Ubuntu</code>操作系统下，不要使用以下命令安装<code>k9s</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo snap install k9s</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sudo snap install k9s</span></span><br></pre></td></tr></table></figure>
 <p>该安装方式会使用沙盒模式，无法穿过<code>Ubuntu</code>的防火墙。</p>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>kubernetes</tag>
@@ -380,7 +469,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Kubectl</title>
-    <url>/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85Kubectl/</url>
+    <url>/2022/06/22/eab7442ec82d/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS  </p>
 </blockquote>
@@ -399,14 +488,15 @@
 <p>将连接信息写入<code>$HOME/.kube/config </code>，</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl get namespace</span><br></pre></td></tr></table></figure>
 
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kubectl config view                         # 查看kubectl配置</span><br><span class="line">kubectl config get-contexts                 # 查看kubectl context列表</span><br><span class="line">kubectl config use-context &lt;context-name&gt;   # 设置当前context</span><br><span class="line">kubectl config current-context              # 查看当前context</span><br><span class="line">kubectl config set-context --current --namespace=&lt;namespace&gt;    # 设置当前context default namespace</span><br><span class="line"></span><br><span class="line">kubectl get node                            # 获取kubernetes节点</span><br><span class="line">kubectl get node -o wide                    # 获取kubernetes节点（展示详细信息）</span><br><span class="line">kubectl get node --show-labels              # 获取kubernetes节点（展示label信息）</span><br><span class="line"></span><br><span class="line">kubectl get pods                            # 获取pod（default namespace）</span><br><span class="line">kubectl get node -n &lt;namespace&gt;             # 获取pod（指定 namespace）</span><br><span class="line">kubectl get node --all-namespace            # 获取pod（全部 namespace）</span><br><span class="line">kubectl get pod &lt;pod-name&gt; -o yaml          # 获取pod（yaml格式）</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://kubernetes.io/docs/tasks/tools/?spm=5176.2020520152.0.0.405816ddd71VlD">kubectl install</a>  </li>
-<li><a href="http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/">kubectl command</a>  </li>
+<li><a href="http://kubernetes.kansea.com/docs/user-guide/kubectl/kubectl/">kubectl command</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>kubernetes</tag>
@@ -416,7 +506,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Maven</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Maven/</url>
+    <url>/2021/11/29/15965a5422a2/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Maven 3.8.3</p>
@@ -436,7 +526,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -445,7 +535,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Minikube</title>
-    <url>/2022/06/22/Ubuntu-%E5%AE%89%E8%A3%85Minikube/</url>
+    <url>/2022/06/22/0d648f6dff08/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS  </p>
 </blockquote>
@@ -467,7 +557,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>kubernetes</tag>
@@ -477,7 +567,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装MongoDB</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85MongoDB/</url>
+    <url>/2021/11/29/3583e294ac11/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>MongDB 5.0.3</p>
@@ -488,7 +578,7 @@
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
 <p>安装 mongodb，参考<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/">官方文档</a></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 导入公钥</span></span></span><br><span class="line">wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 新建 apt mongodb 源</span></span></span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 官方源速度过慢，可使用阿里云 apt mongdb 源</span></span></span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://mirrors.aliyun.com/mongodb/apt/ubuntu focal/mongodb-org/5.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 更新 apt 源</span></span></span><br><span class="line">sudo apt update</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 安装 mongodb</span></span></span><br><span class="line">sudo apt install -y mongodb-org</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 导入公钥</span></span></span><br><span class="line">wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 新建 apt mongodb 源</span></span></span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 官方源速度过慢，可使用阿里云 apt mongdb 源</span></span></span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://mirrors.aliyun.com/mongodb/apt/ubuntu focal/mongodb-org/5.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 更新 apt 源</span></span></span><br><span class="line">sudo apt update</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 安装 mongodb</span></span></span><br><span class="line">sudo apt install -y mongodb-org</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>创建目录</p>
@@ -498,7 +588,7 @@
 <blockquote>
 <p>配置文件</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> db1: /opt/app/mongodb/db1/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db1/data</span><br><span class="line">logpath=/opt/app/mongodb/db1/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27017</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> db2: /opt/app/mongodb/db2/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db2/data</span><br><span class="line">logpath=/opt/app/mongodb/db2/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27018</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> db3: /opt/app/mongodb/db3/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db3/data</span><br><span class="line">logpath=/opt/app/mongodb/db3/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27019</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">db1: /opt/app/mongodb/db1/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db1/data</span><br><span class="line">logpath=/opt/app/mongodb/db1/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27017</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">db2: /opt/app/mongodb/db2/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db2/data</span><br><span class="line">logpath=/opt/app/mongodb/db2/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27018</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">db3: /opt/app/mongodb/db3/etc/mongodb.conf</span></span><br><span class="line">dbpath=/opt/app/mongodb/db3/data</span><br><span class="line">logpath=/opt/app/mongodb/db3/log/mongodb.log</span><br><span class="line">logappend=true</span><br><span class="line">journal=true</span><br><span class="line">bind_ip=0.0.0.0</span><br><span class="line">port=27019</span><br></pre></td></tr></table></figure>
 
 <h3 id="认证配置"><a href="#认证配置" class="headerlink" title="认证配置"></a>认证配置</h3><blockquote>
 <p>启动服务</p>
@@ -513,12 +603,12 @@
 <blockquote>
 <p>配置认证</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建 admin 库的 root 用户</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> use admin</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> db.createUser(&#123;user: <span class="string">&#x27;root&#x27;</span>, <span class="built_in">pwd</span>: <span class="string">&#x27;123456&#x27;</span>, roles:[&#123;role: <span class="string">&#x27;userAdminAnyDatabase&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span>&#125;, &#123;role: <span class="string">&#x27;readWriteAnyDatabase&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>, &#123;role: <span class="string">&#x27;clusterAdmin&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>&#125;&#125;]&#125;)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 创建 admin 库的 root 用户</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">use admin</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">db.createUser(&#123;user: <span class="string">&#x27;root&#x27;</span>, <span class="built_in">pwd</span>: <span class="string">&#x27;123456&#x27;</span>, roles:[&#123;role: <span class="string">&#x27;userAdminAnyDatabase&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span>&#125;, &#123;role: <span class="string">&#x27;readWriteAnyDatabase&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>, &#123;role: <span class="string">&#x27;clusterAdmin&#x27;</span>, db:<span class="string">&#x27;admin&#x27;</span>&#125;&#125;]&#125;)</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>keyfile配置</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建 keyfile</span></span></span><br><span class="line">echo `openssl rand -base64 756` | sudo tee /opt/app/mongodb/keyfile</span><br><span class="line">sudo chmod 400 /opt/app/mongodb/keyfile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置文件中添加参数，并重启服务</span></span></span><br><span class="line">auth=true</span><br><span class="line">keyfile=/opt/app/mongodb/keyfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 创建 keyfile</span></span></span><br><span class="line">echo `openssl rand -base64 756` | sudo tee /opt/app/mongodb/keyfile</span><br><span class="line">sudo chmod 400 /opt/app/mongodb/keyfile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 配置文件中添加参数，并重启服务</span></span></span><br><span class="line">auth=true</span><br><span class="line">keyfile=/opt/app/mongodb/keyfile</span><br></pre></td></tr></table></figure>
 
 <h3 id="副本集配置"><a href="#副本集配置" class="headerlink" title="副本集配置"></a>副本集配置</h3><blockquote>
 <p>登陆其中一个节点</p>
@@ -528,16 +618,16 @@
 <blockquote>
 <p>配置副本集</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> config = &#123;_id: <span class="string">&#x27;rs&#x27;</span>, members: [&#123;_id: 0, host: <span class="string">&#x27;localhost:27017&#x27;</span>&#125;,&#123;_id: 1, host: <span class="string">&#x27;localhost:27018&#x27;</span>&#125;,&#123;_id: 2, host:<span class="string">&#x27;localhost:27019&#x27;</span>&#125;]&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.initiate(config)</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.status()</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 配置</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">config = &#123;_id: <span class="string">&#x27;rs&#x27;</span>, members: [&#123;_id: 0, host: <span class="string">&#x27;localhost:27017&#x27;</span>&#125;,&#123;_id: 1, host: <span class="string">&#x27;localhost:27018&#x27;</span>&#125;,&#123;_id: 2, host:<span class="string">&#x27;localhost:27019&#x27;</span>&#125;]&#125;</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">rs.initiate(config)</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 查看</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">rs.status()</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>修改副本集配置</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 例: 修改node端口</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 获取配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> cfg=rs.conf()</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> cfg.members[0].host=<span class="string">&quot;localhost:27017&quot;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 覆盖配置</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.reconfig(cfg)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 非primary节点需要执行</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rs.reconfig(cfg, &#123;force : <span class="literal">true</span>&#125;)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">例: 修改node端口</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 获取配置</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">cfg=rs.conf()</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 修改配置</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">cfg.members[0].host=<span class="string">&quot;localhost:27017&quot;</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 覆盖配置</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">rs.reconfig(cfg)</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 非primary节点需要执行</span></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">rs.reconfig(cfg, &#123;force : <span class="literal">true</span>&#125;)</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -546,7 +636,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装MySQL</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85MySQL/</url>
+    <url>/2021/11/29/626348ee1f96/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>MySQL  v5.7.35</p>
@@ -572,7 +662,7 @@
 <blockquote>
 <p>允许 root 远程访问</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 登陆 mysql</span></span></span><br><span class="line">sudo mysql -uroot -p</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限(5.0 版本)</span></span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置权限(8.0 版本)</span></span></span><br><span class="line">CREATE USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* to &#x27;root&#x27;@&#x27;%&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 刷新权限</span></span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看权限</span></span></span><br><span class="line">SELECT User, Host, HEX(authentication_string) FROM mysql.user;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 修改密码</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">set</span> password <span class="keyword">for</span> root@localhost = password(<span class="string">&#x27;123456&#x27;</span>);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 登陆 mysql</span></span></span><br><span class="line">sudo mysql -uroot -p</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 配置权限(5.0 版本)</span></span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 配置权限(8.0 版本)</span></span></span><br><span class="line">CREATE USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* to &#x27;root&#x27;@&#x27;%&#x27; WITH GRANT OPTION;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 刷新权限</span></span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 查看权限</span></span></span><br><span class="line">SELECT User, Host, HEX(authentication_string) FROM mysql.user;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 修改密码</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">set</span> password <span class="keyword">for</span> root@localhost = password(<span class="string">&#x27;123456&#x27;</span>);</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>修改常用配置，在 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>文件中添加</p>
@@ -591,7 +681,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>mysql</tag>
@@ -601,7 +691,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Nacos</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nacos/</url>
+    <url>/2021/11/29/1d6c1fbfa2be/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Nacos 2.0.3</p>
@@ -632,7 +722,7 @@
 <blockquote>
 <p>修改配置文件 <code>conf/application.properties</code></p>
 </blockquote>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># server.port=8848/8858/8868</span></span><br><span class="line"><span class="meta">db.num</span>=<span class="string">1</span></span><br><span class="line"><span class="meta">db.url.0</span>=<span class="string">jdbc:mysql://localhost:3306/nacos?characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true</span></span><br><span class="line"><span class="meta">db.user</span>=<span class="string">nacos</span></span><br><span class="line"><span class="meta">db.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># server.port=8848/8858/8868</span></span><br><span class="line"><span class="attr">db.num</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">db.url.0</span>=<span class="string">jdbc:mysql://localhost:3306/nacos?characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true</span></span><br><span class="line"><span class="attr">db.user</span>=<span class="string">nacos</span></span><br><span class="line"><span class="attr">db.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>启动服务</p>
@@ -646,7 +736,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -656,7 +746,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Nginx</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Nginx/</url>
+    <url>/2021/11/29/62042bb21002/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Nginx 1.14.0</p>
@@ -686,7 +776,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -695,7 +785,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装OhMyZsh</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85OhMyZsh/</url>
+    <url>/2021/11/29/b6bbe7999072/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -726,7 +816,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -735,7 +825,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装PostgreSQL</title>
-    <url>/2022/02/08/Ubuntu-%E5%AE%89%E8%A3%85PostgreSQL/</url>
+    <url>/2022/02/08/06655153a049/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS  </p>
 <p>PostgresQL 14.1</p>
@@ -754,7 +844,7 @@
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">listen_addresses</span> = <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>修改<code>/etc/postgresql/14/main/pg_hba.conf</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">local</span>   all             all                                     peer</span></span><br><span class="line">local   all             all                                     md5</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="built_in">local</span>   all             all                                     peer</span></span><br><span class="line">local   all             all                                     md5</span><br></pre></td></tr></table></figure>
 
 <p>重启服务</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
@@ -768,7 +858,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -777,7 +867,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装Redis</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85Redis/</url>
+    <url>/2021/11/29/e11c532b4d46/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 <p>Redis 4.0.9</p>
@@ -807,7 +897,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>redis</tag>
@@ -816,7 +906,7 @@
   </entry>
   <entry>
     <title>Ubuntu 安装与配置NVM</title>
-    <url>/2021/11/29/Ubuntu-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AENVM/</url>
+    <url>/2021/11/29/585782582d71/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -856,7 +946,7 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -864,37 +954,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 常用Shell脚本整理</title>
-    <url>/2022/02/28/Ubuntu-%E5%B8%B8%E7%94%A8Shell%E8%84%9A%E6%9C%AC%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-</blockquote>
-<h2 id="批量执行命令"><a href="#批量执行命令" class="headerlink" title="批量执行命令"></a>批量执行命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">cmd=$1</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$cmd&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: cmd can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to run $cmd on $host&quot;</span><br><span class="line">  ssh $host $cmd</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="批量拷贝文件"><a href="#批量拷贝文件" class="headerlink" title="批量拷贝文件"></a>批量拷贝文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">src=$1</span><br><span class="line">dst=$2</span><br><span class="line"></span><br><span class="line">hosts=(</span><br><span class="line">  &quot;host1&quot;</span><br><span class="line">  &quot;host2&quot;</span><br><span class="line">  &quot;host3&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">if [ &quot;x$src&quot; = &quot;x&quot; -o &quot;x$dst&quot; = &quot;x&quot; ]</span><br><span class="line">then</span><br><span class="line">  echo &quot;Failed: src or dst can&#x27;t be empty&quot;</span><br><span class="line">  exit -1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">for host in &quot;$&#123;hosts[@]&#125;&quot;</span><br><span class="line">do</span><br><span class="line">  echo &quot;begin to scp $src to $host:$dst&quot;</span><br><span class="line">  scp -r $src $host:$dst</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>linux</tag>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 常用工具整理</title>
-    <url>/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/</url>
+    <title>Ubuntu 工具整理</title>
+    <url>/2021/11/29/784bf6d53299/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>新做的系统可能会缺失很多常用的环境和工具，这里整理出来方便统一安装</p>
 </blockquote>
-<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 网络工具</span></span></span><br><span class="line">sudo apt install -y net-tools</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Git</span></span></span><br><span class="line">sudo apt install -y git</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># NodeJs:16 (需要多版本则使用 nvm 替代)</span></span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -</span><br><span class="line">sudo apt install -y nodejs</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 小玩具</span></span></span><br><span class="line">sudo apt install -y cmatrix</span><br><span class="line">sudo apt install -y sl</span><br></pre></td></tr></table></figure>
+<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 网络工具</span></span></span><br><span class="line">sudo apt install -y net-tools</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># Git</span></span></span><br><span class="line">sudo apt install -y git</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># NodeJs:16 (需要多版本则使用 nvm 替代)</span></span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -</span><br><span class="line">sudo apt install -y nodejs</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 小玩具</span></span></span><br><span class="line">sudo apt install -y cmatrix</span><br><span class="line">sudo apt install -y sl</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="初始化环境"><a href="#初始化环境" class="headerlink" title="初始化环境"></a>初始化环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 关闭交换分区</span></span></span><br><span class="line">sudo swapoff -a</span><br></pre></td></tr></table></figure>
+<h2 id="初始化环境"><a href="#初始化环境" class="headerlink" title="初始化环境"></a>初始化环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 关闭交换分区</span></span></span><br><span class="line">sudo swapoff -a</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -902,8 +974,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 常用用户管理</title>
-    <url>/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/</url>
+    <title>Ubuntu 用户管理</title>
+    <url>/2021/11/29/cef3a852034e/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -929,15 +1001,194 @@
 
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 常用镜像源整理</title>
-    <url>/2021/11/29/Ubuntu-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90%E6%95%B4%E7%90%86/</url>
+    <title>Ubuntu 配置Git</title>
+    <url>/2021/11/29/44cdba52964f/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>~/.gitconfig</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">        name = &lt;user&gt;</span><br><span class="line">        email = &lt;email&gt;</span><br><span class="line">[credential]</span><br><span class="line">        helper = cache --timeout=8640000</span><br><span class="line">[push]</span><br><span class="line">        default = simple</span><br><span class="line">[color]</span><br><span class="line">        ui = true</span><br><span class="line">        status = auto</span><br><span class="line">        branch = auto</span><br><span class="line">[alias]</span><br><span class="line">        st = status -s</span><br><span class="line">        br = branch</span><br><span class="line">        ci = commit</span><br><span class="line">        co = checkout</span><br><span class="line">        lg = log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">        required = true</span><br><span class="line">        clean = git-lfs clean -- %f</span><br><span class="line">        smudge = git-lfs smudge -- %f</span><br><span class="line">        process = git-lfs filter-process</span><br><span class="line">[difftool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = opendiff \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot;</span><br><span class="line">        path =</span><br><span class="line">[mergetool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot; -ancestor \&quot;$BASE\&quot; -merge \&quot;$MERGED\&quot;</span><br><span class="line">        trustExitCode = true</span><br><span class="line">[core]</span><br><span class="line">        excludesFile = ~/.gitignore</span><br><span class="line">        quotepath = false</span><br><span class="line">        whitespace = cr-at-eol</span><br><span class="line">        autocrlf = true</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置BASH显示分支名"><a href="#配置BASH显示分支名" class="headerlink" title="配置BASH显示分支名"></a>配置BASH显示分支名</h2><p>在<code>~/bashrc</code>尾部添加</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">function git_branch &#123;</span><br><span class="line">    branch=&quot;`git branch 2&gt;/dev/null | grep &quot;^\*&quot; | sed -e &quot;s/^\*\ //&quot;`&quot;</span><br><span class="line">    if [ &quot;$&#123;branch&#125;&quot; != &quot;&quot; ];then</span><br><span class="line">        if [ &quot;$&#123;branch&#125;&quot; = &quot;(no branch)&quot; ];then</span><br><span class="line">            branch=&quot;(`git rev-parse --short HEAD`...)&quot;</span><br><span class="line">        fi</span><br><span class="line">        echo &quot; ($branch)&quot;</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line">export PS1=&#x27;\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ &#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>config</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置Nginx HTTPS</title>
+    <url>/2022/01/23/18004a7bc75d/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+<p>Nginx 1.14.0</p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>上传<code>SSL</code>证书到服务器，并修改配置文件<code>/etc/nginx/nginx.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash">http -&gt; https</span></span><br><span class="line">  server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line">		return 301 https://$server_name$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">https configuration</span></span><br><span class="line">	server &#123;</span><br><span class="line">		listen 443 ssl;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line"></span><br><span class="line">      # ssl证书地址</span><br><span class="line">      ssl_certificate     /etc/nginx/ssl/ssl_rainlf_com.crt;  # pem/crt文件的路径</span><br><span class="line">      ssl_certificate_key  /etc/nginx/ssl/ssl_rainlf_com.key; # key文件的路径</span><br><span class="line"></span><br><span class="line">      # ssl验证相关配置</span><br><span class="line">      ssl_session_timeout  5m;    #缓存有效期</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议</span><br><span class="line">      ssl_prefer_server_ciphers on;   #使用服务器端的首选算法</span><br><span class="line"></span><br><span class="line">		root /var/www/html;</span><br><span class="line">		index index.html;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+        <tag>config</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置SSH超时时间</title>
+    <url>/2021/11/29/080c71595d9c/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>取消 ssh 连接的超时时间，解决连接一段时间后无法输入的问题，服务端和客户端任改其一即可</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><blockquote>
+<p>编辑配置文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改内容</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LoginGraceTime 0</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">ClientAliveCountMax 6</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>重启服务</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service sshd restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><blockquote>
+<p>编辑配置文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/ssh/ssh_config</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改内容</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ServerAliveInterval 30</span><br><span class="line">ServerAliveCountMax 6</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>config</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置Vim</title>
+    <url>/2021/11/29/381f081457c5/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>vi ~/.vimrc</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">syntax enable</span><br><span class="line">set nu</span><br><span class="line">set syntax=on</span><br><span class="line">set showcmd</span><br><span class="line">set autoread</span><br><span class="line">set nobackup</span><br><span class="line">set ruler</span><br><span class="line">set cursorline</span><br><span class="line">set magic</span><br><span class="line">set noeb</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4</span><br><span class="line">set mouse=a</span><br><span class="line">set hlsearch</span><br><span class="line">filetype on</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>config</tag>
+        <tag>vi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置免密Sudo</title>
+    <url>/2021/11/29/fac97b58d792/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS  </p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>切记使用 <code>sudo visudo</code> 命令!<br>取消 Linux 普通用户在使用 sudo 命令时，要求输入密码的步骤<br>取消 sudo 命令对 env 的重置<br>指定 sudo 命令执行时的安全路径</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>修改配置文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo visudo</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编辑内容</p>
+</blockquote>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取消 env 重置</span></span><br><span class="line"><span class="attr">Defaults</span>        <span class="string">!env_reset</span></span><br><span class="line"><span class="comment"># 指定安全 PATH</span></span><br><span class="line"><span class="attr">Defaults</span> <span class="string">secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</span></span><br><span class="line"><span class="comment"># 取消输入密码，在最后一行添加</span></span><br><span class="line"><span class="attr">admin</span>  <span class="string">ALL=(ALL:ALL) NOPASSWD:ALL</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>保存退出，visudo 默认使用 nano 编辑器</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">执行 ctrl+o</span><br><span class="line">提示 File Name to Write: /etc/sudoers.tmp</span><br><span class="line">执行 enter</span><br><span class="line">执行 ctrl+x</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>config</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 配置静态IP</title>
+    <url>/2021/11/29/fa182683951b/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>Linux 默认由 DHCP 协议从路由获取动态 IP 地址，在某些场景下我们需要将其设置为静态 IP</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>编辑配置文件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/network/interfaces</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改内容为</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto eth0</span><br><span class="line">iface eth0</span><br><span class="line">address 172.17.5.120</span><br><span class="line">netmask 255.255.255.240</span><br><span class="line">gateway 172.17.5.113</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>config</tag>
+        <tag>network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 镜像源整理</title>
+    <url>/2021/11/29/d6813d5d5dee/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
@@ -982,7 +1233,7 @@
 <blockquote>
 <p>添加</p>
 </blockquote>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">channels</span>:<span class="string"></span></span><br><span class="line">  <span class="meta">-</span> <span class="string">https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span></span><br><span class="line">  <span class="meta">-</span> <span class="string">https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span></span><br><span class="line">  <span class="meta">-</span> <span class="string">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></span><br><span class="line">  <span class="meta">-</span> <span class="string">defaults</span></span><br><span class="line"><span class="attr">show_channel_urls</span>: <span class="string">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">channels</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">-</span> <span class="string">https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span></span><br><span class="line">  <span class="attr">-</span> <span class="string">https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span></span><br><span class="line">  <span class="attr">-</span> <span class="string">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></span><br><span class="line">  <span class="attr">-</span> <span class="string">defaults</span></span><br><span class="line"><span class="attr">show_channel_urls</span>: <span class="string">true</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>查看配置</p>
@@ -990,7 +1241,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --show-sources</span><br><span class="line">conda clean -i</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>linux</tag>
@@ -1001,189 +1252,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 配置Git</title>
-    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEGit%20/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-</blockquote>
-<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>~/.gitconfig</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">        name = &lt;user&gt;</span><br><span class="line">        email = &lt;email&gt;</span><br><span class="line">[credential]</span><br><span class="line">        helper = cache --timeout=8640000</span><br><span class="line">[push]</span><br><span class="line">        default = simple</span><br><span class="line">[color]</span><br><span class="line">        ui = true</span><br><span class="line">        status = auto</span><br><span class="line">        branch = auto</span><br><span class="line">[alias]</span><br><span class="line">        st = status -s</span><br><span class="line">        br = branch</span><br><span class="line">        ci = commit</span><br><span class="line">        co = checkout</span><br><span class="line">        lg = log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit</span><br><span class="line">[filter &quot;lfs&quot;]</span><br><span class="line">        required = true</span><br><span class="line">        clean = git-lfs clean -- %f</span><br><span class="line">        smudge = git-lfs smudge -- %f</span><br><span class="line">        process = git-lfs filter-process</span><br><span class="line">[difftool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = opendiff \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot;</span><br><span class="line">        path =</span><br><span class="line">[mergetool &quot;sourcetree&quot;]</span><br><span class="line">        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot; -ancestor \&quot;$BASE\&quot; -merge \&quot;$MERGED\&quot;</span><br><span class="line">        trustExitCode = true</span><br><span class="line">[core]</span><br><span class="line">        excludesFile = ~/.gitignore</span><br><span class="line">        quotepath = false</span><br><span class="line">        whitespace = cr-at-eol</span><br><span class="line">        autocrlf = true</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置BASH显示分支名"><a href="#配置BASH显示分支名" class="headerlink" title="配置BASH显示分支名"></a>配置BASH显示分支名</h2><p>在<code>~/bashrc</code>尾部添加</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">function git_branch &#123;</span><br><span class="line">    branch=&quot;`git branch 2&gt;/dev/null | grep &quot;^\*&quot; | sed -e &quot;s/^\*\ //&quot;`&quot;</span><br><span class="line">    if [ &quot;$&#123;branch&#125;&quot; != &quot;&quot; ];then</span><br><span class="line">        if [ &quot;$&#123;branch&#125;&quot; = &quot;(no branch)&quot; ];then</span><br><span class="line">            branch=&quot;(`git rev-parse --short HEAD`...)&quot;</span><br><span class="line">        fi</span><br><span class="line">        echo &quot; ($branch)&quot;</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line">export PS1=&#x27;\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ &#x27;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 配置Nginx HTTPS</title>
-    <url>/2022/01/23/Ubuntu-%E9%85%8D%E7%BD%AENginx-HTTPS/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-<p>Nginx 1.14.0</p>
-</blockquote>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>上传<code>SSL</code>证书到服务器，并修改配置文件<code>/etc/nginx/nginx.conf</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"><span class="meta">  #</span><span class="bash"> http -&gt; https</span></span><br><span class="line">  server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line">		return 301 https://$server_name$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">	#</span><span class="bash"> https configuration</span></span><br><span class="line">	server &#123;</span><br><span class="line">		listen 443 ssl;</span><br><span class="line">		server_name www.rainlf.com;</span><br><span class="line"></span><br><span class="line">      # ssl证书地址</span><br><span class="line">      ssl_certificate     /etc/nginx/ssl/ssl_rainlf_com.crt;  # pem/crt文件的路径</span><br><span class="line">      ssl_certificate_key  /etc/nginx/ssl/ssl_rainlf_com.key; # key文件的路径</span><br><span class="line"></span><br><span class="line">      # ssl验证相关配置</span><br><span class="line">      ssl_session_timeout  5m;    #缓存有效期</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议</span><br><span class="line">      ssl_prefer_server_ciphers on;   #使用服务器端的首选算法</span><br><span class="line"></span><br><span class="line">		root /var/www/html;</span><br><span class="line">		index index.html;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>nginx</tag>
-        <tag>config</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 配置SSH超时时间</title>
-    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AESSH%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>取消 ssh 连接的超时时间，解决连接一段时间后无法输入的问题，服务端和客户端任改其一即可</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><blockquote>
-<p>编辑配置文件</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>修改内容</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LoginGraceTime 0</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">ClientAliveCountMax 6</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>重启服务</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo service sshd restart</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><blockquote>
-<p>编辑配置文件</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/ssh/ssh_config</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>修改内容</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ServerAliveInterval 30</span><br><span class="line">ServerAliveCountMax 6</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-        <tag>ssh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 配置Vim</title>
-    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AEVim%20/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-</blockquote>
-<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>编辑文件<code>vi ~/.vimrc</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">syntax enable</span><br><span class="line">set nu</span><br><span class="line">set syntax=on</span><br><span class="line">set showcmd</span><br><span class="line">set autoread</span><br><span class="line">set nobackup</span><br><span class="line">set ruler</span><br><span class="line">set cursorline</span><br><span class="line">set magic</span><br><span class="line">set noeb</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4</span><br><span class="line">set mouse=a</span><br><span class="line">set hlsearch</span><br><span class="line">filetype on</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-        <tag>vi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 配置免密Sudo</title>
-    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86Sudo/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS  </p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>切记使用 <code>sudo visudo</code> 命令!<br>取消 Linux 普通用户在使用 sudo 命令时，要求输入密码的步骤<br>取消 sudo 命令对 env 的重置<br>指定 sudo 命令执行时的安全路径</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>修改配置文件</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo visudo</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>编辑内容</p>
-</blockquote>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取消 env 重置</span></span><br><span class="line"><span class="attr">Defaults</span>        <span class="string">!env_reset</span></span><br><span class="line"><span class="comment"># 指定安全 PATH</span></span><br><span class="line"><span class="attr">Defaults</span> <span class="string">secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</span></span><br><span class="line"><span class="comment"># 取消输入密码，在最后一行添加</span></span><br><span class="line"><span class="attr">admin</span>  <span class="string">ALL=(ALL:ALL) NOPASSWD:ALL</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>保存退出，visudo 默认使用 nano 编辑器</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">执行 ctrl+o</span><br><span class="line">提示 File Name to Write: /etc/sudoers.tmp</span><br><span class="line">执行 enter</span><br><span class="line">执行 ctrl+x</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 配置静态IP</title>
-    <url>/2021/11/29/Ubuntu-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81IP/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Ubuntu 20.04 LTS</p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>Linux 默认由 DHCP 协议从路由获取动态 IP 地址，在某些场景下我们需要将其设置为静态 IP</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>编辑配置文件</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/network/interfaces</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>修改内容为</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto eth0</span><br><span class="line">iface eth0</span><br><span class="line">address 172.17.5.120</span><br><span class="line">netmask 255.255.255.240</span><br><span class="line">gateway 172.17.5.113</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>config</tag>
-        <tag>network</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Web站点配置隐式URL跳转</title>
-    <url>/2022/01/23/Web%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E9%9A%90%E5%BC%8FURL%E8%B7%B3%E8%BD%AC/</url>
+    <url>/2022/01/23/faa776502b3e/</url>
     <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我们需要通过自己的域名连接到外部的站点时，<code>DNS</code> 解析的隐式 <code>URL</code>跳转是一个较好的选择。但由于使用了默认的 <code>iframe</code>代码文本，无法自定义站点的标题和图标，此时可以使用自定义的站点文件了实现效果。</p>
-<h2 id="站点文件"><a href="#站点文件" class="headerlink" title="站点文件"></a>站点文件</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>I am site title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--网页标题左侧显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--收藏夹显示图标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noframes</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noframes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="站点文件"><a href="#站点文件" class="headerlink" title="站点文件"></a>站点文件</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>I am site title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--网页标题左侧显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--收藏夹显示图标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;site.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noframes</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.rainlf.com&quot;</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noframes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1192,7 +1264,7 @@
   </entry>
   <entry>
     <title>Windows 修改默认用户目录</title>
-    <url>/2022/02/16/Windows-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95/</url>
+    <url>/2022/02/16/c680b15b1445/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro  </p>
 </blockquote>
@@ -1202,7 +1274,7 @@
 <p>这时 windows 会重启，进入 Audit Mode，然后显示一个 System Preparation Tool，将它关闭</p>
 <h3 id="配置用户目录"><a href="#配置用户目录" class="headerlink" title="配置用户目录"></a>配置用户目录</h3><p>现在可以将电脑连接到网络了。</p>
 <p>接下来要使用 System Preparation Tool (Sysprep) 工具来设置用户路径。这个工具会执行一个 XML 文件中的配置（也就是 unattended answer file）</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">unattend</span> <span class="attr">xmlns</span>=<span class="string">&quot;urn:schemas-microsoft-com:unattend&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span> <span class="attr">pass</span>=<span class="string">&quot;oobeSystem&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">name</span>=<span class="string">&quot;Microsoft-Windows-Shell-Setup&quot;</span> <span class="attr">processorArchitecture</span>=<span class="string">&quot;amd64&quot;</span> <span class="attr">publicKeyToken</span>=<span class="string">&quot;31bf3856ad364e35&quot;</span> <span class="attr">language</span>=<span class="string">&quot;neutral&quot;</span> <span class="attr">versionScope</span>=<span class="string">&quot;nonSxS&quot;</span> <span class="attr">xmlns:wcm</span>=<span class="string">&quot;http://schemas.microsoft.com/WMIConfig/2002/State&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ProfilesDirectory</span>&gt;</span>D:\Users<span class="tag">&lt;/<span class="name">ProfilesDirectory</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">unattend</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">unattend</span> <span class="attr">xmlns</span>=<span class="string">&quot;urn:schemas-microsoft-com:unattend&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span> <span class="attr">pass</span>=<span class="string">&quot;oobeSystem&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">name</span>=<span class="string">&quot;Microsoft-Windows-Shell-Setup&quot;</span> <span class="attr">processorArchitecture</span>=<span class="string">&quot;amd64&quot;</span> <span class="attr">publicKeyToken</span>=<span class="string">&quot;31bf3856ad364e35&quot;</span> <span class="attr">language</span>=<span class="string">&quot;neutral&quot;</span> <span class="attr">versionScope</span>=<span class="string">&quot;nonSxS&quot;</span> <span class="attr">xmlns:wcm</span>=<span class="string">&quot;http://schemas.microsoft.com/WMIConfig/2002/State&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ProfilesDirectory</span>&gt;</span>D:\Users<span class="tag">&lt;/<span class="name">ProfilesDirectory</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">FolderLocations</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">unattend</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>Windows 以字母来标识盘符，但是当安装了 windows 重启之后，本来你想把用户目录安装到 d 盘，但这个盘符可能会发生改变，这个时候就会失败。</p>
 <p>所以为了保证你的 d 盘盘符不变，你需要给他手动设置一下盘符，在 Audit Mode 你可以使用磁盘管理工具，先手动的将 d 盘改成 w 盘，再把它改回 d 盘</p>
@@ -1213,10 +1285,10 @@
 <p>然后运行命令：</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">%windir%\system32\sysprep\sysprep.exe /oobe /reboot /unattend:d:\relocate.xml</span><br></pre></td></tr></table></figure>
 
-<p>上述命令告诉系统从 Windows\System32\Sysprep 运行 Sysprep，执行 D:/relocate.xml 中的指令，为 OOBE（the firlst boot of newly installed Windows） 重启准备系统，最后重启</p>
-<p>然后就继续安装配置系统，之后新用户都会在 D:/Users 这个目录下新建</p>
+<p>上述命令告诉系统从 Windows\System32\Sysprep 运行 Sysprep，执行 D:&#x2F;relocate.xml 中的指令，为 OOBE（the firlst boot of newly installed Windows） 重启准备系统，最后重启</p>
+<p>然后就继续安装配置系统，之后新用户都会在 D:&#x2F;Users 这个目录下新建</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li>https://<em>meta.appinn.net/t/topic/18899</em></li>
+<li>https:&#x2F;&#x2F;<em>meta.appinn.net&#x2F;t&#x2F;topic&#x2F;18899</em></li>
 </ol>
 ]]></content>
       <categories>
@@ -1229,12 +1301,12 @@
   </entry>
   <entry>
     <title>Windows 删除系统文件hiberfil.sys</title>
-    <url>/2022/01/29/Windows-%E5%88%A0%E9%99%A4%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6hiberfil.sys/</url>
+    <url>/2022/01/29/73d645e0e554/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro  </p>
 </blockquote>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>hiberfil.sys</code>为<code>Windows</code>的系统休眠文件，如果系统磁盘紧张，可考虑禁用休眠功能以取消该文件。</p>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>以管理员权限运行<code>PowerShell</code>，执行</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>以管理员权限运行<code>PowerShell</code>，执行</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powercfg <span class="literal">-h</span> off</span><br></pre></td></tr></table></figure>
 
 ]]></content>
@@ -1248,7 +1320,7 @@
   </entry>
   <entry>
     <title>Windows 启动Postman后灰屏问题</title>
-    <url>/2022/01/14/Windows-%E5%90%AF%E5%8A%A8Postman%E5%90%8E%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
+    <url>/2022/01/14/6d2b02659abc/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro<br>Postman v9.0.7   </p>
 </blockquote>
@@ -1271,7 +1343,7 @@
   </entry>
   <entry>
     <title>Windows 子系统出现The referenced object type does not support the attempted operation的问题</title>
-    <url>/2022/06/22/Windows-%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%87%BA%E7%8E%B0The-referenced-object-type-does-not-support-the-attempted-operation%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <url>/2022/06/22/770b3be82aee/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro  </p>
 </blockquote>
@@ -1296,61 +1368,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 常用镜像源整理</title>
-    <url>/2022/01/27/Windows-%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+    <title>Windows 配置IDEA Linux Terminal</title>
+    <url>/2022/07/05/02cd7d0a5bef/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Windows 10 Pro</p>
+<p>Windows 10 Pro  </p>
 </blockquote>
-<h2 id="Pip-镜像源"><a href="#Pip-镜像源" class="headerlink" title="Pip 镜像源"></a>Pip 镜像源</h2><blockquote>
-<p>在<code>%APPDATA%</code>目录下新建<code>\pip\pip.ini\</code>，并编辑内容</p>
-</blockquote>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">[global]</span></span><br><span class="line"><span class="attr">timeout</span> = <span class="string">6000</span></span><br><span class="line"><span class="meta">trusted-host</span>=<span class="string">mirrors.aliyun.com</span></span><br><span class="line"><span class="meta">index-url</span>=<span class="string">http://mirrors.aliyun.com/pypi/simple/</span></span><br></pre></td></tr></table></figure>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>首先，需要安装<code>Linux</code>子系统  </p>
+<p>然后在<code>IDEA</code>中，依次打开<code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Terminal</code><br>在<code>Application Settings</code>-&gt;<code>Shell Path</code>中配置，如下图</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32\bash.exe</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>查看</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip config get global.index-url</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Yarn-Npm-镜像源"><a href="#Yarn-Npm-镜像源" class="headerlink" title="Yarn/Npm 镜像源"></a>Yarn/Npm 镜像源</h2><blockquote>
-<p>配置</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>查看</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config get registry</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Anaconda-源"><a href="#Anaconda-源" class="headerlink" title="Anaconda 源"></a>Anaconda 源</h2><blockquote>
-<p>配置</p>
-</blockquote>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">conda config -<span class="literal">-add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config -<span class="literal">-add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda<span class="literal">-forge</span> </span><br><span class="line">conda config -<span class="literal">-add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">conda config -<span class="literal">-set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>查看</p>
-</blockquote>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">conda config -<span class="literal">-show</span><span class="literal">-sources</span></span><br><span class="line">conda clean <span class="literal">-i</span></span><br></pre></td></tr></table></figure>
-
+<p><img src="/images/image-20220705124364673.png" alt="image-20220705124364673"></p>
 ]]></content>
       <categories>
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>yarn</tag>
-        <tag>config</tag>
-        <tag>npm</tag>
-        <tag>anaconda</tag>
+        <tag>optimize</tag>
         <tag>windows</tag>
-        <tag>pip</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
     <title>Windows 重启子系统</title>
-    <url>/2022/01/14/Windows-%E9%87%8D%E5%90%AF%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
+    <url>/2022/01/14/2c7ef962ca82/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Windows 10 Pro</p>
 </blockquote>
@@ -1371,8 +1411,85 @@
       </tags>
   </entry>
   <entry>
-    <title>博客页面添加Github标识角</title>
-    <url>/2022/01/17/%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0Github%E6%A0%87%E8%AF%86%E8%A7%92/</url>
+    <title>Windows 镜像源整理</title>
+    <url>/2022/01/27/82a1098e82bb/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro</p>
+</blockquote>
+<h2 id="Pip-镜像源"><a href="#Pip-镜像源" class="headerlink" title="Pip 镜像源"></a>Pip 镜像源</h2><blockquote>
+<p>在<code>%APPDATA%</code>目录下新建<code>\pip\pip.ini\</code>，并编辑内容</p>
+</blockquote>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">[global]</span></span><br><span class="line"><span class="attr">timeout</span> = <span class="string">6000</span></span><br><span class="line"><span class="attr">trusted-host</span>=<span class="string">mirrors.aliyun.com</span></span><br><span class="line"><span class="attr">index-url</span>=<span class="string">http://mirrors.aliyun.com/pypi/simple/</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip config get global.index-url</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Yarn-x2F-Npm-镜像源"><a href="#Yarn-x2F-Npm-镜像源" class="headerlink" title="Yarn&#x2F;Npm 镜像源"></a>Yarn&#x2F;Npm 镜像源</h2><blockquote>
+<p>配置</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn config get registry</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Anaconda-源"><a href="#Anaconda-源" class="headerlink" title="Anaconda 源"></a>Anaconda 源</h2><blockquote>
+<p>配置</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">conda config <span class="literal">--add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config <span class="literal">--add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda<span class="literal">-forge</span> </span><br><span class="line">conda config <span class="literal">--add</span> channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">conda config <span class="literal">--set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">conda config <span class="literal">--show-sources</span></span><br><span class="line">conda clean <span class="literal">-i</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>yarn</tag>
+        <tag>config</tag>
+        <tag>npm</tag>
+        <tag>anaconda</tag>
+        <tag>windows</tag>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客升级Hexo</title>
+    <url>/2022/07/04/510c203ec156/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>安装<code>npm-check</code>和<code>npm-upgrade</code>工具</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check npm-upgrade</span><br></pre></td></tr></table></figure>
+
+<p>升级检测</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm-check</span><br></pre></td></tr></table></figure>
+
+<p>执行升级</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+
+<p>保存升级</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm update -g --save</span><br></pre></td></tr></table></figure>
+
+<p>查看<code>hexo</code>插件版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客设置Github标识角</title>
+    <url>/2022/01/17/cb06e13fcb48/</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>在下面网站用选择自己喜欢的图标：</p>
 <blockquote>
 <p><a href="https://github.blog/2008-12-19-github-ribbons/">https://github.blog/2008-12-19-github-ribbons/</a>  </p>

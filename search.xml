@@ -210,6 +210,32 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL 迁移数据目录</title>
+    <url>/2022/07/19/955e2fba5e33/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Ubuntu 20.04 LTS<br>MySQL Ver 8.0.27 for Linux on x86_64 (MySQL Community Server - GPL)</p>
+</blockquote>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>迁移数据目录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rsync -av --progress /var/lib/mysql /mnt/data/app/</span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件<code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">datadir = /var/lib/mysql</span></span><br><span class="line">datadir = /mnt/data/app/mysql</span><br></pre></td></tr></table></figure>
+
+<p>修改系统安全模块</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sudo vi /etc/apparmor.d/usr.sbin.mysqld</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># /mnt/data/mysql/ r,</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># /mnt/data/mysql/** rwk,</span></span></span><br><span class="line">/mnt/data/app/mysql/ r,</span><br><span class="line">/mnt/data/app/mysql/** rwk,</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sudo vi /etc/apparmor.d/abstractions/mysql</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># /var/lib/mysql&#123;,d&#125;/mysql&#123;,d&#125;.sock rw,</span></span></span><br><span class="line">/mnt/data/app/mysql&#123;,d&#125;/mysql&#123;,d&#125;.sock rw,</span><br></pre></td></tr></table></figure>
+
+<p>重启服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/apparmor restart</span><br><span class="line">sudo /etc/init.d/mysql start</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>ansible</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Shell 判断表达式</title>
     <url>/2022/07/07/ba0f3454079b/</url>
     <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[ condition ] &amp;&amp; echo yes || echo no</span><br></pre></td></tr></table></figure>
@@ -267,8 +293,11 @@
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS<br>Docker 20.10.12  </p>
 </blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><code>Ansible</code>使用<code>SSH</code>协议来管理主机，管理节点与托管节点需要建立<code>ssh</code>免密登陆通道，同时管理节点与托管节点均需要<code>Python2.7</code>环境<br>在管理节点上安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo apt-add-repository ppa:ansible/ansible</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ansible</span><br></pre></td></tr></table></figure>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><code>Ansible</code>使用<code>SSH</code>协议来管理主机，管理节点与托管节点需要建立<code>ssh</code>免密登陆通道，同时管理节点与托管节点均需要<code>Python2.7</code>环境  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install python2.7 -y</span><br></pre></td></tr></table></figure>
+
+<p>在管理节点上安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install software-properties-common -y</span><br><span class="line">sudo apt-add-repository ppa:ansible/ansible</span><br><span class="line">sudo apt update </span><br><span class="line">sudo apt install ansible -y</span><br></pre></td></tr></table></figure>
 
 <p>编辑<code>Inventory</code>文件</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/ansible/hosts</span><br><span class="line">---</span><br><span class="line">[group_name]</span><br><span class="line">host1</span><br><span class="line">host2</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -1263,6 +1292,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows Postman启动后灰屏问题</title>
+    <url>/2022/01/14/f10120170406/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro<br>Postman v9.0.7   </p>
+</blockquote>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><blockquote>
+<p>添加系统环境变量</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POSTMAN_DISABLE_GPU = true</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 修改默认用户目录</title>
     <url>/2022/02/16/c680b15b1445/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -1319,29 +1368,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 启动Postman后灰屏问题</title>
-    <url>/2022/01/14/6d2b02659abc/</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Windows 10 Pro<br>Postman v9.0.7   </p>
-</blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>解决 Postman 使用或启动后，突然出现灰屏的问题</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>添加系统环境变量</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POSTMAN_DISABLE_GPU = true</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows 子系统出现The referenced object type does not support the attempted operation的问题</title>
     <url>/2022/06/22/770b3be82aee/</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
@@ -1358,6 +1384,25 @@
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://blog.actorsfit.com/a?ID=01700-55c208f3-575c-41be-b656-edda3df12ef0">Solve the problem that WSL2 and Proxifier cannot be used at the same time</a></li>
 </ol>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 桌面图标丢失问题</title>
+    <url>/2022/07/08/639d61d9547f/</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>Windows 10 Pro  </p>
+</blockquote>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p><code>win + r</code> 输入  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">%</span><span class="language-bash">USERPROFILE%\AppData\Local</span></span><br></pre></td></tr></table></figure>
+
+<p>删除图标缓存文件<code>IconCache.db</code>后，刷新即可</p>
 ]]></content>
       <categories>
         <category>Windows</category>

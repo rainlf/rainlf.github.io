@@ -25,21 +25,21 @@
     var CONFIG = {"hostname":"rainlf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="环境 Windows 10 Pro Postman v9.0.7   说明 解决 Postman 使用或启动后，突然出现灰屏的问题  步骤 添加系统环境变量  1   POSTMAN_DISABLE_GPU &#x3D; true">
+  <meta name="description" content="环境 Windows 10 Pro   方案 win + r 输入   1   %USERPROFILE%\AppData\Local   删除图标缓存文件IconCache.db后，刷新即可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows 启动Postman后灰屏问题">
-<meta property="og:url" content="https://rainlf.github.io/2022/01/14/6d2b02659abc/index.html">
+<meta property="og:title" content="Windows 桌面图标丢失问题">
+<meta property="og:url" content="https://rainlf.github.io/2022/07/08/639d61d9547f/index.html">
 <meta property="og:site_name" content="Rain&#39;s Blog">
-<meta property="og:description" content="环境 Windows 10 Pro Postman v9.0.7   说明 解决 Postman 使用或启动后，突然出现灰屏的问题  步骤 添加系统环境变量  1   POSTMAN_DISABLE_GPU &#x3D; true">
+<meta property="og:description" content="环境 Windows 10 Pro   方案 win + r 输入   1   %USERPROFILE%\AppData\Local   删除图标缓存文件IconCache.db后，刷新即可">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-14T15:01:27.000Z">
-<meta property="article:modified_time" content="2022-07-19T14:34:15.472Z">
+<meta property="article:published_time" content="2022-07-08T02:24:26.000Z">
+<meta property="article:modified_time" content="2022-07-19T14:51:02.856Z">
 <meta property="article:author" content="rain">
 <meta property="article:tag" content="windows">
 <meta property="article:tag" content="bug">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://rainlf.github.io/2022/01/14/6d2b02659abc/">
+<link rel="canonical" href="https://rainlf.github.io/2022/07/08/639d61d9547f/">
 
 
 <script id="page-configurations">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>Windows 启动Postman后灰屏问题 | Rain's Blog</title>
+  <title>Windows 桌面图标丢失问题 | Rain's Blog</title>
   
 
 
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/14/6d2b02659abc/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/08/639d61d9547f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -219,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Windows 启动Postman后灰屏问题
+          Windows 桌面图标丢失问题
         </h1>
 
         <div class="post-meta">
@@ -229,14 +229,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-01-14 23:01:27" itemprop="dateCreated datePublished" datetime="2022-01-14T23:01:27+08:00">2022-01-14</time>
+              <time title="创建时间：2022-07-08 10:24:26" itemprop="dateCreated datePublished" datetime="2022-07-08T10:24:26+08:00">2022-07-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,16 +260,12 @@
 
       
         <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<p>Windows 10 Pro<br>Postman v9.0.7   </p>
+<p>Windows 10 Pro  </p>
 </blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>解决 Postman 使用或启动后，突然出现灰屏的问题</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>添加系统环境变量</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POSTMAN_DISABLE_GPU = true</span><br></pre></td></tr></table></figure>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p><code>win + r</code> 输入  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">%</span><span class="language-bash">USERPROFILE%\AppData\Local</span></span><br></pre></td></tr></table></figure>
 
+<p>删除图标缓存文件<code>IconCache.db</code>后，刷新即可</p>
 
     </div>
 
@@ -291,12 +287,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/14/2c7ef962ca82/" rel="prev" title="Windows 重启子系统">
-      <i class="fa fa-chevron-left"></i> Windows 重启子系统
+    <a href="/2022/07/07/e1cd445e02ee/" rel="prev" title="Shell 控制语法">
+      <i class="fa fa-chevron-left"></i> Shell 控制语法
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/01/17/cb06e13fcb48/" rel="next" title="博客设置Github标识角">
-      博客设置Github标识角 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/07/19/955e2fba5e33/" rel="next" title="MySQL 迁移数据目录">
+      MySQL 迁移数据目录 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -356,7 +352,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">方案</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -372,7 +368,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -442,7 +438,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 8.1k</span>
+  <span class="post-count"> | Blog word count: 8.2k</span>
 </div>
 
         

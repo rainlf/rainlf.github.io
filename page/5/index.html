@@ -202,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/1d6c1fbfa2be/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/14/f10120170406/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -216,7 +216,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/1d6c1fbfa2be/" class="post-title-link" itemprop="url">Ubuntu 安装Nacos</a>
+            <a href="/2022/01/14/f10120170406/" class="post-title-link" itemprop="url">Windows Postman启动后灰屏问题</a>
         </h2>
 
         <div class="post-meta">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-01-14 23:01:27" itemprop="dateCreated datePublished" datetime="2022-01-14T23:01:27+08:00">2022-01-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
                 </span>
             </span>
 
@@ -257,42 +257,609 @@
 
       
           环境
-Ubuntu 20.04 LTS
+Windows 10 Pro
+Postman v9.0.7 
 
-Nacos 2.0.3
+方案
+添加系统环境变量
+
+1
+
+
+POSTMAN_DISABLE_GPU = true
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/14/f10120170406/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/16/c680b15b1445/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/16/c680b15b1445/" class="post-title-link" itemprop="url">Windows 修改默认用户目录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-16 11:31:42" itemprop="dateCreated datePublished" datetime="2022-02-16T11:31:42+08:00">2022-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          环境
+Windows 10 Pro 
 
 说明
-安装 Nacos 服务器，修改默认密码，配置数据库存储，以集群模式运行，参考 官方文档
+安装Windows系统时，将默认的用户目录调整至非系统盘。
 
 步骤
-数据库
-创建 nacos 用户，授权使用 nacos 数据库
+安装系统
+当 windows 连接到网络的时候有时 Sysprep 会失败，所以在进入 Audit Mode 之前，全程关闭网络连接
+
+安装上 windows，重启电脑之后，当进入区域选择界面时，按下 Ctrl Shift F3 
+
+这时 windows 会重启，进入 Audit Mode，然后显示一个 System Preparation Tool，将它关闭
+
+配置用户目录
+现在可以将电脑连接到网络了。
+
+接下来要使用 System Preparation Tool (Syspr
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/16/c680b15b1445/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/29/73d645e0e554/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/29/73d645e0e554/" class="post-title-link" itemprop="url">Windows 删除系统文件hiberfil.sys</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-29 14:04:09" itemprop="dateCreated datePublished" datetime="2022-01-29T14:04:09+08:00">2022-01-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          环境
+Windows 10 Pro 
+
+说明
+hiberfil.sys为Windows的系统休眠文件，如果系统磁盘紧张，可考虑禁用休眠功能以取消该文件。
+
+步骤
+以管理员权限运行PowerShell，执行
+
+1
+
+
+powercfg -h off
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/29/73d645e0e554/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/06/22/770b3be82aee/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/22/770b3be82aee/" class="post-title-link" itemprop="url">Windows 子系统出现The referenced object type does not support the attempted operation的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-22 12:38:31" itemprop="dateCreated datePublished" datetime="2022-06-22T12:38:31+08:00">2022-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          环境
+Windows 10 Pro 
+
+方案
+临时方案
+以管理员身份运行
+
+1
+
+
+netsh winsock reset
+
+
+永久方案
+下载NoLsp工具
+
+1
+
+
+http://file2.happyjava.cn/NoLsp.exe
+
+
+以管理员身份运行
+
+1
+
+
+.\NoLsp.exe C:\windows\system32\wsl.exe
+
+
+参考
+ 1. Solve the problem that WSL2 and Proxifier cannot be used at the same time
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/06/22/770b3be82aee/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/08/639d61d9547f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/08/639d61d9547f/" class="post-title-link" itemprop="url">Windows 桌面图标丢失问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-08 10:24:26" itemprop="dateCreated datePublished" datetime="2022-07-08T10:24:26+08:00">2022-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          环境
+Windows 10 Pro 
+
+方案
+win + r 输入 
+
+1
+
+
+%USERPROFILE%\AppData\Local
+
+
+删除图标缓存文件IconCache.db后，刷新即可
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/08/639d61d9547f/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/05/02cd7d0a5bef/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/05/02cd7d0a5bef/" class="post-title-link" itemprop="url">Windows 配置IDEA Linux Terminal</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-05 12:21:38" itemprop="dateCreated datePublished" datetime="2022-07-05T12:21:38+08:00">2022-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          环境
+Windows 10 Pro 
+
+步骤
+首先，需要安装Linux子系统 
+
+然后在IDEA中，依次打开Settings->Tools->Terminal
+在Application Settings->Shell Path中配置，如下图
+
+1
+
+
+C:\Windows\System32\bash.exe
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/05/02cd7d0a5bef/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/14/2c7ef962ca82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="rain">
+      <meta itemprop="description" content="hello world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rain's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/14/2c7ef962ca82/" class="post-title-link" itemprop="url">Windows 重启子系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-14 22:54:44" itemprop="dateCreated datePublished" datetime="2022-01-14T22:54:44+08:00">2022-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          环境
+Windows 10 Pro
+
+说明
+Windows 子系统（WSL）是基于 LxssManager 服务运行的，只需将 LxssManager 重启即可
+
+操作
+已管理员权限运行 cmd，执行
 
 1
 2
 3
+4
+5
 
 
-CREATE DATABASE nacos;
-CREATE USER 'nacos'@'%' IDENTIFIED BY '123456';
-GRANT PRIVILEGES ON nacos.* TO 'nacos'@'%'
+# 停止 LxssManager 服务
+net stop LxssManager
 
-
-初始化数据库，使用 conf/nacos-mysql.sql
-
-1
-2
-
-
-use nacos;
-...
-
-
-服务器
-
+# 启动 LxssManager 服务
+net start LxssManager
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/1d6c1fbfa2be/#more" rel="contents">
+              <a class="btn" href="/2022/01/14/2c7ef962ca82/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -316,7 +883,7 @@ use nacos;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/62042bb21002/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/27/82a1098e82bb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -330,7 +897,7 @@ use nacos;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/62042bb21002/" class="post-title-link" itemprop="url">Ubuntu 安装Nginx</a>
+            <a href="/2022/01/27/82a1098e82bb/" class="post-title-link" itemprop="url">Windows 镜像源整理</a>
         </h2>
 
         <div class="post-meta">
@@ -340,14 +907,14 @@ use nacos;
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-01-27 15:11:40" itemprop="dateCreated datePublished" datetime="2022-01-27T15:11:40+08:00">2022-01-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -355,7 +922,7 @@ use nacos;
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
                 </span>
             </span>
 
@@ -371,252 +938,10 @@ use nacos;
 
       
           环境
-Ubuntu 20.04 LTS
+Windows 10 Pro
 
-Nginx 1.14.0
-
-说明
-安装 Nginx Web 服务器
-
-步骤
-安装
-
-1
-
-
-sudo apt install -y nginx
-
-
-配置信息
-
-1
-
-
-/etc/nginx/nginx.conf
-
-
-默认静态资源目录
-
-1
-
-
-/var/www/html/
-
-
-启动
-
-1
-
-
-service nginx start
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/29/62042bb21002/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/b6bbe7999072/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/29/b6bbe7999072/" class="post-title-link" itemprop="url">Ubuntu 安装OhMyZsh</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          环境
-Ubuntu 20.04 LTS
-
-说明
-使用zsh与oh-my-zsh搭建日常命令行环境
-
-步骤
-安装 zsh
-
-1
-
-
-sudo apt install -y zsh
-
-
-配置 zsh 为默认 shell
-
-1
-
-
-chsh -s /bin/zsh
-
-
-安装 oh-my-zsh
-
-1
-
-
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-其他
-安装时可能会遇到 github 访问过慢的问题，也可以将上述安装文件先保存至本地，手动指定镜像仓库来安装
-
-1
-
-
-RE
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/29/b6bbe7999072/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/02/08/06655153a049/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/08/06655153a049/" class="post-title-link" itemprop="url">Ubuntu 安装PostgreSQL</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-02-08 17:03:13" itemprop="dateCreated datePublished" datetime="2022-02-08T17:03:13+08:00">2022-02-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          环境
-Ubuntu 20.04 LTS 
-
-PostgresQL 14.1
-
-说明
-安装postgresql服务器，配置远程访问。
-
-步骤
-安装postgresql，参考 https://www.postgresql.org/download/linux/ubuntu/
+Pip 镜像源
+在%APPDATA%目录下新建\pip\pip.ini\，并编辑内容
 
 1
 2
@@ -624,11 +949,31 @@ PostgresQL 14.1
 4
 
 
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-wget --quiet -O - https:
+[global]
+timeout = 6000
+trusted-host=mirrors.aliyun.com
+index-url=http://mirrors.aliyun.com/pypi/simple/
+
+
+查看
+
+1
+
+
+pip config get global.index-url
+
+
+Yarn/Npm 镜像源
+配置
+
+1
+
+
+yarn config set registry https://registry.npm.taobao.org
+
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/02/08/06655153a049/#more" rel="contents">
+              <a class="btn" href="/2022/01/27/82a1098e82bb/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -652,7 +997,7 @@ wget --quiet -O - https:
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/e11c532b4d46/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/07/04/510c203ec156/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -666,7 +1011,7 @@ wget --quiet -O - https:
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/e11c532b4d46/" class="post-title-link" itemprop="url">Ubuntu 安装Redis</a>
+            <a href="/2022/07/04/510c203ec156/" class="post-title-link" itemprop="url">博客升级Hexo</a>
         </h2>
 
         <div class="post-meta">
@@ -676,14 +1021,14 @@ wget --quiet -O - https:
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-07-04 10:34:13" itemprop="dateCreated datePublished" datetime="2022-07-04T10:34:13+08:00">2022-07-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -691,7 +1036,7 @@ wget --quiet -O - https:
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a>
                 </span>
             </span>
 
@@ -706,52 +1051,48 @@ wget --quiet -O - https:
     <div class="post-body" itemprop="articleBody">
 
       
-          环境
-Ubuntu 20.04 LTS
-
-Redis 4.0.9
-
-说明
-安装 Redis Server，配置密码，并允许外网访问
-
-步骤
-安装 redis-server
+          步骤
+安装npm-check和npm-upgrade工具
 
 1
 
 
-sudo apt install -y redis-server
+npm install -g npm-check npm-upgrade
 
 
-修改配置文件
-
-1
-
-
-sudo vi /etc/redis/redis.conf
-
-
-找到对应行，修改内容为
-
-1
-2
-3
-
-
-bind 0.0.0.0 ::1
-protected-mode no
-requirepass 123456
-
-
-重启服务
+升级检测
 
 1
 
 
-sudo service redis-server restart
+npm-check
+
+
+执行升级
+
+1
+
+
+npm-upgrade
+
+
+保存升级
+
+1
+
+
+npm update -g --save
+
+
+查看hexo插件版本
+
+1
+
+
+npm outdated
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/e11c532b4d46/#more" rel="contents">
+              <a class="btn" href="/2022/07/04/510c203ec156/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -775,7 +1116,7 @@ sudo service redis-server restart
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/585782582d71/">
+    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2022/01/17/cb06e13fcb48/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -789,7 +1130,7 @@ sudo service redis-server restart
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/29/585782582d71/" class="post-title-link" itemprop="url">Ubuntu 安装与配置NVM</a>
+            <a href="/2022/01/17/cb06e13fcb48/" class="post-title-link" itemprop="url">博客设置Github标识角</a>
         </h2>
 
         <div class="post-meta">
@@ -799,14 +1140,14 @@ sudo service redis-server restart
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
+              <time title="创建时间：2022-01-17 17:20:59" itemprop="dateCreated datePublished" datetime="2022-01-17T17:20:59+08:00">2022-01-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
+                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -814,7 +1155,7 @@ sudo service redis-server restart
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a>
                 </span>
             </span>
 
@@ -829,129 +1170,15 @@ sudo service redis-server restart
     <div class="post-body" itemprop="articleBody">
 
       
-          环境
-Ubuntu 20.04 LTS
+          步骤
+在下面网站用选择自己喜欢的图标：
 
-说明
-日常会遇到兼顾 nodejs 多版本的问题，使用 nvm 可以在本地切换 nodejs 版本的工具，来应对不同应用强依赖不同 nodejs 版本的问题
+https://github.blog/2008-12-19-github-ribbons/ 
 
-步骤
-安装 nvm
+https://tholman.com/github-corners/
 
-1
+修改 /themes/next/layout/_layout.swig
 
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-
-查看可用版本
-
-1
-
-
-nvm ls-remote
-
-
-安装指定版本 node
-
-1
-
-
-nvm install 14.7.0
-
-
-查看本地版本
-
-1
-
-
-nvm ls
-
-
-选择版本
-
-1
-
-
-nvm u
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/29/585782582d71/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/784bf6d53299/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/29/784bf6d53299/" class="post-title-link" itemprop="url">Ubuntu 工具整理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          环境
-Ubuntu 20.04 LTS
-
-说明
-新做的系统可能会缺失很多常用的环境和工具，这里整理出来方便统一安装
-
-常用工具
 1
 2
 3
@@ -959,134 +1186,17 @@ Ubuntu 20.04 LTS
 5
 6
 7
-8
-9
-10
-11
 
 
-## 网络工具
-sudo apt install -y net-tools
-## Git
-sudo apt install -y git
-## NodeJs:16 (需要多版本则使用 nvm 替代)
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt install -y nodejs
+<div class="headband"></div>
 
-## 小玩具
-sudo apt 
+<!-- 刚刚复制的代码 -->
+
+<header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="header
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/11/29/784bf6d53299/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://rainlf.github.io/2021/11/29/cef3a852034e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="rain">
-      <meta itemprop="description" content="hello world">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rain's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/29/cef3a852034e/" class="post-title-link" itemprop="url">Ubuntu 用户管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-29 11:11:11" itemprop="dateCreated datePublished" datetime="2021-11-29T11:11:11+08:00">2021-11-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:34:15" itemprop="dateModified" datetime="2022-07-19T22:34:15+08:00">2022-07-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          环境
-Ubuntu 20.04 LTS
-
-说明
-Linux 默认提供 root 用户，但日常使用时推荐使用拥有 sudo 权限的普通用户
-
-步骤
-新建用户，指定工作目录，指定 Shell
-
-1
-
-
-useradd -d /home/admin -m -s /bin/bash admin
-
-
-配置密码
-
-1
-
-
-passwd admin
-
-
-删除用户时执行（会同时删除主目录）
-
-1
-
-
-userdel admin
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/29/cef3a852034e/#more" rel="contents">
+              <a class="btn" href="/2022/01/17/cb06e13fcb48/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1177,7 +1287,7 @@ userdel admin
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1247,7 +1357,7 @@ userdel admin
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | Blog word count: 8.1k</span>
+  <span class="post-count"> | Blog word count: 8.2k</span>
 </div>
 
         

@@ -11,12 +11,16 @@ tag: [linux, ansible]
 
 ## 步骤
 `Ansible`使用`SSH`协议来管理主机，管理节点与托管节点需要建立`ssh`免密登陆通道，同时管理节点与托管节点均需要`Python2.7`环境  
+```shell
+sudo apt install python2.7 -y
+```
+
 在管理节点上安装
 ```shell
-sudo apt-get install software-properties-common
+sudo apt install software-properties-common -y
 sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
+sudo apt update 
+sudo apt install ansible -y
 ```
 
 编辑`Inventory`文件

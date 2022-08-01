@@ -1,6 +1,7 @@
 # Rain's Blog
 
 ## Run Hexo Server
+> npm install -g hexo-cli --registry=https://registry.npm.taobao.org  
 > npm install --registry=https://registry.npm.taobao.org  
 > hexo s
 

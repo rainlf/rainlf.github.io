@@ -1008,23 +1008,25 @@
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>Ubuntu 20.04 LTS</p>
 </blockquote>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
-<p>Linux 默认提供 root 用户，但日常使用时推荐使用拥有 sudo 权限的普通用户</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><blockquote>
 <p>新建用户，指定工作目录，指定 Shell</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd -d /home/admin -m -s /bin/bash admin</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd -d /home/rain -m -s /bin/bash rain</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>配置密码</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">passwd admin</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">passwd rain</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>为用户添加组</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">usermod -a -G &lt;group&gt; rain</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>删除用户时执行（会同时删除主目录）</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">userdel admin</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">userdel rain</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1158,7 +1160,7 @@
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
 <p>切记使用 <code>sudo visudo</code> 命令!<br>取消 Linux 普通用户在使用 sudo 命令时，要求输入密码的步骤<br>取消 sudo 命令对 env 的重置<br>指定 sudo 命令执行时的安全路径</p>
 </blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><blockquote>
 <p>修改配置文件</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo visudo</span><br></pre></td></tr></table></figure>
@@ -1166,14 +1168,15 @@
 <blockquote>
 <p>编辑内容</p>
 </blockquote>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取消 env 重置</span></span><br><span class="line"><span class="attr">Defaults</span>        <span class="string">!env_reset</span></span><br><span class="line"><span class="comment"># 指定安全 PATH</span></span><br><span class="line"><span class="attr">Defaults</span> <span class="string">secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</span></span><br><span class="line"><span class="comment"># 取消输入密码，在最后一行添加</span></span><br><span class="line"><span class="attr">admin</span>  <span class="string">ALL=(ALL:ALL) NOPASSWD:ALL</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取消 env 重置</span></span><br><span class="line"><span class="attr">Defaults</span>        <span class="string">!env_reset</span></span><br><span class="line"><span class="comment"># 指定默认编辑器</span></span><br><span class="line"><span class="attr">Defaults</span>        <span class="string">editor=/usr/bin/vim</span></span><br><span class="line"><span class="comment"># 指定安全 PATH</span></span><br><span class="line"><span class="attr">Defaults</span> <span class="string">secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</span></span><br><span class="line"><span class="comment"># 取消输入密码，在最后一行添加</span></span><br><span class="line"><span class="attr">rain</span>  <span class="string">ALL=(ALL:ALL) NOPASSWD:ALL</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>保存退出，visudo 默认使用 nano 编辑器</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">执行 ctrl+o</span><br><span class="line">提示 File Name to Write: /etc/sudoers.tmp</span><br><span class="line">执行 enter</span><br><span class="line">执行 ctrl+x</span><br></pre></td></tr></table></figure>
 
-]]></content>
+<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>在<code>/etc/sudoers.d/</code>目录下新增文件<code>sudo_rain</code>，内容为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rain  ALL=(ALL:ALL) NOPASSWD:ALL</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Linux</category>
       </categories>

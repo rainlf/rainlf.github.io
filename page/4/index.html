@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
 
           
@@ -334,7 +334,7 @@ sudo apt
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -360,16 +360,13 @@ sudo apt
           环境
 Ubuntu 20.04 LTS
 
-说明
-Linux 默认提供 root 用户，但日常使用时推荐使用拥有 sudo 权限的普通用户
-
-步骤
+操作
 新建用户，指定工作目录，指定 Shell
 
 1
 
 
-useradd -d /home/admin -m -s /bin/bash admin
+useradd -d /home/rain -m -s /bin/bash rain
 
 
 配置密码
@@ -377,7 +374,15 @@ useradd -d /home/admin -m -s /bin/bash admin
 1
 
 
-passwd admin
+passwd rain
+
+
+为用户添加组
+
+1
+
+
+usermod -a -G <group> rain
 
 
 删除用户时执行（会同时删除主目录）
@@ -385,7 +390,7 @@ passwd admin
 1
 
 
-userdel admin
+userdel rain
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/29/cef3a852034e/#more" rel="contents">
@@ -443,7 +448,7 @@ userdel admin
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -573,7 +578,7 @@ Ubuntu 20.04 LTS
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -697,7 +702,7 @@ http {
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -829,7 +834,7 @@ Serve
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -951,7 +956,7 @@ filetype
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -983,7 +988,7 @@ Ubuntu 20.04 LTS
 取消 sudo 命令对 env 的重置
 指定 sudo 命令执行时的安全路径
 
-步骤
+方案一
 修改配置文件
 
 1
@@ -1000,12 +1005,16 @@ sudo visudo
 4
 5
 6
+7
+8
 
 
 # 取消 env 重置
 Defaults        !env_reset
+# 指定默认编辑器
+Defaults        editor=/usr/bin/vim
 # 指定安全 PATH
-Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
+Defaults secure_path="/usr/
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/29/fac97b58d792/#more" rel="contents">
@@ -1063,7 +1072,7 @@ Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1178,7 +1187,7 @@ gateway 172.17.5.113
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1295,7 +1304,7 @@ deb-src http://mirrors.aliyun.com/ubuntu
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:51:02" itemprop="dateModified" datetime="2022-07-19T22:51:02+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-02 14:02:51" itemprop="dateModified" datetime="2022-08-02T14:02:51+08:00">2022-08-02</time>
               </span>
 
           
